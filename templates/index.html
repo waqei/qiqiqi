@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>汽配城</title>
+    <meta name="keywords" content="汽配,汽配城">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+<div id="page" class="w950">
+    <div id="mini-nav">
+        {% if user.is_authenticated %}
+            欢迎您:{{user.username}}
+        {% else %}
+            <a href="/account/login">登录</a>
+            <a href="/account/register">注册</a>
+        {% endif %}
+        <a href="/account/logout">注销</a>
+    </div>
+
+    <div id="top-header">
+        <div class="logo-search">
+            <div class="logo">
+                <a href="#"><img src="image/qpr_logo.png" alt="汽配网"></a>
+                <span>汽配网</span>
+            </div>
+            <div class="search">
+                {% if error %}
+                    <p style="color: red">请输入搜索内容！</p>
+                {% endif %}
+                <form action="/search/" method="get">
+                    <input type="text" name="q">
+                    <input type="submit" value="Search">
+                </form>
+
+            </div>
+            </div>
+        </div>
+
+</div>
+</body>
+</html>
