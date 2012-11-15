@@ -7,6 +7,7 @@ from index import view
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+from django.conf import settings
 
 urlpatterns = patterns('',
     # Examples:
@@ -26,4 +27,5 @@ urlpatterns = patterns('',
     url(r'^accounts/register$', 'accounts.views.register',name="register"),
     url(r'^accounts/login$', 'accounts.views.login',name="login"),
     url(r'^accounts/logout$', 'accounts.views.logout',name="logout"),
+    url(r'^static/(?P<path>.*)$','django.views.static.serve',{'static_root':settings.STATIC_ROOT}),
 )
