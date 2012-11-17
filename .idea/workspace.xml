@@ -147,7 +147,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1365" />
-    <option name="y" value="-907" />
+    <option name="y" value="-7" />
     <option name="width" value="1442" />
     <option name="height" value="908" />
   </component>
@@ -531,7 +531,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1365" y="-907" width="1442" height="908" extended-state="6" />
+    <frame x="1365" y="-7" width="1442" height="908" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
