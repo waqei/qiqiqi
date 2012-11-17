@@ -1,0 +1,50 @@
+{% extends "base-log.html" %}
+{% block head %}
+    <script type="text/javascript">
+        function run(){
+            var s = document.getElementById("dd");
+            if(s.innerHTML == 0){
+                window.location.href='/';
+                return false;
+            }
+            s.innerHTML = s.innerHTML * 1 - 1;
+        }
+        window.setInterval("run();", 1000);
+    </script>
+
+{% endblock %}
+{% block title %}
+    404--您访问的页面不存在
+{% endblock %}
+{% block content %}
+    <body>
+    <br />
+    <div class="container">
+        <TABLE align="center">
+            <TD align="center">
+                <div class="alert alert-info span7">
+                    <h1 align="center" class="en"><strong>Error:<big>404</big></strong></h1><br />
+                    <h4>Not Found</h4><br /><br />
+                    <h4>对不起，您访问的页面不存在</h4>
+                </div>
+            </TD>
+
+        </TABLE>
+
+        <br /><p align="center"><span id="dd">5</span>秒后，跳转到<a href="/">汽配商城</a>首页</p>
+
+
+        <br /><br /><div style="height:3px;background-color: #092d70;"></div><br />
+        <div style="float:left; width:800px;margin-top:3px;">
+            <p style="margin-left:200px;">
+                Copyright &copy;  2012
+                <a href="#" style="text-decoration:none;">
+                    汽配商城
+                </a>. All right reserved.  |  技术支持:
+                <a href="http://sdutlinux.org">
+                    SLUG
+                </a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

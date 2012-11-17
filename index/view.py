@@ -9,7 +9,13 @@ from car.models import Items
 def index(request):
     return render_to_response('index.html')
 
+def err_404(request):
+    return  render_to_response('404.html')
+
 def search(request):
+    """
+    商品搜索功能
+    """
     error=False
     if 'q' in request.GET and request.GET['q']:
         q=request.GET['q']

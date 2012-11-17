@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base-log.html" %}
 
 {% block title %}Account Login{% endblock %}
     {% if messages %}
@@ -10,20 +10,27 @@
 {% endif %}
 
 {% block content %}
-    <form action="" method="post">{% csrf_token %}
-    <table border="0" cellpadding="0" >
-        {{form.as_table}}        
-    </table>
-        <div class="btn-group">
-        <a href="{%url register%}" class="btn btn-info">注册</a>
+
+    <div class="form-actions span7 offset4" align="center">
+
+    <form action="" method="post" class="" >
+            {% csrf_token %}
+        <table border="0" cellpadding="0" >
+            {{form.as_table}}
+        </table>
+        <br>
+        <div class="control-group" align="center">
+            <div class="btn-group">
+                <a href="{%url register%}" class="btn btn-info">注册商户</a>
+            </div>
+            <div class="btn-group">
+                <input type="submit"  class="btn btn-primary" value="登录"/>
+            </div>
+            <div class="btn-group">
+                <a href="{%url index%}" class="btn btn-info">返回网站首页</a>
+            </div>
         </div>
 
-        <div class="btn-group">
-        <input type="submit"  class="btn btn-primary" value="登录"/>
-        </div>
-        
-        <div class="btn-group">
-        <a href="{%url index%}" class="btn btn-info">返回首页</a>
-        </div>
     </form>
+    </div>
 {% endblock %}

@@ -2,27 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bdbaca4-e156-4759-8970-fc890cce7a96" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/css/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/css/__init__.py" afterPath="$PROJECT_DIR$/templates/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/css/bootstrap-responsive.css" afterPath="$PROJECT_DIR$/templates/static/css/bootstrap-responsive.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/css/bootstrap-responsive.min.css" afterPath="$PROJECT_DIR$/templates/static/css/bootstrap-responsive.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/css/bootstrap.css" afterPath="$PROJECT_DIR$/templates/static/css/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/templates/static/css/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/css/style.css" afterPath="$PROJECT_DIR$/templates/static/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/css/style2.css" afterPath="$PROJECT_DIR$/templates/static/css/style2.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/image/qpr_logo.png" afterPath="$PROJECT_DIR$/templates/static/image/qpr_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/img/glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/templates/static/img/glyphicons-halflings-white.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/img/glyphicons-halflings.png" afterPath="$PROJECT_DIR$/templates/static/img/glyphicons-halflings.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/js/bootstrap.js" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/accounts/function.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/accounts/urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index/form.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/404.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/accounts/add.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/base-admin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/base-index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/base-log.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/search.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-alert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-button.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-carousel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-collapse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-popover.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-scrollspy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-tab.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-tooltip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-transition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/bootstrap-typeahead.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/js/jquery.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/accounts/admin.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/search_form.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qiqiqi/settings.py" afterPath="$PROJECT_DIR$/qiqiqi/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/forms.py" afterPath="$PROJECT_DIR$/accounts/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/views.py" afterPath="$PROJECT_DIR$/accounts/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/view.py" afterPath="$PROJECT_DIR$/index/view.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qiqiqi/urls.py" afterPath="$PROJECT_DIR$/qiqiqi/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/accounts/admin.html" afterPath="$PROJECT_DIR$/templates/accounts/admin.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/accounts/login.html" afterPath="$PROJECT_DIR$/templates/accounts/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/accounts/register.html" afterPath="$PROJECT_DIR$/templates/accounts/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/accounts/welcome.html" afterPath="$PROJECT_DIR$/templates/accounts/welcome.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
     </list>
     <ignored path="qiqiqi.iws" />
@@ -47,56 +60,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="base-admin.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base-admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="63" selection-start="3272" selection-end="3272" vertical-scroll-proportion="3.5625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/models.py">
+        <entry file="file://$PROJECT_DIR$/car/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/accounts/register.html">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="66" selection-start="346" selection-end="346" vertical-scroll-proportion="-5.75">
-              <folding />
+            <state line="67" column="0" selection-start="2485" selection-end="2485" vertical-scroll-proportion="0.395574">
+              <folding>
+                <element signature="e#2013#2372#0" expanded="false" />
+                <element signature="e#2399#2484#0" expanded="false" />
+                <element signature="e#2514#2534#1" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="861" selection-end="861" vertical-scroll-proportion="-13.65625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/accounts/admin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="35" selection-start="768" selection-end="768" vertical-scroll-proportion="-15.8125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/accounts/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="8" selection-start="587" selection-end="587" vertical-scroll-proportion="0.66714907">
+            <state line="15" column="0" selection-start="282" selection-end="923" vertical-scroll-proportion="-6.46875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qiqiqi/settings.py">
+      <file leaf-file-name="view.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index/view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="23" selection-start="2401" selection-end="2401" vertical-scroll-proportion="0.0">
+            <state line="10" column="0" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/accounts/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="94" selection-end="94" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#14#65#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,16 +123,27 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qiqiqi/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="74" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
+            <state line="30" column="45" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#14#65#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/accounts/add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="14" selection-start="482" selection-end="482" vertical-scroll-proportion="-11.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <file leaf-file-name="welcome.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/accounts/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="14" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
+            <state line="9" column="0" selection-start="258" selection-end="258" vertical-scroll-proportion="-6.46875">
               <folding />
             </state>
           </provider>
@@ -132,28 +162,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/car/models.py" />
-        <option value="$PROJECT_DIR$/templates/css/style2.css" />
-        <option value="$PROJECT_DIR$/index/view.py" />
-        <option value="$USER_HOME$/python_text/repair/convert_utf-8.py" />
-        <option value="$PROJECT_DIR$/templates/css/style.css" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/car/views.py" />
-        <option value="$PROJECT_DIR$/account/views.py" />
-        <option value="$PROJECT_DIR$/accounts/views.py" />
-        <option value="$PROJECT_DIR$/qiqiqi/settings.py" />
-        <option value="$PROJECT_DIR$/qiqiqi/urls.py" />
-        <option value="$PROJECT_DIR$/templates/head.html" />
-        <option value="$PROJECT_DIR$/templates/accounts/register.html" />
-        <option value="$PROJECT_DIR$/templates/accounts/admin.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/search_form.html" />
+        <option value="$PROJECT_DIR$/index/form.py" />
+        <option value="$PROJECT_DIR$/accounts/function.py" />
+        <option value="$PROJECT_DIR$/accounts/forms.py" />
+        <option value="$PROJECT_DIR$/templates/base1.html" />
         <option value="$PROJECT_DIR$/templates/accounts/login.html" />
+        <option value="$PROJECT_DIR$/templates/accounts/register.html" />
+        <option value="$PROJECT_DIR$/templates/404.html" />
+        <option value="$PROJECT_DIR$/templates/accounts/welcome.html" />
+        <option value="$PROJECT_DIR$/accounts/views.py" />
+        <option value="$PROJECT_DIR$/accounts/urls.py" />
+        <option value="$PROJECT_DIR$/qiqiqi/urls.py" />
+        <option value="$PROJECT_DIR$/templates/base-admin.html" />
+        <option value="$PROJECT_DIR$/templates/admin.html" />
+        <option value="$PROJECT_DIR$/templates/accounts/add.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1365" />
-    <option name="y" value="-7" />
+    <option name="y" value="-907" />
     <option name="width" value="1442" />
     <option name="height" value="908" />
   </component>
@@ -183,16 +213,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -239,39 +259,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qiqiqi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qiqiqi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="accounts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qiqiqi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qiqiqi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qiqiqi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -299,22 +287,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="car" />
+              <option name="myItemId" value="accounts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qiqiqi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qiqiqi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="accounts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -348,6 +332,7 @@
       <recent name="$PROJECT_DIR$/accounts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/templates/static" />
     </key>
   </component>
@@ -392,6 +377,22 @@
       <option name="MULTIPROCESS" value="false" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="qiqiqi" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -545,19 +546,39 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="1365" y="-7" width="1442" height="908" extended-state="6" />
+    <frame x="1365" y="-907" width="1442" height="908" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20071943" sideWeight="0.96005154" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2582734" sideWeight="0.71005154" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5098658" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34020618" sideWeight="0.4846093" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28994846" sideWeight="0.4846093" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -623,99 +644,122 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/qiqiqi/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/templates/base-index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="2" selection-end="2" vertical-scroll-proportion="0.06362379" />
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/Django-1.4-py2.7.egg/django/template/defaulttags.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="595" column="4" selection-start="21576" selection-end="21576" vertical-scroll-proportion="0.33239436" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="32" selection-start="216" selection-end="216" vertical-scroll-proportion="0.22268327" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/static/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index/view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="9" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0" />
+        <state line="57" column="7" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.77482516" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="47" column="0" selection-start="2026" selection-end="2026" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#14#38#0" expanded="true" />
+            <element signature="e#1095#1300#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/car/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/accounts/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="63" selection-start="659" selection-end="659" vertical-scroll-proportion="0.291834">
+        <state line="6" column="29" selection-start="282" selection-end="282" vertical-scroll-proportion="0.19971056">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="14" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
+        <state line="22" column="30" selection-start="561" selection-end="561" vertical-scroll-proportion="-0.1316932">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qiqiqi/settings.py">
+    <entry file="file://$PROJECT_DIR$/templates/base-log.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="23" selection-start="2401" selection-end="2401" vertical-scroll-proportion="0.0">
+        <state line="38" column="0" selection-start="1410" selection-end="1410" vertical-scroll-proportion="1.2648336">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="36" selection-start="390" selection-end="390" vertical-scroll-proportion="0.40026775">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="1" selection-start="2020" selection-end="2021" vertical-scroll-proportion="0.9321534">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/accounts/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="258" selection-end="258" vertical-scroll-proportion="-6.46875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="94" selection-end="94" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#14#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/accounts/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="282" selection-end="923" vertical-scroll-proportion="-6.46875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/accounts/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="14" selection-start="482" selection-end="482" vertical-scroll-proportion="-11.5">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qiqiqi/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="74" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
+        <state line="30" column="45" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#14#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/base-admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="861" selection-end="861" vertical-scroll-proportion="-13.65625">
+        <state line="76" column="63" selection-start="3272" selection-end="3272" vertical-scroll-proportion="3.5625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/accounts/admin.html">
+    <entry file="file://$PROJECT_DIR$/car/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="35" selection-start="768" selection-end="768" vertical-scroll-proportion="-15.8125">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/accounts/register.html">
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="66" selection-start="346" selection-end="346" vertical-scroll-proportion="-5.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/accounts/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="8" selection-start="587" selection-end="587" vertical-scroll-proportion="0.66714907">
-          <folding />
+        <state line="67" column="0" selection-start="2485" selection-end="2485" vertical-scroll-proportion="0.395574">
+          <folding>
+            <element signature="e#2013#2372#0" expanded="false" />
+            <element signature="e#2399#2484#0" expanded="false" />
+            <element signature="e#2514#2534#1" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,0 +1,12 @@
+{% extends "base-index.html" %}
+{% block title %}
+    商品搜索
+{% endblock %}
+{% block content %}
+    {% if error %}
+        <p style="color: red">请输入搜索内容！</p>
+    {% endif %}
+    <form action="/search/" method="get">
+    <input type="text" name="q">
+    <input type="submit" value="Search">
+{% endblock %}

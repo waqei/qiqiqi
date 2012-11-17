@@ -8,6 +8,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login ,logout as auth_logout
 from django.utils.translation import ugettext_lazy as _
 from forms import RegisterForm,LoginForm
+from accounts.forms import ItemsForm
+import ImageFile
 
 def index(request):
     '''首页视图'''
@@ -41,7 +43,7 @@ def login(request):
         form=LoginForm(request.POST.copy())
         if form.is_valid():
             _login(request,form.cleaned_data["username"],form.cleaned_data["password"])
-            return HttpResponseRedirect(reverse("index"))
+            return HttpResponseRedirect(reverse("admin_index"))
     template_var["form"]=form
     return render_to_response("accounts/login.html",template_var,context_instance=RequestContext(request))
 
@@ -63,3 +65,19 @@ def logout(request):
     '''注销视图'''
     auth_logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+
+def addItems(request):
+    """
+    上传图片
+    """
+    if request.method == 'POST':
+        form = ItemsForm(request.POST,request.FILES)
+        if form.is_valid():
+            f=request.FILES["imagefile"]
+            parser=ImageFile.Parser()
+            for chunk in f.chunks():
+                paser.feed(chunk)
+            img = parser.close()
+            img.save("/templates/static/image")
+            return render_to_response("accounts/add.html",template_var,context_instance=RequestContext(request))

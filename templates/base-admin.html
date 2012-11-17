@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+{#css#}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "bootstrap.css" %}" type="text/css">
+{#    <link rel="stylesheet" href="{% static "bootstrap-responsive.css" %}" type="text/css">#}
+{#    <link rel="stylesheet" href="{% static "bootstrap.min.css" %}" type="text/css" >#}
+{#    <link rel="stylesheet" href="{% static "style.css" %}" type="text/css" >#}
+{#    <link rel="stylesheet" href="{% static "style2.css" %}" type="text/css" >#}
+    <script type="text/javascript" src="{% static "bootstrap.js" %}"></script>
+    <script type="text/javascript" src="{% static "bootstrap.min.js" %}"></script>
+
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+    </style>
+    {% block head %}{% endblock %}
+</head>
+<body>
+{% if request.user.is_authenticated %}
+    <div class="container-fluid">
+        {#navbar#}
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">网站后台</a>
+                    <div class="nav-collapse collapse">
+                        <p class="navbar-text pull-right">
+                            {#                    Logged in as <a href="#" class="navbar-link">{{ username }}</a>#}
+                        </p>
+                        <ul class="nav">
+                            <li class="active"><a href="/">网站首页</a></li>
+                            <li><a href="{% url logout %}">注销</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        {#功能区#}
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">功能区</li>
+                            {% block function %}
+                                <li><a href="{% url add_items %}">增加商品</a></li>
+                                <li><a href="#">增加分类</a></li>
+                                <li><a href="#">商品管理</a></li>
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">更改商铺信息</a></li>
+                            {% endblock %}
+                        </ul>
+                    </div><!--/.well -->
+                </div><!--/span3-->
+
+
+                {#主体#}
+                <div class="span9">
+                    <div class="hero-unit">
+                        {% block main %}
+
+                        {% endblock %}
+                    </div><!--/hero-->
+                </div><!--/span9-->
+            </div><!--/row-->
+        </div>
+        <hr>
+
+        <footer align="center"><p>&copy; Company 2012</p></footer><!--/footer-->
+
+    </div><!--/.fluid-container-->
+{% else %}
+    <script language="JAVASCRIPT">
+        setTimeout("document.location.href="/",0);
+    </script>
+{% endif %}
+</body>
+</html>
