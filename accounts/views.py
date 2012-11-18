@@ -1,4 +1,6 @@
 #coding=utf-8
+import time
+from qiqiqi import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
@@ -7,9 +9,11 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login ,logout as auth_logout
 from django.utils.translation import ugettext_lazy as _
-from forms import RegisterForm,LoginForm
-from accounts.forms import ItemsForm
+from forms import RegisterForm,LoginForm,ItemsForm
+
 import ImageFile
+from car.models import Items
+import os
 
 def index(request):
     '''首页视图'''
@@ -69,15 +73,48 @@ def logout(request):
 
 def addItems(request):
     """
-    上传图片
+    添加商品
     """
+    template_var={}
+    form = ItemsForm()
     if request.method == 'POST':
-        form = ItemsForm(request.POST,request.FILES)
+        form = ItemsForm(request.POST.copy())
         if form.is_valid():
-            f=request.FILES["imagefile"]
-            parser=ImageFile.Parser()
-            for chunk in f.chunks():
-                paser.feed(chunk)
-            img = parser.close()
-            img.save("/templates/static/image")
-            return render_to_response("accounts/add.html",template_var,context_instance=RequestContext(request))
+            name=form.cleaned_data['name']
+            store=form.cleaned_data['store']
+            series=form.cleaned_data['series']
+            version=form.cleaned_data['version']
+            description=form.cleaned_data['description']
+            exit_date=form.cleaned_data['exit_date']
+            price=form.cleaned_data['price']
+            item=Items(it_name=name,
+                company=store,
+                series=series,
+                version=version,
+                description=description,
+                exit_date=exit_date,
+                price=price
+            )
+            item.save()
+            _upload('imagefiles')
+    template_var['form']=form
+    return  render_to_response('accounts/add.html',template_var,context_instance=RequestContext(request))
+
+def _upload(file):
+    '''图片上传函数'''
+    if file:
+        path=os.path.join(settings.MEDIA_ROOT,'upload')
+        file_name=str(time.strftime("%y%m%d%H%M%S",time.localtime()))+".jpg"
+        path_file=os.path.join(path,file_name)
+        parser = ImageFile.Parser()
+        for chunk in file.chunks():
+            parser.feed(chunk)
+        img = parser.close()
+        try:
+            if img.mode != "RGB":
+                img = img.convert("RGB")
+            img.save(path_file, 'jpeg',quality=100)
+        except:
+            return False
+        return True
+    return False

@@ -36,7 +36,7 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-{% if request.user.is_authenticated %}
+{% if request.user.is_staff %}
     <div class="container-fluid">
         {#navbar#}
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -51,6 +51,7 @@
                     <div class="nav-collapse collapse">
                         <p class="navbar-text pull-right">
                             {#                    Logged in as <a href="#" class="navbar-link">{{ username }}</a>#}
+                            {{ w }}
                         </p>
                         <ul class="nav">
                             <li class="active"><a href="/">网站首页</a></li>
@@ -69,12 +70,15 @@
                         <ul class="nav nav-list">
                             <li class="nav-header">功能区</li>
                             {% block function %}
-                                <li><a href="{% url add_items %}">增加商品</a></li>
-                                <li><a href="#">增加分类</a></li>
-                                <li><a href="#">商品管理</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">更改商铺信息</a></li>
+                                {% if request.user.is_superuser %}
+                                    <li><a href="{% url add_items %}">管理商户</a></li>
+                                {% endif %}
+                                    <li><a href="{% url add_items %}">增加商品</a></li>
+                                    <li><a href="#">增加分类</a></li>
+                                    <li><a href="#">商品管理</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">更改商铺信息</a></li>
                             {% endblock %}
                         </ul>
                     </div><!--/.well -->
@@ -98,7 +102,7 @@
     </div><!--/.fluid-container-->
 {% else %}
     <script language="JAVASCRIPT">
-        setTimeout("document.location.href="/",0);
+        setTimeout("document.location.href='/404'",0);
     </script>
 {% endif %}
 </body>
