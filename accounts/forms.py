@@ -3,6 +3,9 @@ from django import forms
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
+from django.forms import ModelForm
+from car.models import Items
+
 
 
 class RegisterForm(forms.Form):
@@ -29,15 +32,15 @@ class LoginForm(forms.Form):
     password=forms.CharField(label=_(u"密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
 
 
-class ItemsForm(forms.Form):
-    name=forms.CharField(label=_(u'商品名称'),max_length=30,widget=forms.TextInput(attrs={'size':30}))
-    store=forms.CharField(label=_(u'商铺名称'),max_length=30,widget=forms.TextInput(attrs={'size':30}))
-    series=forms.CharField(label=_(u'商品系列'),max_length=50,widget=forms.TextInput(attrs={'size':50}))
-    version=forms.CharField(label=_(u'商品型号'),max_length=50,widget=forms.TextInput(attrs={'seze':50}))
-    description=forms.CharField(label=_(u'商品描述',max_length=500,widget=forms.TextInput(attrs={'size':500})))
-    exit_date=forms.DateField(label=_(u'出厂日期'))
-    price=forms.CharField(label=_(u'商品价格'),max_length=10,widget=forms.TextInput(attrs={'size':30}))
-    imagefiles=forms.ImageField()
+#class ItemsForm(forms.Form):
+#    name=forms.CharField(label=_(u'商品名称'),max_length=30,widget=forms.TextInput(attrs={'size':30}))
+#    store=forms.CharField(label=_(u'商铺名称'),max_length=30,widget=forms.TextInput(attrs={'size':30}))
+#    series=forms.CharField(label=_(u'商品系列'),max_length=50,widget=forms.TextInput(attrs={'size':50}))
+#    version=forms.CharField(label=_(u'商品型号'),max_length=50,widget=forms.TextInput(attrs={'seze':50}))
+#    description=forms.CharField(label=_(u'商品描述',max_length=500,widget=forms.TextInput(attrs={'size':500})))
+#    exit_date=forms.DateField(label=_(u'出厂日期'))
+#    price=forms.CharField(label=_(u'商品价格'),max_length=10,widget=forms.TextInput(attrs={'size':30}))
+#    imagefiles=forms.ImageField()
 
 
 #    def clean_item(self):
@@ -51,3 +54,7 @@ class ItemsForm(forms.Form):
 #
 
 
+
+class ItemsForm(ModelForm):
+    class Meta:
+        model=Items

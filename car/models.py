@@ -9,6 +9,7 @@ class Items(models.Model):
     description=models.CharField(max_length=200,verbose_name='描述')
     exit_date=models.DateField(verbose_name='上市时间',blank=True)
     price=models.CharField(max_length=20,verbose_name='价格')
+    img=models.ImageField(verbose_name='商品图片',upload_to='image')
     def __unicode__(self):
         return self.it_name
 
@@ -23,7 +24,7 @@ class Stores(models.Model):
 
 class Messages(models.Model):
     mes_store=models.CharField(max_length=10)
-    contact_number=models.CharField(max_length=12,verbose_name='您的联系电话')
+    contact_number=models.DecimalField(max_length=12,verbose_name='您的联系电话')
     content=models.CharField(max_length=200,verbose_name='留言内容')
     def __unicode__(self):
         return self.contact_number
