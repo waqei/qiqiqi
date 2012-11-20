@@ -9,10 +9,10 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login ,logout as auth_logout
 from django.utils.translation import ugettext_lazy as _
-from forms import RegisterForm,LoginForm,ItemsForm
+from forms import RegisterForm,LoginForm,ItemsForm,StoreForm
 
 import ImageFile
-from car.models import Items
+from car.models import Items,Stores
 import os
 
 def index(request):
@@ -118,3 +118,27 @@ def _upload(file):
             return False
         return True
     return False
+
+def addStore(request):
+    template_var={}
+    form=StoreForm()
+    if request.method == 'POST':
+        form = StoreForm(request.POST.copy())
+        if form.is_valid():
+            st_name=form.cleaned_data['st_name']
+            boss=form.cleaned_data['boss']
+            address=form.cleaned_data['address']
+            tele=form.cleaned_data['tele']
+            it_description=form.cleaned_data['it_description']
+            email=form.cleaned_data['email']
+
+            store=Stores(
+                st_name=st_name,
+                boss=boss,
+                address=address,
+                tele=tele,
+                it_description=it_description,
+                email=email,
+            )
+    template_var['form']=form
+    return render_to_response('accounts/add_store.html',template_var,context_instance=RequestContext(request))

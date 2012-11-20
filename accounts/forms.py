@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 from django.forms import ModelForm
-from car.models import Items
+from car.models import Items,Stores
 
 
 
@@ -58,3 +58,8 @@ class LoginForm(forms.Form):
 class ItemsForm(ModelForm):
     class Meta:
         model=Items
+
+
+class StoreForm(ModelForm):
+    class Meta:
+        model=Stores

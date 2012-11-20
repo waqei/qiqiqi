@@ -72,6 +72,7 @@
                             {% block function %}
                                 {% if request.user.is_superuser %}
                                     <li><a href="{% url add_items %}">管理商户</a></li>
+                                    <li><a href="{% url add_store %}">增加商户</a></li>
                                 {% endif %}
                                     <li><a href="{% url add_items %}">增加商品</a></li>
                                     <li><a href="#">增加分类</a></li>
