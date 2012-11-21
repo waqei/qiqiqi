@@ -97,6 +97,7 @@ def addItems(request):
             )
             item.save()
             _upload('imagefiles')
+            return HttpResponseRedirect(reverse("index"))
     template_var['form']=form
     return  render_to_response('accounts/add.html',template_var,context_instance=RequestContext(request))
 
@@ -138,7 +139,9 @@ def addStore(request):
                 address=address,
                 tele=tele,
                 it_description=it_description,
-                email=email,
+                email=email
             )
+            store.save()
+            return render
     template_var['form']=form
     return render_to_response('accounts/add_store.html',template_var,context_instance=RequestContext(request))

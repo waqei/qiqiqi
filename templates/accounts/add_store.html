@@ -3,7 +3,7 @@
 {% block main %}
     <h2>添加商户</h2>
     <hr>
-    <form enctype="multipart/form-data" action="account/add" method="post">{% csrf_token %}
+    <form action="" method="post">{% csrf_token %}
         <table border="0" cellpadding="0" >
             {{ form.as_table }}
         </table>

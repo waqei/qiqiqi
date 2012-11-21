@@ -8,7 +8,7 @@ class Stores(models.Model):
     st_name=models.CharField(max_length=10,verbose_name='商铺名称')
     boss=models.ForeignKey(User,verbose_name='商铺主')
     address=models.CharField(max_length=30,verbose_name='地址')
-    tele=models.DecimalField(max_digits='11',decimal_places='0' ,verbose_name='联系电话')
+    tele=models.CharField(max_length='11',verbose_name='联系电话')
     it_description=models.CharField(max_length=200,verbose_name='商铺描述')
     email=models.EmailField('e-mail',blank=True)
     def __unicode__(self):

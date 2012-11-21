@@ -27,7 +27,7 @@ urlpatterns = patterns('',
     ##url(r'^accounts/login$', 'accounts.views.login',name="login"),
     url(r'^accounts/logout$', 'accounts.views.logout',name="logout"),
     url(r'^accounts/item/add','accounts.views.addItems',name="add_items"),
-    url(r'^accounts/store/add','accounts.views.addStores',name="add_store"),
+    url(r'^accounts/store/add','accounts.views.addStore',name="add_store"),
 
     #static items
     url(r'^static/(?P<path>.*)$','django.views.static.serve',{'static_root':settings.STATIC_ROOT}),
