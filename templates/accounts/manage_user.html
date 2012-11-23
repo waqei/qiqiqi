@@ -1,0 +1,13 @@
+{% extends "base-admin.html" %}
+{% block title %}管理商户{% endblock %}
+{% block main %}
+    <h2>管理商户</h2>
+    <hr>
+    {% for foo in user %}
+        <div class="nav-list well">
+            {{ foo }}
+
+        </div>
+    {% endfor %}
+    
+{% endblock %}
