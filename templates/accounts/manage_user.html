@@ -1,13 +1,65 @@
 {% extends "base-admin.html" %}
 {% block title %}管理商户{% endblock %}
 {% block main %}
+
     <h2>管理商户</h2>
     <hr>
-    {% for foo in user %}
-        <div class="nav-list well">
-            {{ foo }}
 
+    <ul id="tab" class="nav nav-tabs">
+        <li class="active"><a href="#all" data-toggle="tab" class="btn btn-info">全部商户</a></li>
+        <li><a href="#wait" data-toggle="tab" class="btn btn-info">待认证商户</a></li>
+        <li><a href="#super" data-toggle="tab" class="btn btn-info">管理员</a></li>
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="all">
+            {% for foo in all_user %}
+                <div class="category-list alert alert-info">
+                    {{ foo }}
+                    {% if foo.first_name %}
+                        <p>真实姓名:{{ foo.first_name }}</p>
+                    {% endif %}
+
+                    <div class="control-group">
+                        <a href="/accounts/store/edit/?user={{ foo }}" class="btn btn-primary">编辑商户</a>
+                        <a href="/accounts/store/delete/?user={{ foo }}" class="btn btn-danger">删除商户</a>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
-    
+        <div class="tab-pane fade in active" id="wait">
+            {% for foo in asso_user %}
+                <div class="category-list alert alert-info">
+                    {{ foo }}
+                    {% if foo.first_name %}
+                        <p>真实姓名:{{ foo.first_name }}</p>
+                    {% endif %}
+
+                    <div class="control-group">
+                        <a href="/accounts/store/pass/?user={{ foo }}" class="btn btn-primary">通过申请</a>
+                        <a href="/accounts/store/delete/?user={{ foo }}" class="btn btn-danger">删除申请</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="tab-pane fade in active" id="super">
+            {% for foo in super_user %}
+                <div class="category-list alert alert-info">
+                    管理员：{{ foo }}
+                    {% if foo.first_name %}
+                        <p>真实姓名:{{ foo.first_name }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    <script>
+        $(function () {
+            $('.tabs a:last').tab('show')
+        })
+    </script>
+    <script src="/static/bootstrap-tab.js"></script>
+
+
 {% endblock %}

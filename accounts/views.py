@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login ,logout as auth_logout
 from django.utils.translation import ugettext_lazy as _
-from forms import RegisterForm,LoginForm,ItemsForm,StoreForm
+from forms import *
 
 
 def index(request):
@@ -78,11 +78,34 @@ def addItems(request):
     """
     template_var={}
     form = ItemsForm()
+    company=request.user
     if request.method == 'POST':
         form = ItemsForm(request.POST,request.FILES)
         if form.is_valid():
+            form
             form.save()
-            return HttpResponse('<script>alert("添加成功！");history.go(0);</script>')
+#            it_name=form.cleaned_data['it_name']
+#            company=company
+#            series=form.cleaned_data['series']
+#            version=form.cleaned_data['version']
+#            description=form.cleaned_data['description']
+#            exit_date=form.cleaned_data['exit_date']
+#            price=form.cleaned_data['price']
+#            img=form.cleaned_data['img']
+#
+#            item=Items[
+#                'it_name':it_name,
+#                'company':company,
+#                'series':series,
+#                'version':version,
+#                'description':description,
+#                'exit_date':exit_date,
+#                'price':price,
+#                'img':img,
+#            ]
+#            item.save()
+
+            return HttpResponse('<script>alert("添加成功！");top.location="/accounts/item/add";</script>')
     template_var['form']=form
     return  render_to_response('accounts/add.html',template_var,context_instance=RequestContext(request))
 
@@ -93,13 +116,52 @@ def addStore(request):
         form = StoreForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-
-            return HttpResponse('<script>alert("添加成功！");history.go(0);</script>')
+            return HttpResponse('<script>alert("添加成功！");top.location="/accounts/store/add";</script>')
+        else:
+            HttpResponseRedirect(reverse('add_store'))
     template_var['form']=form
     return render_to_response('accounts/add_store.html',template_var,context_instance=RequestContext(request))
 
 def manUser(request):
     template_var={}
-    user=User.objects.filter(is_staff='0')
-    template_var['user']=user
+    all_user=User.objects.filter(is_staff='1',is_superuser='0')
+    asso_user=User.objects.filter(is_staff='0',is_active='1')
+    super_user=User.objects.filter(is_superuser='1')
+    template_var={
+        'all_user':all_user,
+        'asso_user':asso_user,
+        'super_user':super_user
+    }
     return render_to_response("accounts/manage_user.html",template_var,context_instance=RequestContext(request))
+
+def passUser(request):
+    if request.GET.get('user'):
+        muser=request.GET.get('user')
+        user=User.objects.get(username=muser)
+        user.is_staff= '1'
+        user.is_staff= '1'
+        user.save()
+        return HttpResponse('<script>alert("已通过！");top.location="/accounts/store/manage_user"</script>')
+    else:
+        HttpResponseRedirect(reverse('manage_user'))
+
+def deleUser(request):
+    if request.GET.get('user'):
+        muser=request.GET.get('user')
+        user=User.objects.get(username=muser)
+        user.delete()
+        return HttpResponse('<script>alert("已删除！");top.location="/accounts/store/manage_user"</script>')
+    else:
+        HttpResponseRedirect(reverse('manage_user'))
+
+def editUser(request):
+    if request.GET.get('user'):
+        muser=request.GET.get('user')
+
+
+        return HttpResponse('<script>alert("已删除！");top.location="/accounts/store/manage_user"</script>')
+    else:
+        HttpResponseRedirect(reverse('manage_user'))
+
+def editStore(request):
+    pass
