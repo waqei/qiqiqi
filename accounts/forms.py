@@ -40,7 +40,7 @@ class LoginForm(forms.Form):
 class ItemsForm(ModelForm):
     class Meta:
         model=Items
-        fields=('it_name','series','version','description','exit_date','price','img')
+#        fields=('it_name','company','series','version','description','exit_date','price','img')
         widgets={
             'description':Textarea(attrs={'cols':10,'rows':10}),
             }
@@ -53,3 +53,20 @@ class StoreForm(ModelForm):
             'it_description':Textarea(attrs={'cols':10,'rows':10}),
         }
 
+class UserForm(forms.Form):
+    realname=forms.CharField(label=_(u"真实姓名"),max_length=10,widget=forms.TextInput(attrs={'size':10,}))
+    email=forms.EmailField(label=_(u"E-mail"),max_length=30,widget=forms.TextInput(attrs={'size':30,}))
+    is_staff=forms.ChoiceField(label=_(u"是否商户",widget=forms.Select(choices=BOOLE_CHOICES)))
+    is_superuser=forms.ChoiceField(label=_(u"是否管理员",widget=forms.Select(choices=BOOLE_CHOICES)))
+
+    def clean_email(self):
+        emails = User.objects.filter(email__iexact=self.cleaned_data["email"])
+        if not emails:
+            return self.cleaned_data["email"]
+        raise forms.ValidationError(_(u"该邮箱已经被使用请使用其他的"))
+
+
+class ChangePasswordForm(forms.Form):
+    old_password = forms.CharField(label=_(u"原密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
+    new_password = forms.CharField(label=_(u"新密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
+    new_password1 = forms.CharField(label=_(u"新密码确认"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))

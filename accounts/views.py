@@ -76,13 +76,13 @@ def addItems(request):
     """
     添加商品
     """
+    muser=request.GET.get('user')
     template_var={}
-    form = ItemsForm()
-    company=request.user
+    form = ItemsForm(initial={'company':muser,})
+#    company=request.user
     if request.method == 'POST':
         form = ItemsForm(request.POST,request.FILES)
         if form.is_valid():
-            form
             form.save()
 #            it_name=form.cleaned_data['it_name']
 #            company=company
@@ -123,7 +123,6 @@ def addStore(request):
     return render_to_response('accounts/add_store.html',template_var,context_instance=RequestContext(request))
 
 def manUser(request):
-    template_var={}
     all_user=User.objects.filter(is_staff='1',is_superuser='0')
     asso_user=User.objects.filter(is_staff='0',is_active='1')
     super_user=User.objects.filter(is_superuser='1')
@@ -147,21 +146,71 @@ def passUser(request):
 
 def deleUser(request):
     if request.GET.get('user'):
-        muser=request.GET.get('user')
-        user=User.objects.get(username=muser)
-        user.delete()
-        return HttpResponse('<script>alert("已删除！");top.location="/accounts/store/manage_user"</script>')
+            muser=request.GET.get('user')
+            user=User.objects.get(username=muser)
+            user.delete()
+            return HttpResponse('<script>alert("已删除！");top.location="/accounts/store/manage_user"</script>')
     else:
         HttpResponseRedirect(reverse('manage_user'))
+
 
 def editUser(request):
-    if request.GET.get('user'):
-        muser=request.GET.get('user')
+    template_var={}
+    form = UserForm()
+    if request.method == "POST":
+        form = UserForm(request.POST.copy())
+        if form.is_valid():
+            username=request.user.username
+            realname = form.cleaned_data['realname']
+            email = form.cleaned_data['email']
+            is_staff = form.cleaned_data['is_staff']
+            is_superuser=form.cleaned_data['is_superuser']
+            user= authenticate(username=username,first_name=realname,email=email,is_staff=is_staff,is_superuser=is_superuser)
+    template_var['euser']=request.GET.get('user')
+    template_var['form']=form
+    return render_to_response('accounts/edit_user.html',template_var,context_instance=RequestContext(request))
 
 
-        return HttpResponse('<script>alert("已删除！");top.location="/accounts/store/manage_user"</script>')
-    else:
-        HttpResponseRedirect(reverse('manage_user'))
+
 
 def editStore(request):
     pass
+
+def change_password(request):
+    if not request.user.is_authenticated():
+        return HttpResponseRedirect(reverse("404"))
+    template = {}
+    form = ChangePasswordForm()
+    if request.method=="POST":
+        form = ChangePasswordForm(request.POST.copy())
+        if form.is_valid():
+            username = request.user.username
+            oldpassword = form.cleaned_data["old_password"]
+            newpassword = form.cleaned_data["new_password"]
+            newpassword1 = form.cleaned_data["new_password1"]
+            user = authenticate(username=username,password=oldpassword)
+            if user: #原口令正确
+                if newpassword == newpassword1:#两次新口令一致
+                    user.set_password(newpassword)
+                    user.save()
+                    print '1'
+                    return HttpResponse('<script>alert("修改密码成功！");top.location="/accounts/changepw";</script>')
+                else:#两次新口令不一致
+                    template["word"] = '两次输入口令不一致'
+                    template["form"] = form
+                    print '2'
+                    return render_to_response("accounts/change_password.html",template,context_instance=RequestContext(request))
+            else:  #原口令不正确
+                if newpassword == newpassword1:#两次新口令一致
+                    template["word"] = '原口令不正确'
+                    template["form"] = form
+                    print '3'
+                    return render_to_response("accounts/change_password.html",template,context_instance=RequestContext(request))
+                else:#两次新口令不一致
+                    template["word"] = '原口令不正确，两次输入口令不一致'
+                    template["form"] = form
+                    print '4'
+                    return render_to_response("accounts/change_password.html",template,context_instance=RequestContext(request))
+    template["form"] = form
+    return render_to_response("accounts/change_password.html",template,context_instance=RequestContext(request))
+

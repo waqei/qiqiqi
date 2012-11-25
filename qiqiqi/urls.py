@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     url(r'^accounts/index$', 'accounts.views.index',name="admin_index"),
     url(r'^accounts/register$', 'accounts.views.register',name="register"),
     url(r'^accounts/logout$', 'accounts.views.logout',name="logout"),
+    url(r'^accounts/changepw$', 'accounts.views.change_password',name="changepw"),
 
 
     ##item
@@ -36,7 +37,7 @@ urlpatterns = patterns('',
     url(r'^accounts/store/manage_user','accounts.views.manUser',name="manage_user"),
     url(r'^accounts/store/delete/$','accounts.views.deleUser',name="delete_user"),
     url(r'^accounts/store/pass/$','accounts.views.passUser',name="pass_user"),
-    url(r'^accounts/store/edit/$','accounts.views.editUser',name="pass_user"),
+    url(r'^accounts/store/edit_user/$','accounts.views.editUser',name="edit_user"),
     url(r'^accounts/store/edit_store$','accounts.views.editStore',name="edit_store"),
 
     #static items
