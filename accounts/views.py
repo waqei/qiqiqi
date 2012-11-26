@@ -84,30 +84,13 @@ def addItems(request):
         form = ItemsForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-#            it_name=form.cleaned_data['it_name']
-#            company=company
-#            series=form.cleaned_data['series']
-#            version=form.cleaned_data['version']
-#            description=form.cleaned_data['description']
-#            exit_date=form.cleaned_data['exit_date']
-#            price=form.cleaned_data['price']
-#            img=form.cleaned_data['img']
-#
-#            item=Items[
-#                'it_name':it_name,
-#                'company':company,
-#                'series':series,
-#                'version':version,
-#                'description':description,
-#                'exit_date':exit_date,
-#                'price':price,
-#                'img':img,
-#            ]
-#            item.save()
 
             return HttpResponse('<script>alert("添加成功！");top.location="/accounts/item/add";</script>')
     template_var['form']=form
     return  render_to_response('accounts/add.html',template_var,context_instance=RequestContext(request))
+
+
+
 
 def addStore(request):
     template_var={}
