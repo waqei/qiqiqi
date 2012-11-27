@@ -59,7 +59,8 @@
             $('.tabs a:last').tab('show')
         })
     </script>
-    <script src="/static/bootstrap-tab.js"></script>
+    {% load static %}
+    <script src="{% static 'bootstrap-tab.js' %}"></script>
 
 
 {% endblock %}
