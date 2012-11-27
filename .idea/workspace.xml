@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bdbaca4-e156-4759-8970-fc890cce7a96" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/accounts/change_password.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/accounts/edit_user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/forms.py" afterPath="$PROJECT_DIR$/accounts/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/models.py" afterPath="$PROJECT_DIR$/accounts/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/views.py" afterPath="$PROJECT_DIR$/accounts/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car/models.py" afterPath="$PROJECT_DIR$/car/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qiqiqi/urls.py" afterPath="$PROJECT_DIR$/qiqiqi/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/accounts/add_store.html" afterPath="$PROJECT_DIR$/templates/accounts/add_store.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/accounts/manage_user.html" afterPath="$PROJECT_DIR$/templates/accounts/manage_user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base-admin.html" afterPath="$PROJECT_DIR$/templates/base-admin.html" />
-    </list>
+    <list default="true" id="9bdbaca4-e156-4759-8970-fc890cce7a96" name="Default" comment="" />
     <ignored path="qiqiqi.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,12 +29,7 @@
         <entry file="file://$PROJECT_DIR$/accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="216" column="0" selection-start="8411" selection-end="8411" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#4544#4948#0" expanded="false" />
-                <element signature="e#4977#5330#0" expanded="false" />
-                <element signature="e#5359#5676#0" expanded="false" />
-                <element signature="e#6494#8409#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,10 +38,7 @@
         <entry file="file://$PROJECT_DIR$/accounts/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="60" column="0" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1301#1506#0" expanded="false" />
-                <element signature="e#1802#1930#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,7 +46,7 @@
       <file leaf-file-name="add_store.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/accounts/add_store.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="51" selection-start="407" selection-end="407" vertical-scroll-proportion="0.31213874">
+            <state line="16" column="14" selection-start="491" selection-end="491" vertical-scroll-proportion="0.41618496">
               <folding />
             </state>
           </provider>
@@ -75,7 +55,7 @@
       <file leaf-file-name="edit_user.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/accounts/edit_user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="14" selection-start="562" selection-end="562" vertical-scroll-proportion="-10.0">
+            <state line="15" column="14" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -93,7 +73,7 @@
       <file leaf-file-name="manage_user.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/accounts/manage_user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="8" selection-start="478" selection-end="478" vertical-scroll-proportion="1.7037038">
+            <state line="14" column="8" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -141,8 +121,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1441" />
-    <option name="y" value="-904" />
+    <option name="x" value="1365" />
+    <option name="y" value="-4" />
     <option name="width" value="1442" />
     <option name="height" value="905" />
   </component>
@@ -281,13 +261,13 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$USER_HOME$/python_text/repair" />
     <property name="DefaultHtmlFileTemplate" value="Html" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -381,6 +361,25 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="qiqiqi" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -400,25 +399,6 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <module name="qiqiqi" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -483,10 +463,10 @@
       <method />
     </configuration>
     <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Django server.qiqiqi" />
-      <item index="1" class="java.lang.String" itemvalue="Query Language Console.Default" />
-      <item index="2" class="java.lang.String" itemvalue="Python.models" />
-      <item index="3" class="java.lang.String" itemvalue="Python.convert_utf-8" />
+      <item index="0" class="java.lang.String" itemvalue="Query Language Console.Default" />
+      <item index="1" class="java.lang.String" itemvalue="Python.models" />
+      <item index="2" class="java.lang.String" itemvalue="Python.convert_utf-8" />
+      <item index="3" class="java.lang.String" itemvalue="Django server.qiqiqi" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -537,14 +517,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1441" y="-904" width="1442" height="905" extended-state="6" />
-    <editor active="false" />
+    <frame x="1365" y="-4" width="1442" height="905" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18489209" sideWeight="0.7112299" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17122301" sideWeight="0.96256685" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26690647" sideWeight="0.28737113" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5098658" order="7" side_tool="true" content_ui="tabs" />
@@ -648,20 +628,12 @@
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/Django-1.4.2-py2.7.egg/django/contrib/auth/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="238" column="50" selection-start="8652" selection-end="8652" vertical-scroll-proportion="-3.6244605">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="238" column="50" selection-start="8652" selection-end="8652" vertical-scroll-proportion="-3.6244605" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="41" selection-start="951" selection-end="951" vertical-scroll-proportion="0.67338127">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="26" column="41" selection-start="951" selection-end="951" vertical-scroll-proportion="0.67338127" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/accounts/change_password.html">
@@ -694,7 +666,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/accounts/edit_user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="562" selection-end="562" vertical-scroll-proportion="-10.0">
+        <state line="15" column="14" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -702,18 +674,13 @@
     <entry file="file://$PROJECT_DIR$/accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="216" column="0" selection-start="8411" selection-end="8411" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#4544#4948#0" expanded="false" />
-            <element signature="e#4977#5330#0" expanded="false" />
-            <element signature="e#5359#5676#0" expanded="false" />
-            <element signature="e#6494#8409#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/accounts/manage_user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="8" selection-start="478" selection-end="478" vertical-scroll-proportion="1.7037038">
+        <state line="14" column="8" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -721,16 +688,13 @@
     <entry file="file://$PROJECT_DIR$/accounts/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="0" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1301#1506#0" expanded="false" />
-            <element signature="e#1802#1930#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/accounts/add_store.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="51" selection-start="407" selection-end="407" vertical-scroll-proportion="0.31213874">
+        <state line="16" column="14" selection-start="491" selection-end="491" vertical-scroll-proportion="0.41618496">
           <folding />
         </state>
       </provider>
