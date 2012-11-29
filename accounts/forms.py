@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 from django.forms import ModelForm,Textarea
-from car.models import Items,Stores
+from car.models import Items,Stores,Sorts,Brands
 
 BOOLE_CHOICES=(
     ('是','1'),
@@ -70,3 +70,12 @@ class ChangePasswordForm(forms.Form):
     old_password = forms.CharField(label=_(u"原密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
     new_password = forms.CharField(label=_(u"新密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
     new_password1 = forms.CharField(label=_(u"新密码确认"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
+
+
+class SortForm(ModelForm):
+    class Meta:
+        model=Sorts
+
+class BrandForm(ModelForm):
+    class Meta:
+        model=Brands

@@ -29,3 +29,7 @@ def search(request):
             )
     else:
         return render_to_response('index.html',{'error':error})
+
+
+def test(request):
+    return render_to_response('accounts/test.html')

@@ -78,13 +78,14 @@
                                 {% if request.user.is_superuser %}
                                     <li><a href="{% url manage_user %}">管理商户</a></li>
                                     <li><a href="{% url add_store %}">增加商铺</a></li>
-                                    <li><a href="#">增加用户</a></li>
+
+                                    <li><a href="{% url add_sort %}">分类管理</a></li>
+                                    <li><a href="{% url add_brand %}">品牌管理</a></li>
                                     <hr>
                                 {% endif %}
                                     <li><a href="{% url add_items %}/?user={{ request.user }}">增加商品</a></li>
-                                    <li><a href="#">增加分类</a></li>
                                     <li><a href="#">商品管理</a></li>
-                                    <li><a href="">更改商铺信息</a></li>
+                                    <li><a href="#">更改商铺信息</a></li>
                                     <hr>
                                     <li><a href="{% url changepw %}">修改登录密码</a></li>
                             {% endblock %}

@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     #index
     url(r'^$', 'index.view.index',name='index'),
     url(r'search/$',view.search),
+    url(r'test','index.view.test',name='test'),
 
     #account pages
 
@@ -31,6 +32,14 @@ urlpatterns = patterns('',
 
     url(r'^accounts/item/add','accounts.views.addItems',name="add_items"),
 
+    ##sort&&brand
+
+    url(r'^accounts/add_sort/$','accounts.views.addsort',name="add_sort"),
+    url(r'^accounts/add_sort/dele/$','accounts.views.delesort',name="dele_sort"),
+    url(r'^accounts/add_brand/$','accounts.views.addbrand',name="add_brand"),
+    url(r'^accounts/add_brand/dele/$','accounts.views.delebrand',name="dele_brand"),
+
+
     ##store
 
     url(r'^accounts/store/add','accounts.views.addStore',name="add_store"),
@@ -39,6 +48,8 @@ urlpatterns = patterns('',
     url(r'^accounts/store/pass/$','accounts.views.passUser',name="pass_user"),
     url(r'^accounts/store/edit_user/$','accounts.views.editUser',name="edit_user"),
     url(r'^accounts/store/edit_store$','accounts.views.editStore',name="edit_store"),
+
+
 
     #static items
 
