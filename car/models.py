@@ -27,6 +27,7 @@ class Brands(models.Model):
         return self.name
 
 
+
 #商铺
 class Stores(models.Model):
     st_name=models.CharField(max_length=10,verbose_name='商铺名称',unique=True)
@@ -45,7 +46,7 @@ class Stores(models.Model):
 class Items(models.Model):
     it_name=models.CharField(max_length=10,verbose_name='商品名称')
     company=models.ForeignKey(Stores,max_length=20,verbose_name='所属商铺')
-    sort=models.ManyToManyField(Sorts,verbose_name='分类')
+    sort=models.ManyToManyField(Middle.sort,verbose_name='分类')
     brand=models.ManyToManyField(Brands,max_length=10,verbose_name='品牌',blank=True)
     version=models.CharField(max_length=30,verbose_name='型号',blank=True)
     description=models.CharField(max_length=200,verbose_name='描述')
@@ -72,5 +73,9 @@ class Messages(models.Model):
         return self.contact_number
 
 
+#中间model
+class Middle(models.Model):
+    sort=models.ForeignKey(Items)
+    Items=models.ForeignKey(Sorts)
 
 # Create your models here.

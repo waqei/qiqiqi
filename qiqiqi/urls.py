@@ -31,6 +31,7 @@ urlpatterns = patterns('',
     ##item
 
     url(r'^accounts/item/add','accounts.views.addItems',name="add_items"),
+    url(r'^accounts/item/manage','accounts.views.manageitems',name="manage_items"),
 
     ##sort&&brand
 

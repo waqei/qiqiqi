@@ -6,7 +6,8 @@
         <hr>
         <div>
             {% for brand in allbrand %}
-                <a href="{% url dele_brand %}/?brand={{ brand.id }}" class="btn">{{ brand }}</a>
+                <a href="{% url dele_brand %}?brand={{ brand.id }}" class="btn" onClick="{if(confirm('确定要删除品牌 『{{ brand }}』 吗?\n')){return true;}return false;}">
+                    {{ brand }}</a>
             {% endfor %}
         </div>
         <br>
@@ -26,5 +27,4 @@
             </div>
         </div>
     </form>
-
 {% endblock %}

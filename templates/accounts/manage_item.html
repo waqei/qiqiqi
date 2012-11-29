@@ -1,0 +1,45 @@
+{% extends "base-admin.html" %}
+{% block title %}
+    管理商品
+{% endblock %}
+
+{% block main %}
+    <h2>商品管理</h2>
+    <hr>
+    <div>
+        <div class="subnav">
+            <ul class="nav nav-pills">
+                <li>分类:</li>
+                <li><a href="#" class="label active">全部</a></li>
+                {% for sort in allsort %}
+                    <li><a href="#" class="label-inverse">{{ sort }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    <hr>
+        <div class="subnav">
+            <ul class="nav nav-pills">
+                <li>品牌:</li>
+                <li><a href="#" class="label active">全部</a></li>
+                {% for brand in allbrand %}
+                    <li><a href="#" class="label-inverse">{{ brand }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    <hr>
+    <table>
+        {% for item in allitem %}
+        <tr>
+            <td>{{ item.it_name }}</td>
+            <td>{{ item.sort }}</td>
+            <td>{{ item.company }}</td>
+            <td>{{ item.price }}</td>
+            <td><a href="#" >修改</a></td>
+            <td><a href="#" >删除</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    </div>
+{% endblock %}

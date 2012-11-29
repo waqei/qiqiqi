@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login ,logout as auth_logout
 from django.utils.translation import ugettext_lazy as _
 from forms import *
+from car.models import *
 
 
 def index(request):
@@ -81,7 +82,6 @@ def addItems(request):
     form = ItemsForm(initial={'company':muser,})
     form['sort'].field.help_text ='按下Ctrl键支持多选'
     form['brand'].field.help_text ='按下Ctrl键支持多选'
-#    company=request.user
     if request.method == 'POST':
         form = ItemsForm(request.POST,request.FILES)
         if form.is_valid():
@@ -258,3 +258,17 @@ def delebrand(request):
         return HttpResponse('<script>alert("已删除！");top.location="/accounts/add_brand"</script>')
     else:
         HttpResponseRedirect(reverse('addbrand'))
+
+
+#管理商品
+def manageitems(request):
+    allitem=Items.objects.all()
+    allsort=Sorts.objects.all()
+    allbrand=Brands.objects.all()
+    template_var={
+        'allitem':allitem,
+        'allsort':allsort,
+        'allbrand':allbrand,
+
+    }
+    return render_to_response("accounts/manage_item.html",template_var,context_instance=RequestContext(request))

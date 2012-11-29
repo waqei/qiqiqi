@@ -22,7 +22,7 @@
 
                     <div class="control-group">
                         <a href="/accounts/store/edit_user/?user={{ foo.id }}" class="btn btn-primary">编辑商户</a>
-                        <a href="/accounts/store/delete/?user={{ foo.id }}" class="btn btn-danger">删除商户</a>
+                        <a href="/accounts/store/delete/?user={{ foo.id }}" class="btn btn-danger" onClick="{if(confirm('确定要删除用户 『{{ foo }}』 吗?\n')){return true;}return false;}">删除商户</a>
                     </div>
                 </div>
             {% endfor %}
@@ -37,7 +37,7 @@
 
                     <div class="control-group">
                         <a href="/accounts/store/pass/?user={{ foo.id }}" class="btn btn-primary">通过申请</a>
-                        <a href="/accounts/store/delete/?user={{ foo.id }}" class="btn btn-danger">删除申请</a>
+                        <a href="/accounts/store/delete/?user={{ foo.id }}" class="btn btn-danger" onClick="{if(confirm('确定要删除用户 『{{ foo }}』 的申请吗?\n')){return true;}return false;}">删除申请</a>
                     </div>
                 </div>
             {% endfor %}

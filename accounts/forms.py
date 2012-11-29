@@ -12,7 +12,7 @@ BOOLE_CHOICES=(
 )
 
 class RegisterForm(forms.Form):
-    email=forms.EmailField(label=_(u"邮件"),max_length=30,widget=forms.TextInput(attrs={'size': 30,}))
+    email=forms.EmailField(label=_(u"邮箱"),max_length=30,widget=forms.TextInput(attrs={'size': 30,}))
     username=forms.CharField(label=_(u"用户名"),max_length=30,widget=forms.TextInput(attrs={'size': 20,}))
     password=forms.CharField(label=_(u"密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
     re_password=forms.CharField(label=_(u"重复密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
@@ -32,7 +32,7 @@ class RegisterForm(forms.Form):
         raise forms.ValidationError(_(u"该邮箱已经被使用请使用其他的"))
         
 class LoginForm(forms.Form):
-    username=forms.CharField(label=_(u"昵称"),max_length=30,widget=forms.TextInput(attrs={'size': 20,}))
+    username=forms.CharField(label=_(u"用户名"),max_length=30,widget=forms.TextInput(attrs={'size': 20,}))
     password=forms.CharField(label=_(u"密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
 
 
