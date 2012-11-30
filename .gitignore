@@ -1,2 +1,2 @@
 account/*.pyc
-*/*.pyc
+templates/static/image/image/*

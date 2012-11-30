@@ -2,13 +2,21 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-from car.models import Items
+
+from django.forms import ModelForm,Textarea
+from car.models import Items,Stores,Sorts,Brands
+
+BOOLE_CHOICES=(
+    ('是','1'),
+    ('否','0'),
+)
 
 class RegisterForm(forms.Form):
-    email=forms.EmailField(label=_(u"邮件"),max_length=30,widget=forms.TextInput(attrs={'size': 30,}))    
+    email=forms.EmailField(label=_(u"邮箱"),max_length=30,widget=forms.TextInput(attrs={'size': 30,}))
+    username=forms.CharField(label=_(u"用户名"),max_length=30,widget=forms.TextInput(attrs={'size': 20,}))
     password=forms.CharField(label=_(u"密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
-    username=forms.CharField(label=_(u"昵称"),max_length=30,widget=forms.TextInput(attrs={'size': 20,}))
-    
+    re_password=forms.CharField(label=_(u"重复密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
+
     def clean_username(self):
         '''验证重复昵称'''
         users = User.objects.filter(username__iexact=self.cleaned_data["username"])
@@ -24,25 +32,50 @@ class RegisterForm(forms.Form):
         raise forms.ValidationError(_(u"该邮箱已经被使用请使用其他的"))
         
 class LoginForm(forms.Form):
-    username=forms.CharField(label=_(u"昵称"),max_length=30,widget=forms.TextInput(attrs={'size': 20,}))
+    username=forms.CharField(label=_(u"用户名"),max_length=30,widget=forms.TextInput(attrs={'size': 20,}))
     password=forms.CharField(label=_(u"密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
 
 
-class ItemsForm(forms.Form):
-    name=forms.CharField(label=_(u'产品名称'),max_length=30,widget=forms.TextInput(attrs={'size':30}))
-    price=forms.CharField(label=_(u'产品价格'),max_length=10,widget=forms.TextInput(attrs={'size':30}))
-    description=forms.CharField(label=_(u'产品描述',max_length=500,widget=forms.TextInput(attrs={'size':500})))
-    exit_date=forms.CharField(label=_(u'出场日期',widget=forms.TimeInput()))
-    imagefiles=forms.ImageField()
 
-#    def clean_item(self):
-#        """
-#        验证重复产品
-#        """
-#        items=Items.objects.filter(it_name__iexact=self.cleaned_data["it_name"])
-#        if not items:
-#            return self.cleaned_data["it_name"]
-#        raise forms.ValidationError(_(u"该产品已经登记了"))
-#
+class ItemsForm(ModelForm):
+    class Meta:
+        model=Items
+#        fields=('it_name','company','series','version','description','exit_date','price','img')
+        widgets={
+            'description':Textarea(attrs={'cols':10,'rows':10}),
+            }
 
 
+class StoreForm(ModelForm):
+    class Meta:
+        model=Stores
+        widgets={
+            'it_description':Textarea(attrs={'cols':10,'rows':10}),
+        }
+
+class UserForm(forms.Form):
+    realname=forms.CharField(label=_(u"真实姓名"),max_length=10,widget=forms.TextInput(attrs={'size':10,}))
+    email=forms.EmailField(label=_(u"E-mail"),max_length=30,widget=forms.TextInput(attrs={'size':30,}))
+    is_staff=forms.ChoiceField(label=_(u"是否商户",widget=forms.Select(choices=BOOLE_CHOICES)))
+    is_superuser=forms.ChoiceField(label=_(u"是否管理员",widget=forms.Select(choices=BOOLE_CHOICES)))
+
+    def clean_email(self):
+        emails = User.objects.filter(email__iexact=self.cleaned_data["email"])
+        if not emails:
+            return self.cleaned_data["email"]
+        raise forms.ValidationError(_(u"该邮箱已经被使用请使用其他的"))
+
+
+class ChangePasswordForm(forms.Form):
+    old_password = forms.CharField(label=_(u"原密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
+    new_password = forms.CharField(label=_(u"新密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
+    new_password1 = forms.CharField(label=_(u"新密码确认"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
+
+
+class SortForm(ModelForm):
+    class Meta:
+        model=Sorts
+
+class BrandForm(ModelForm):
+    class Meta:
+        model=Brands

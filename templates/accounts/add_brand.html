@@ -1,0 +1,30 @@
+{% extends "base-admin.html" %}
+{% block title %}添加品牌{% endblock %}
+{% block main %}
+    <div>
+        <h3>全部品牌</h3>
+        <hr>
+        <div>
+            {% for brand in allbrand %}
+                <a href="{% url dele_brand %}?brand={{ brand.id }}" class="btn" onClick="{if(confirm('确定要删除品牌 『{{ brand }}』 吗?\n')){return true;}return false;}">
+                    {{ brand }}</a>
+            {% endfor %}
+        </div>
+        <br>
+        <p class="alert alert-danger">单击某一品牌将删除该品牌！请慎重！</p>
+    </div>
+    <hr>
+    <h3>添加品牌</h3>
+    <hr>
+    <form action="" method="post">{% csrf_token %}
+        <table border="0" cellpadding="0" >
+            {{ form.as_table }}
+        </table>
+        <br>
+        <div class="control-group" align="center">
+            <div class="btn-group">
+                <input type="submit"  class="btn btn-primary" value="添加"/>
+            </div>
+        </div>
+    </form>
+{% endblock %}

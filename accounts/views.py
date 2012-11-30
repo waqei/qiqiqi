@@ -1,4 +1,6 @@
 #coding=utf-8
+import time
+from qiqiqi import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
@@ -7,9 +9,9 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login ,logout as auth_logout
 from django.utils.translation import ugettext_lazy as _
-from forms import RegisterForm,LoginForm
-from accounts.forms import ItemsForm
-import ImageFile
+from forms import *
+from car.models import *
+
 
 def index(request):
     '''首页视图'''
@@ -28,10 +30,14 @@ def register(request):
             username=form.cleaned_data["username"]
             email=form.cleaned_data["email"]
             password=form.cleaned_data["password"]
-            user=User.objects.create_user(username,email,password)
-            user.save()
-            _login(request,username,password)#注册完毕 直接登陆
-            return HttpResponseRedirect(reverse("index"))
+            re_password=form.cleaned_data["re_password"]
+            if password==re_password:
+                user=User.objects.create_user(username,email,password)
+                user.save()
+                _login(request,username,password)#注册完毕 直接登陆
+                return HttpResponse('<script>alert("提交成功，等待管理员认证！");top.location="/accounts/"</script>')
+            else:
+                return HttpResponse('<script>alert("两次密码必须相同！");history.go(-1);</script>')
     template_var["form"]=form
     return render_to_response("accounts/register.html",template_var,context_instance=RequestContext(request))
 
@@ -69,15 +75,200 @@ def logout(request):
 
 def addItems(request):
     """
-    上传图片
+    添加商品
     """
+    muser=request.GET.get('user')
+    template_var={}
+    form = ItemsForm(initial={'company':muser,})
+    form['sort'].field.help_text ='按下Ctrl键支持多选'
+    form['brand'].field.help_text ='按下Ctrl键支持多选'
     if request.method == 'POST':
         form = ItemsForm(request.POST,request.FILES)
         if form.is_valid():
-            f=request.FILES["imagefile"]
-            parser=ImageFile.Parser()
-            for chunk in f.chunks():
-                paser.feed(chunk)
-            img = parser.close()
-            img.save("/templates/static/image")
-            return render_to_response("accounts/add.html",template_var,context_instance=RequestContext(request))
+            form.save()
+
+            return HttpResponse('<script>alert("添加成功！");top.location="/accounts/item/add";</script>')
+    template_var['form']=form
+    return  render_to_response('accounts/add.html',template_var,context_instance=RequestContext(request))
+
+
+
+#添加商铺
+def addStore(request):
+    template_var={}
+    form=StoreForm()
+    form['sell'].field.help_text ='按下Ctrl键支持多选'
+    form['s_brand'].field.help_text ='按下Ctrl键支持多选'
+    if request.method == 'POST':
+        form = StoreForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('<script>alert("添加成功！");top.location="/accounts/store/add";</script>')
+        else:
+            HttpResponseRedirect(reverse('add_store'))
+    template_var['form']=form
+    return render_to_response('accounts/add_store.html',template_var,context_instance=RequestContext(request))
+
+
+#管理用户，传递用户
+def manUser(request):
+    all_user=User.objects.filter(is_staff='1',is_superuser='0')
+    asso_user=User.objects.filter(is_staff='0',is_active='1')
+    super_user=User.objects.filter(is_superuser='1')
+    template_var={
+        'all_user':all_user,
+        'asso_user':asso_user,
+        'super_user':super_user
+    }
+    return render_to_response("accounts/manage_user.html",template_var,context_instance=RequestContext(request))
+
+#审核用户
+def passUser(request):
+    if request.GET.get('user'):
+        muser=request.GET.get('user')
+        user=User.objects.get(id=muser)
+        user.is_staff= '1'
+        user.is_staff= '1'
+        user.save()
+        return HttpResponse('<script>alert("已通过！");top.location="/accounts/store/manage_user"</script>')
+    else:
+        HttpResponseRedirect(reverse('manage_user'))
+#删除用户
+def deleUser(request):
+    if request.GET.get('user'):
+            muser=request.GET.get('user')
+            user=User.objects.get(id=muser)
+            user.delete()
+            return HttpResponse('<script>alert("已删除！");top.location="/accounts/store/manage_user"</script>')
+    else:
+        HttpResponseRedirect(reverse('manage_user'))
+
+
+#编辑用户信息
+def editUser(request):
+    template_var={}
+    form = UserForm()
+    if request.method == "POST":
+        form = UserForm(request.POST.copy())
+        if form.is_valid():
+            username=request.user.username
+            realname = form.cleaned_data['realname']
+            email = form.cleaned_data['email']
+            is_staff = form.cleaned_data['is_staff']
+            is_superuser=form.cleaned_data['is_superuser']
+            user= authenticate(username=username,first_name=realname,email=email,is_staff=is_staff,is_superuser=is_superuser)
+    template_var['euser']=request.GET.get('user')
+    template_var['form']=form
+    return render_to_response('accounts/edit_user.html',template_var,context_instance=RequestContext(request))
+
+#编辑商铺信息
+def editStore(request):
+    pass
+
+#更改用户密码
+def change_password(request):
+    if not request.user.is_authenticated():
+        return HttpResponseRedirect(reverse("404"))
+    template = {}
+    form = ChangePasswordForm()
+    if request.method=="POST":
+        form = ChangePasswordForm(request.POST.copy())
+        if form.is_valid():
+            username = request.user.username
+            oldpassword = form.cleaned_data["old_password"]
+            newpassword = form.cleaned_data["new_password"]
+            newpassword1 = form.cleaned_data["new_password1"]
+            user = authenticate(username=username,password=oldpassword)
+            if user: #原口令正确
+                if newpassword == newpassword1:#两次新口令一致
+                    user.set_password(newpassword)
+                    user.save()
+                    print '1'
+                    return HttpResponse('<script>alert("修改密码成功！");top.location="/accounts/changepw";</script>')
+                else:#两次新口令不一致
+                    template["word"] = '两次输入口令不一致'
+                    template["form"] = form
+                    print '2'
+                    return render_to_response("accounts/change_password.html",template,context_instance=RequestContext(request))
+            else:  #原口令不正确
+                if newpassword == newpassword1:#两次新口令一致
+                    template["word"] = '原口令不正确'
+                    template["form"] = form
+                    print '3'
+                    return render_to_response("accounts/change_password.html",template,context_instance=RequestContext(request))
+                else:#两次新口令不一致
+                    template["word"] = '原口令不正确，两次输入口令不一致'
+                    template["form"] = form
+                    print '4'
+                    return render_to_response("accounts/change_password.html",template,context_instance=RequestContext(request))
+    template["form"] = form
+    return render_to_response("accounts/change_password.html",template,context_instance=RequestContext(request))
+
+
+##添加分类
+def addsort(request):
+    allsort=Sorts.objects.all()
+    template_var={}
+    form=SortForm()
+    if request.method=='POST':
+        form = SortForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('<script>alert("添加成功!");top.location="/accounts/add_sort";</script>')
+        else:
+            HttpResponseRedirect(reverse('add_sort'))
+    template_var['form']=form
+    template_var['allsort']=allsort
+    return render_to_response('accounts/add_sort.html',template_var,context_instance=RequestContext(request))
+
+
+#添加品牌
+def addbrand(request):
+    allbrand=Brands.objects.all()
+    template_var={}
+    form=BrandForm()
+    if request.method=='POST':
+        form = BrandForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('<script>alert("添加成功");top.location="/accounts/add_brand";</script>')
+        else:
+            HttpResponseRedirect(reverse('add_brand'))
+    template_var['form']=form
+    template_var['allbrand']=allbrand
+    return render_to_response('accounts/add_brand.html',template_var,context_instance=RequestContext(request))
+
+#删除分类
+def delesort(request):
+    if request.GET.get('sort'):
+        name=request.GET.get('sort')
+        dele=Sorts.objects.get(id=name)
+        dele.delete()
+        return HttpResponse('<script>alert("已删除！");top.location="/accounts/add_sort"</script>')
+    else:
+        HttpResponseRedirect(reverse('addsort'))
+
+
+#删除品牌
+def delebrand(request):
+    if request.GET.get('brand'):
+        name=request.GET.get('brand')
+        dele=Brands.objects.get(id=name)
+        dele.delete()
+        return HttpResponse('<script>alert("已删除！");top.location="/accounts/add_brand"</script>')
+    else:
+        HttpResponseRedirect(reverse('addbrand'))
+
+
+#管理商品
+def manageitems(request):
+    allitem=Items.objects.all()
+    allsort=Sorts.objects.all()
+    allbrand=Brands.objects.all()
+    template_var={
+        'allitem':allitem,
+        'allsort':allsort,
+        'allbrand':allbrand,
+
+    }
+    return render_to_response("accounts/manage_item.html",template_var,context_instance=RequestContext(request))

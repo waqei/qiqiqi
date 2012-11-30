@@ -36,7 +36,7 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-{% if request.user.is_authenticated %}
+{% if request.user.is_staff %}
     <div class="container-fluid">
         {#navbar#}
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -47,13 +47,19 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">网站后台</a>
+                    <a class="brand active" href="{% url admin_index %}">网站后台</a>
                     <div class="nav-collapse collapse">
                         <p class="navbar-text pull-right">
-                            {#                    Logged in as <a href="#" class="navbar-link">{{ username }}</a>#}
+                            欢迎您!&nbsp;
+                            {% if request.user.is_superuser %}
+                                管理员
+                            {% else %}
+                                商户
+                            {% endif %}
+                            {{ user.username }}
                         </p>
                         <ul class="nav">
-                            <li class="active"><a href="/">网站首页</a></li>
+                            <li><a href="/">网站首页</a></li>
                             <li><a href="{% url logout %}">注销</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
@@ -69,12 +75,19 @@
                         <ul class="nav nav-list">
                             <li class="nav-header">功能区</li>
                             {% block function %}
-                                <li><a href="{% url add_items %}">增加商品</a></li>
-                                <li><a href="#">增加分类</a></li>
-                                <li><a href="#">商品管理</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">更改商铺信息</a></li>
+                                {% if request.user.is_superuser %}
+                                    <li><a href="{% url manage_user %}">管理商户</a></li>
+                                    <li><a href="{% url add_store %}">增加商铺</a></li>
+
+                                    <li><a href="{% url add_sort %}">分类管理</a></li>
+                                    <li><a href="{% url add_brand %}">品牌管理</a></li>
+                                    <hr>
+                                {% endif %}
+                                    <li><a href="{% url add_items %}/?user={{ request.user }}">增加商品</a></li>
+                                    <li><a href="{% url manage_items %}">商品管理</a></li>
+                                    <li><a href="#">更改商铺信息</a></li>
+                                    <hr>
+                                    <li><a href="{% url changepw %}">修改登录密码</a></li>
                             {% endblock %}
                         </ul>
                     </div><!--/.well -->
@@ -98,7 +111,7 @@
     </div><!--/.fluid-container-->
 {% else %}
     <script language="JAVASCRIPT">
-        setTimeout("document.location.href="/",0);
+        setTimeout("document.location.href='/404'",0);
     </script>
 {% endif %}
 </body>

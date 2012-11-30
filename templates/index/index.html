@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>汽配商城首页</title>
+    {% load static %}
+    <link href="{% static "index.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "navpic.css" %}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div class="all">
+    <!--标题-->
+    <div class="head">
+        <img src="image/qpr_logo.png" />
+        <form>
+            <input id="text"  type="text" />
+            <input id="submit" type="submit" value="搜索" />
+        </form>
+    </div>
+    <!--导航-->
+    <div class="nav">
+        <a href="#">首页</a>
+        <a href="#">|找产品</a>
+        <a href="#">|找公司</a>
+        <a href="#">|配件目录</a>
+        <a href="#">|找求购</a>
+        <a href="#">|咨询</a>
+        <a href="#">|目录</a>
+        <a href="#">|车型</a>
+    </div>
+    <!--主体1-->
+    <div class="container_up">
+        <div class="container_l">
+            <!--滚动图片-->
+            <div class="navpic">
+                <DIV id=idContainer2 class=container>
+                    <TABLE id=idSlider2 border=0 cellSpacing=0 cellPadding=0>
+                        <TR>
+                            <TD class=td_f><A onclick="pgvSendClick({hottag:'ISD.SHOW.BANNER.SOFTMGR'});" href=""><IMG src="images/pic1.gif"></A></TD>
+                            <TD class=td_f><A onclick="pgvSendClick({hottag:'ISD.SHOW.BANNER.PY'});" href=""><IMG src="images/pic2.gif"></A></TD>
+                            <TD class=td_f><A onclick="pgvSendClick({hottag:'ISD.SHOW.BANNER.PLAYER'});" href=""><IMG src="images/pic3.gif"></A></TD>
+                            <TD class=td_f><A onclick="pgvSendClick({hottag:'ISD.SHOW.BANNER.XF'});"  href=""><IMG src="images/pic4.gif"></A></TD>
+                            <TD class=td_f><A onclick="pgvSendClick({hottag:'ISD.SHOW.BANNER.TT'});"  href=""><IMG  src="images/pic5.gif"></A></TD>
+                        </TR>
+                    </TABLE>
+                    <UL id=idNum class=num></UL>
+                </DIV>
+
+            </div>
+        </div>
+        <div class="container_r">
+            <div class="container_r1">
+            </div>
+            <div class="container_r2">
+            </div>
+            <div class="container_r3">
+            </div>
+        </div>
+    </div>
+    <!--广告1-->
+    <div class="ad">
+        <img src="images/139.gif" />
+        <img src="images/139.gif" />
+        <img src="images/139.gif" />
+        <img src="images/139.gif" />
+        <img src="images/139.gif" />
+    </div>
+    <!--主体2-->
+    <div class="container_down">
+    </div>
+    <!--广告2-->
+    <div class="ad">
+        <img src="images/622.gif" />
+        <img src="images/622.gif" />
+        <img src="images/622.gif" />
+        <img src="images/622.gif" />
+        <img src="images/622.gif" />
+        <img src="images/622.gif" />
+    </div>
+    <!--版权所有-->
+    <div class="copyright">
+    </div>
+</div>
+
+{#js#}
+{% load static %}
+<script type="text/javascript" language="javascript" src="{% static 'navpic.js' %}" ></script>
+</body>
+</html>
