@@ -46,7 +46,7 @@ class Stores(models.Model):
 class Items(models.Model):
     it_name=models.CharField(max_length=10,verbose_name='商品名称')
     company=models.ForeignKey(Stores,max_length=20,verbose_name='所属商铺')
-    sort=models.ManyToManyField(Middle.sort,verbose_name='分类')
+    sort=models.ManyToManyField(Sorts,verbose_name='分类')
     brand=models.ManyToManyField(Brands,max_length=10,verbose_name='品牌',blank=True)
     version=models.CharField(max_length=30,verbose_name='型号',blank=True)
     description=models.CharField(max_length=200,verbose_name='描述')

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bdbaca4-e156-4759-8970-fc890cce7a96" name="Default" comment="" />
+    <list default="true" id="9bdbaca4-e156-4759-8970-fc890cce7a96" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car/models.py" afterPath="$PROJECT_DIR$/car/models.py" />
+    </list>
     <ignored path="qiqiqi.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage_user.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="manage_user.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/accounts/manage_user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="60" selection-start="623" selection-end="623" vertical-scroll-proportion="0.032906763">
+            <state line="16" column="60" selection-start="623" selection-end="623" vertical-scroll-proportion="-4.148148">
               <folding />
             </state>
           </provider>
@@ -64,7 +68,16 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/car/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="39" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0">
+            <state line="48" column="37" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="77" selection-start="93" selection-end="93" vertical-scroll-proportion="0.12788633">
               <folding />
             </state>
           </provider>
@@ -92,8 +105,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/car/admin.py" />
-        <option value="$PROJECT_DIR$/templates/accounts/text.html" />
         <option value="$PROJECT_DIR$/index/view.py" />
         <option value="$PROJECT_DIR$/templates/accounts/test.html" />
         <option value="$PROJECT_DIR$/templates/accounts/register.html" />
@@ -106,13 +117,15 @@
         <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/templates/accounts/manage_item.html" />
         <option value="/usr/local/lib/python2.7/dist-packages/Django-1.4.2-py2.7.egg/django/contrib/auth/forms.py" />
-        <option value="$PROJECT_DIR$/car/models.py" />
         <option value="$PROJECT_DIR$/qiqiqi/settings.py" />
+        <option value="$PROJECT_DIR$/sql" />
+        <option value="$PROJECT_DIR$/car/models.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="50" />
+    <option name="x" value="-1316" />
     <option name="y" value="-4" />
     <option name="width" value="1317" />
     <option name="height" value="773" />
@@ -657,10 +670,10 @@
       <method />
     </configuration>
     <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Query Language Console.Default" />
-      <item index="1" class="java.lang.String" itemvalue="Python.models" />
-      <item index="2" class="java.lang.String" itemvalue="Python.convert_utf-8" />
-      <item index="3" class="java.lang.String" itemvalue="Django server.qiqiqi" />
+      <item index="0" class="java.lang.String" itemvalue="Django server.qiqiqi" />
+      <item index="1" class="java.lang.String" itemvalue="Query Language Console.Default" />
+      <item index="2" class="java.lang.String" itemvalue="Python.models" />
+      <item index="3" class="java.lang.String" itemvalue="Python.convert_utf-8" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -711,14 +724,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="-4" width="1317" height="773" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1316" y="-4" width="1317" height="773" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17470355" sideWeight="0.96256685" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17470355" sideWeight="0.96256685" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26690647" sideWeight="0.28737113" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5098658" order="7" side_tool="true" content_ui="tabs" />
@@ -789,11 +802,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="14" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/accounts/add_brand.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="42" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
@@ -806,11 +814,6 @@
         <state line="35" column="31" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="4" selection-start="20" selection-end="93" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/Django-1.4.2-py2.7.egg/django/contrib/auth/models.py">
@@ -853,9 +856,30 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="267" column="18" selection-start="9866" selection-end="9866" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="41" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.55636364">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/accounts/manage_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="60" selection-start="623" selection-end="623" vertical-scroll-proportion="-4.148148">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/car/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="39" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0">
+        <state line="48" column="37" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -867,16 +891,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="267" column="18" selection-start="9866" selection-end="9866" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/accounts/manage_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="60" selection-start="623" selection-end="623" vertical-scroll-proportion="0.032906763">
+        <state line="4" column="77" selection-start="93" selection-end="93" vertical-scroll-proportion="0.12788633">
           <folding />
         </state>
       </provider>
