@@ -1,2 +1,6 @@
 account/*.pyc
-templates/static/image/image/*
+index/*.pyc
+qiqiqi/*.pyc
+*.pyc
+templates/static/image/*
+.idea/*
