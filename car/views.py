@@ -4,14 +4,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from froms import ItemsForm,StoreForm,SortForm,BrandForm
+from form import ItemsForm,StoreForm,SortForm,BrandForm,AddForm
 from car.models import *
 
-def addItems(request):
+def addItems(request,muser):
     """
     添加商品
     """
-    muser=request.GET.get('user')
     template_var={}
     form = ItemsForm(initial={'company':muser,})
     form['sort'].field.help_text ='按下Ctrl键支持多选'
@@ -74,17 +73,6 @@ def addbrand(request):
     template_var['form']=form
     template_var['allbrand']=allbrand
     return render_to_response('goods/add_brand.html',template_var,context_instance=RequestContext(request))
-#
-##删除分类
-#def delesort(request):
-#    if request.GET.get('sort'):
-#        name=request.GET.get('sort')
-#        dele=Sorts.objects.get(id=name)
-#        dele.delete()
-#        return HttpResponse('<script>alert("已删除！");top.location="/goods/add_sort"</script>')
-#    else:
-#        HttpResponseRedirect(reverse('addsort'))
-
 
 #删除品牌
 def delebrand(request):
@@ -112,5 +100,33 @@ def manageitems(request):
 
 
 def show_sort(request):
+    return render_to_response("goods/show_sort.html",
+        {'nodes':Sorts.objects.all()},
+        context_instance=RequestContext(request))
 
-    return render_to_response("goods/show_sort.html",{'nodes':Sorts.objects.all()},context_instance=RequestContext(request))
+#添加子分类
+def add_sort(request,parent):
+    template_var={}
+    form = AddForm()
+    if request.method=="POST":
+        form = AddForm(request.POST.copy())
+        if form.is_valid():
+            if parent!="ROOT" and parent:
+                sortname=form.cleaned_data['name']
+                Sorts.objects.create(name=sortname)
+                return HttpResponse('<script>alert("添加成功");history.go(-1);</script>')
+            else:
+                return HttpResponse('<script>alert("添加错误!");history.go(-1);</script>')
+    template_var['par']=parent
+    template_var['form']=form
+    return  render_to_response("goods/add_sort.html",template_var,context_instance=RequestContext(request))
+
+#删除分类
+def dele_sort(request,id):
+    if id !="ROOT" and id:
+        p=Sorts.objects.filter(id=id)
+        p.delete()
+        return HttpResponse('<script>alert("删除成功");top.location="/goods/show_sort/";</script>')
+    else:
+        return HttpResponseRedirect(reverse('show_sort'))
+

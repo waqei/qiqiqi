@@ -85,6 +85,8 @@ def logout(request):
 
 #管理用户，传递用户
 def manUser(request):
+    if not request.user.is_superuser:
+        return HttpResponseRedirect(reverse("404"))
     all_user=User.objects.filter(is_staff='1',is_superuser='0')
     asso_user=User.objects.filter(is_staff='0',is_active='1')
     super_user=User.objects.filter(is_superuser='1')
@@ -97,6 +99,8 @@ def manUser(request):
 
 #审核用户
 def passUser(request):
+    if not request.user.is_superuser:
+        return HttpResponseRedirect(reverse("404"))
     if request.GET.get('user'):
         muser=request.GET.get('user')
         user=User.objects.get(id=muser)
@@ -108,6 +112,8 @@ def passUser(request):
         HttpResponseRedirect(reverse('manage_user'))
 #删除用户
 def deleUser(request):
+    if not request.user.is_superuser:
+        return HttpResponseRedirect(reverse("404"))
     if request.GET.get('user'):
             muser=request.GET.get('user')
             user=User.objects.get(id=muser)
@@ -119,6 +125,8 @@ def deleUser(request):
 
 #编辑用户信息
 def editUser(request):
+    if not request.user.is_superuser:
+        return HttpResponseRedirect(reverse("404"))
     template_var={}
     form = UserForm()
     if request.method == "POST":
