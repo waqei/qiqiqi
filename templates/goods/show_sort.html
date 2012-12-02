@@ -1,0 +1,26 @@
+{% extends "base-admin.html" %}
+{% block title %}添加分类{% endblock %}
+{% block main %}
+    <div>
+        <h3>全部分类</h3>
+        <div>
+            {% load mptt_tags %}
+            <ul>
+                {% recursetree nodes %}
+                    <li class="category-list">
+                        {{ node.name }}&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="add/{{ node.name }}/" class="btn btn-small">添加子分类</a>
+                            <a href="dele/{{ node.id }}/" class="btn btn-danger" onClick="{if(confirm('确定要删除分类 『{{ node.name }}』 吗?\n')){return true;}return false;}">删除分类</a>
+                        {% if not node.is_leaf_node %}
+                            <ul class="children">
+                                {{ children }}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endrecursetree %}
+                <br>
+                <a href="add/root/" class="btn btn-primary">添加根分类</a>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

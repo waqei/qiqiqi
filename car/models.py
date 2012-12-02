@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 #from django.core.files.storage import FileSystemStorage
 #from django.conf import settings
 #import os,time,random
+from mptt.models import MPTTModel,TreeForeignKey
 
 BOOLE_CHOICES=(
     ('是','1'),
@@ -11,8 +12,13 @@ BOOLE_CHOICES=(
     )
 
 #分类
-class Sorts(models.Model):
+class Sorts(MPTTModel):
     name=models.CharField(max_length=20,verbose_name="分类名称",unique=True)
+    parent=TreeForeignKey("self", blank=True, null=True, related_name="children")
+
+
+    class MPTTMeta:
+        order_insertion_by = ['name']
 
     def __unicode__(self):
         return self.name
@@ -32,8 +38,8 @@ class Brands(models.Model):
 class Stores(models.Model):
     st_name=models.CharField(max_length=10,verbose_name='商铺名称',unique=True)
     boss=models.OneToOneField(User,verbose_name='商铺主')
-    sell=models.ManyToManyField(Sorts,verbose_name='主营产品',help_text="按下Ctrl键支持多选")
-    s_brand=models.ManyToManyField(Brands,verbose_name='主营品牌',help_text="按下Ctrl键支持多选")
+    sell=models.CharField(max_length=100,verbose_name='主营产品')
+    s_brand=models.CharField(max_length=100,verbose_name='主营品牌')
     address=models.CharField(max_length=30,verbose_name='地址')
     tele=models.CharField(max_length='11',verbose_name='联系电话')
     it_description=models.CharField(max_length=200,verbose_name='商铺描述')
@@ -46,7 +52,7 @@ class Stores(models.Model):
 class Items(models.Model):
     it_name=models.CharField(max_length=10,verbose_name='商品名称')
     company=models.ForeignKey(Stores,max_length=20,verbose_name='所属商铺')
-    sort=models.ManyToManyField(Sorts,verbose_name='分类')
+    sort=models.ForeignKey(Sorts,verbose_name='分类')
     brand=models.ManyToManyField(Brands,max_length=10,verbose_name='品牌',blank=True)
     version=models.CharField(max_length=30,verbose_name='型号',blank=True)
     description=models.CharField(max_length=200,verbose_name='描述')
@@ -72,10 +78,3 @@ class Messages(models.Model):
     def __unicode__(self):
         return self.contact_number
 
-
-#中间model
-class Middle(models.Model):
-    sort=models.ForeignKey(Items)
-    Items=models.ForeignKey(Sorts)
-
-# Create your models here.

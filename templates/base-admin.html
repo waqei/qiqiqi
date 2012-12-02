@@ -79,11 +79,11 @@
                                     <li><a href="{% url manage_user %}">管理商户</a></li>
                                     <li><a href="{% url add_store %}">增加商铺</a></li>
 
-                                    <li><a href="{% url add_sort %}">分类管理</a></li>
+                                    <li><a href="{% url show_sort %}">分类管理</a></li>
                                     <li><a href="{% url add_brand %}">品牌管理</a></li>
                                     <hr>
                                 {% endif %}
-                                    <li><a href="{% url add_items %}/?user={{ request.user }}">增加商品</a></li>
+                                    <li><a href="/item/add/{{ request.user }}/">增加商品</a></li>
                                     <li><a href="{% url manage_items %}">商品管理</a></li>
                                     <li><a href="#">更改商铺信息</a></li>
                                     <hr>
@@ -111,7 +111,7 @@
     </div><!--/.fluid-container-->
 {% else %}
     <script language="JAVASCRIPT">
-        setTimeout("document.location.href='/404'",0);
+        setTimeout("document.location.href='/accounts/'",0);
     </script>
 {% endif %}
 </body>

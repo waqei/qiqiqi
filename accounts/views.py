@@ -73,45 +73,20 @@ def logout(request):
     return HttpResponseRedirect(reverse('index'))
 
 
-def addItems(request):
-    """
-    添加商品
-    """
-    muser=request.GET.get('user')
-    template_var={}
-    form = ItemsForm(initial={'company':muser,})
-    form['sort'].field.help_text ='按下Ctrl键支持多选'
-    form['brand'].field.help_text ='按下Ctrl键支持多选'
-    if request.method == 'POST':
-        form = ItemsForm(request.POST,request.FILES)
-        if form.is_valid():
-            form.save()
-
-            return HttpResponse('<script>alert("添加成功！");top.location="/accounts/item/add";</script>')
-    template_var['form']=form
-    return  render_to_response('accounts/add.html',template_var,context_instance=RequestContext(request))
+#def requires_login(view):
+#    def new_view(request, *args, **kwargs):
+#        if not request.user.is_authenticated():
+#            return HttpResponseRedirect('/accounts/login/')
+#        return view(request,*args,**kwargs)
+#    return new_view
 
 
-
-#添加商铺
-def addStore(request):
-    template_var={}
-    form=StoreForm()
-    form['sell'].field.help_text ='按下Ctrl键支持多选'
-    form['s_brand'].field.help_text ='按下Ctrl键支持多选'
-    if request.method == 'POST':
-        form = StoreForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return HttpResponse('<script>alert("添加成功！");top.location="/accounts/store/add";</script>')
-        else:
-            HttpResponseRedirect(reverse('add_store'))
-    template_var['form']=form
-    return render_to_response('accounts/add_store.html',template_var,context_instance=RequestContext(request))
 
 
 #管理用户，传递用户
 def manUser(request):
+    if not request.user.is_superuser:
+        return HttpResponseRedirect(reverse("404"))
     all_user=User.objects.filter(is_staff='1',is_superuser='0')
     asso_user=User.objects.filter(is_staff='0',is_active='1')
     super_user=User.objects.filter(is_superuser='1')
@@ -124,6 +99,8 @@ def manUser(request):
 
 #审核用户
 def passUser(request):
+    if not request.user.is_superuser:
+        return HttpResponseRedirect(reverse("404"))
     if request.GET.get('user'):
         muser=request.GET.get('user')
         user=User.objects.get(id=muser)
@@ -135,6 +112,8 @@ def passUser(request):
         HttpResponseRedirect(reverse('manage_user'))
 #删除用户
 def deleUser(request):
+    if not request.user.is_superuser:
+        return HttpResponseRedirect(reverse("404"))
     if request.GET.get('user'):
             muser=request.GET.get('user')
             user=User.objects.get(id=muser)
@@ -146,6 +125,8 @@ def deleUser(request):
 
 #编辑用户信息
 def editUser(request):
+    if not request.user.is_superuser:
+        return HttpResponseRedirect(reverse("404"))
     template_var={}
     form = UserForm()
     if request.method == "POST":
@@ -203,72 +184,3 @@ def change_password(request):
                     return render_to_response("accounts/change_password.html",template,context_instance=RequestContext(request))
     template["form"] = form
     return render_to_response("accounts/change_password.html",template,context_instance=RequestContext(request))
-
-
-##添加分类
-def addsort(request):
-    allsort=Sorts.objects.all()
-    template_var={}
-    form=SortForm()
-    if request.method=='POST':
-        form = SortForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponse('<script>alert("添加成功!");top.location="/accounts/add_sort";</script>')
-        else:
-            HttpResponseRedirect(reverse('add_sort'))
-    template_var['form']=form
-    template_var['allsort']=allsort
-    return render_to_response('accounts/add_sort.html',template_var,context_instance=RequestContext(request))
-
-
-#添加品牌
-def addbrand(request):
-    allbrand=Brands.objects.all()
-    template_var={}
-    form=BrandForm()
-    if request.method=='POST':
-        form = BrandForm(request.POST,request.FILES)
-        if form.is_valid():
-            form.save()
-            return HttpResponse('<script>alert("添加成功");top.location="/accounts/add_brand";</script>')
-        else:
-            HttpResponseRedirect(reverse('add_brand'))
-    template_var['form']=form
-    template_var['allbrand']=allbrand
-    return render_to_response('accounts/add_brand.html',template_var,context_instance=RequestContext(request))
-
-#删除分类
-def delesort(request):
-    if request.GET.get('sort'):
-        name=request.GET.get('sort')
-        dele=Sorts.objects.get(id=name)
-        dele.delete()
-        return HttpResponse('<script>alert("已删除！");top.location="/accounts/add_sort"</script>')
-    else:
-        HttpResponseRedirect(reverse('addsort'))
-
-
-#删除品牌
-def delebrand(request):
-    if request.GET.get('brand'):
-        name=request.GET.get('brand')
-        dele=Brands.objects.get(id=name)
-        dele.delete()
-        return HttpResponse('<script>alert("已删除！");top.location="/accounts/add_brand"</script>')
-    else:
-        HttpResponseRedirect(reverse('addbrand'))
-
-
-#管理商品
-def manageitems(request):
-    allitem=Items.objects.all()
-    allsort=Sorts.objects.all()
-    allbrand=Brands.objects.all()
-    template_var={
-        'allitem':allitem,
-        'allsort':allsort,
-        'allbrand':allbrand,
-
-    }
-    return render_to_response("accounts/manage_item.html",template_var,context_instance=RequestContext(request))
