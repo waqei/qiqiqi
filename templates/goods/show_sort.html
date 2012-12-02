@@ -1,0 +1,56 @@
+{% extends "base-admin.html" %}
+{% block title %}添加分类{% endblock %}
+{% block main %}
+{#    <div>#}
+{#        <h3>全部分类</h3>#}
+{#        <div>#}
+{#            {% for sort in allsort %}#}
+{#                <a href="{% url dele_sort %}?sort={{ sort.id }}" class="btn" onClick="{if(confirm('确定要删除分类 『{{ sort }}』 吗?\n')){return true;}return false;}">{{ sort }}</a>#}
+{#            {% endfor %}#}
+{##}
+{#        </div>#}
+{#    </div>#}
+{#        <br>#}
+{#        <p class="alert alert-danger">单击某一分类将删除该分类！请慎重！</p>#}
+{#    <hr>#}
+{% comment %}    <h4>添加分类</h4>
+    <hr>
+    <form action="" method="post">{% csrf_token %}
+        <table border="0" cellpadding="0" >
+            {{ form.as_p }}
+        </table>
+        <br>
+        <div class="control-group" align="center">
+            <div class="btn-group">
+                <input type="submit"  class="btn btn-primary" value="添加"/>
+            </div>
+        </div>
+    </form>{% endcomment %}
+
+{#    {% load mptt_tags %}#}
+{#    <ul>#}
+{#        {% recursetree nodes %}#}
+{#            <li>#}
+{#                {{ node.name }}#}
+{#                {% if node.is_leaf_node %}#}
+{#                    <ul class="children">#}
+{#                        {{ children }}#}
+{#                    </ul>#}
+{#                {% endif %}#}
+{#            </li>#}
+{#        {% endrecursetree %}#}
+{#    </ul>#}
+    {% load mptt_tags %}
+    <ul>
+        {% recursetree nodes %}
+            <li>
+                {{ node.name }}
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endrecursetree %}
+    </ul>
+{% endblock %}

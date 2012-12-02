@@ -37,21 +37,7 @@ class LoginForm(forms.Form):
 
 
 
-class ItemsForm(ModelForm):
-    class Meta:
-        model=Items
-#        fields=('it_name','company','series','version','description','exit_date','price','img')
-        widgets={
-            'description':Textarea(attrs={'cols':10,'rows':10}),
-            }
 
-
-class StoreForm(ModelForm):
-    class Meta:
-        model=Stores
-        widgets={
-            'it_description':Textarea(attrs={'cols':10,'rows':10}),
-        }
 
 class UserForm(forms.Form):
     realname=forms.CharField(label=_(u"真实姓名"),max_length=10,widget=forms.TextInput(attrs={'size':10,}))
@@ -70,12 +56,3 @@ class ChangePasswordForm(forms.Form):
     old_password = forms.CharField(label=_(u"原密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
     new_password = forms.CharField(label=_(u"新密码"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
     new_password1 = forms.CharField(label=_(u"新密码确认"),max_length=30,widget=forms.PasswordInput(attrs={'size': 20,}))
-
-
-class SortForm(ModelForm):
-    class Meta:
-        model=Sorts
-
-class BrandForm(ModelForm):
-    class Meta:
-        model=Brands
