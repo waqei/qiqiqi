@@ -6,13 +6,12 @@
     <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
         <table border="0" cellpadding="0" >
             {% if par != 'root' %}
-                <p class="alert alert-success">为分类&nbsp;<em class="label">{{ par }}</em>添加子分类</p>
+                <p class="alert alert-success">为分类&nbsp;<em class="btn">{{ par }}</em>添加子分类</p>
             {% else %}
                 <p class="alert alert-success" >添加根分类</p>
             {% endif %}
-
-
             {{ form.as_table }}
+            <p class="alert alert-info ">名称不得超过十个字节</p>
         </table>
         <br>
         <div class="control-group" align="center">
@@ -24,4 +23,5 @@
             </div>
         </div>
     </form>
+
 {% endblock %}

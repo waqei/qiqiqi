@@ -124,23 +124,30 @@ def deleUser(request):
 
 
 #编辑用户信息
-def editUser(request):
+def editUser(request,userid):
     if not request.user.is_superuser:
         return HttpResponseRedirect(reverse("404"))
     template_var={}
     form = UserForm()
+    euser=User.objects.get(id=userid)
     if request.method == "POST":
         form = UserForm(request.POST.copy())
         if form.is_valid():
-            username=request.user.username
             realname = form.cleaned_data['realname']
             email = form.cleaned_data['email']
             is_staff = form.cleaned_data['is_staff']
             is_superuser=form.cleaned_data['is_superuser']
-            user= authenticate(username=username,first_name=realname,email=email,is_staff=is_staff,is_superuser=is_superuser)
-    template_var['euser']=request.GET.get('user')
+
+            euser.first_name=realname
+            euser.email=email
+            euser.is_staff=is_staff
+            euser.is_superuser=is_superuser
+            euser.save()
+            return HttpResponse('<script>alert("修改成功！");top.location="/accounts/store/manage_user";</script>')
+    template_var['euser']=euser.username
     template_var['form']=form
     return render_to_response('accounts/edit_user.html',template_var,context_instance=RequestContext(request))
+
 
 #编辑商铺信息
 def editStore(request):

@@ -21,7 +21,7 @@
                     {% endif %}
 
                     <div class="control-group">
-                        <a href="/accounts/store/edit_user/?user={{ foo.id }}" class="btn btn-primary">编辑商户</a>
+                        <a href="/accounts/store/edit_user/{{ foo.id }}.html" class="btn btn-primary">编辑商户</a>
                         <a href="/accounts/store/delete/?user={{ foo.id }}" class="btn btn-danger" onClick="{if(confirm('确定要删除用户 『{{ foo }}』 吗?\n')){return true;}return false;}">删除商户</a>
                     </div>
                 </div>

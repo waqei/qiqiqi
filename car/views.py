@@ -43,21 +43,6 @@ def addStore(request):
     return render_to_response('goods/add_store.html',template_var,context_instance=RequestContext(request))
 
 
-###添加分类
-#def addsort(request):
-#    template_var={}
-#    form=SortForm()
-#    if request.method=='POST':
-#        form = SortForm(request.POST)
-#        if form.is_valid():
-#            form.save()
-#            return HttpResponse('<script>alert("添加成功!");top.location="/goods/add_sort";</script>')
-#        else:
-#            HttpResponseRedirect(reverse('add_sort'))
-#    template_var['form']=form
-#    return render_to_response('goods/show_sort.html',template_var,context_instance=RequestContext(request))
-
-
 #添加品牌
 def addbrand(request):
     allbrand=Brands.objects.all()
@@ -108,18 +93,25 @@ def show_sort(request):
 def add_sort(request,parent):
     template_var={}
     form = AddForm()
+
     if request.method=="POST":
         form = AddForm(request.POST.copy())
         if form.is_valid():
-            if parent!="ROOT" and parent:
+            if parent!="root" and parent:
+                sortname=form.cleaned_data['name']
+                par=Sorts.objects.get(name=parent)
+                Sorts.objects.create(name=sortname,parent=par,)
+                return HttpResponse('<script>alert("添加成功");top.location="/goods/show_sort/";</script>')
+            elif parent == "root":
                 sortname=form.cleaned_data['name']
                 Sorts.objects.create(name=sortname)
-                return HttpResponse('<script>alert("添加成功");history.go(-1);</script>')
+                return HttpResponse('<script>alert("添加成功");top.location="/goods/show_sort/";</script>')
             else:
-                return HttpResponse('<script>alert("添加错误!");history.go(-1);</script>')
+                return HttpResponse('<script>alert("填写错误!");history.go(-1);</script>')
     template_var['par']=parent
     template_var['form']=form
     return  render_to_response("goods/add_sort.html",template_var,context_instance=RequestContext(request))
+
 
 #删除分类
 def dele_sort(request,id):
