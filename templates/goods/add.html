@@ -1,5 +1,13 @@
 {% extends "base-admin.html" %}
 {% block title %}添加商品{% endblock %}
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "uploadify.css" %}"/>
+    <script type="text/javascript" src="{% static "jquery.js" %}"></script>
+    <script type="text/javascript" src="{% static "swfobject.js" %}"></script>
+    <script type="text/javascript" src="{% static "jquery.uploadify.v2.1.4.min.js" %}"></script>
+
+{% endblock %}
 {% block main %}
     <h2>添加商品</h2>
     <hr>

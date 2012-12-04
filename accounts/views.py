@@ -87,7 +87,7 @@ def logout(request):
 def manUser(request):
     if not request.user.is_superuser:
         return HttpResponseRedirect(reverse("404"))
-    all_user=User.objects.filter(is_staff='1',is_superuser='0')
+    all_user=User.objects.filter(is_staff='1',is_superuser='0').order_by('-date_joined')
     asso_user=User.objects.filter(is_staff='0',is_active='1')
     super_user=User.objects.filter(is_superuser='1')
     template_var={

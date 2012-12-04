@@ -68,6 +68,7 @@ STATIC_URL = '/static/'
 # Additional locations of static files
 STATICFILES_DIRS = (
     "templates/static/css",
+    "templates/static/plugin/uploadify_214/",
     "templates/static/js",
     "templates/static/image",
     "templates/static/img",

@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^show_sort/dele/(?P<id>\w.*)/$','car.views.dele_sort',name="dele_sort"),
 #    url(r'^add_sort/dele/$','car.views.delesort',name="dele_sort"),
     url(r'^add_brand/$','car.views.addbrand',name="add_brand"),
-    url(r'^add_brand/dele/$','car.views.delebrand',name="dele_brand"),
+    url(r'^add_brand/dele/(?P<id>\w.*)$','car.views.delebrand',name="dele_brand"),
 
 
     ##store

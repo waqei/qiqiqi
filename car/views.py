@@ -6,6 +6,9 @@ from django.template import RequestContext
 
 from form import ItemsForm,StoreForm,SortForm,BrandForm,AddForm
 from car.models import *
+import os
+from qiqiqi import settings
+
 
 def addItems(request,muser):
     """
@@ -51,7 +54,12 @@ def addbrand(request):
     if request.method=='POST':
         form = BrandForm(request.POST,request.FILES)
         if form.is_valid():
+#            name=form.cleaned_data['name']
+#            img=form.cleaned_data['img']
+#            img_1=img.save_FOO_file()
             form.save()
+
+
             return HttpResponse('<script>alert("添加成功");top.location="/goods/add_brand";</script>')
         else:
             HttpResponseRedirect(reverse('add_brand'))
@@ -59,13 +67,31 @@ def addbrand(request):
     template_var['allbrand']=allbrand
     return render_to_response('goods/add_brand.html',template_var,context_instance=RequestContext(request))
 
+#上传图片函数
+#def _upload(file):
+#    if file:
+#        path=os.path.join(settings.MEDIA_ROOT,'upload')
+#        file_name=str(uuid.uuid1())+".jpg"
+#        path_file=os.path.join(path,file_name)
+#        parser = ImageFile.Parser()
+#        for chunk in file.chunks():
+#            parser.feed(chunk)
+#        img = parser.close()
+#        try:
+#            if img.mode != "RGB":
+#                img = img.convert("RGB")
+#            img.save(path_file, 'jpeg',quality=100)
+#        except:
+#            return False
+#        return True
+#    return False
+
 #删除品牌
-def delebrand(request):
-    if request.GET.get('brand'):
-        name=request.GET.get('brand')
-        dele=Brands.objects.get(id=name)
+def delebrand(request,id):
+    if id:
+        dele=Brands.objects.get(id=id)
         dele.delete()
-        return HttpResponse('<script>alert("已删除！");top.location="/accounts/add_brand"</script>')
+        return HttpResponse('<script>alert("已删除！");top.location="/goods/add_brand"</script>')
     else:
         HttpResponseRedirect(reverse('addbrand'))
 
@@ -84,6 +110,8 @@ def manageitems(request):
     return render_to_response("goods/manage_item.html",template_var,context_instance=RequestContext(request))
 
 
+
+#显示分类
 def show_sort(request):
     return render_to_response("goods/show_sort.html",
         {'nodes':Sorts.objects.all()},
@@ -111,7 +139,6 @@ def add_sort(request,parent):
     template_var['par']=parent
     template_var['form']=form
     return  render_to_response("goods/add_sort.html",template_var,context_instance=RequestContext(request))
-
 
 #删除分类
 def dele_sort(request,id):
