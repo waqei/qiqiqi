@@ -28,18 +28,17 @@
             </ul>
         </div>
     <hr>
-    <table>
+    <table bgcolor="#faebd7" align="center">
+        <tr><td>图片</td><td>商品名</td><td>所属商铺</td><td>价格</td><td>功能</td></tr>
         {% for item in allitem %}
         <tr>
-            <td>{{ item.it_name }}</td>
-            <td>{{ item.sort.name }}</td>
-            <td>{{ item.company }}</td>
+            <td width="150px">{{ item.img.get_url }}</td>
+            <td width="150px">{{ item.it_name }}</td>
+            <td width="150px">{{ item.company }}</td>
             <td>{{ item.price }}</td>
-            <td><a href="#" >修改</a></td>
-            <td><a href="#" >删除</a></td>
+            <td width="50px" align="center"><a href="#" class="btn-mini btn-primary">修改</a><br><a href="#" class="btn-mini btn-danger">删除</a></td>
         </tr>
         {% endfor %}
     </table>
-
     </div>
 {% endblock %}

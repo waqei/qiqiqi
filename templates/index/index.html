@@ -13,7 +13,8 @@
 <div class="all">
     <!--标题-->
     <div class="head">
-        <img src="image/qpr_logo.png" />
+        {% load static %}
+        <img class="logo" src="{% static "logo1.jpg" %}" />
         <form>
             <input id="text"  type="text" />
             <input id="submit" type="submit" value="搜索" />
@@ -22,13 +23,12 @@
     <!--导航-->
     <div class="nav">
         <a href="#">首页</a>
-        <a href="#">|找产品</a>
-        <a href="#">|找公司</a>
-        <a href="#">|配件目录</a>
-        <a href="#">|找求购</a>
-        <a href="#">|咨询</a>
-        <a href="#">|目录</a>
-        <a href="#">|车型</a>
+        <a href="#">找产品</a>
+        <a href="#">找公司</a>
+        <a href="#">配件目录</a>
+        <a href="#">找求购</a>
+        <a href="#">咨询</a>
+        <a href="#">目录</a>
     </div>
     <!--主体1-->
     <div class="container_up">
@@ -81,6 +81,7 @@
     </div>
     <!--版权所有-->
     <div class="copyright">
+        <h6 align="center"><p>&copy; Company 2012 汽配商城,All Rights Reserved</p></h6>
     </div>
 </div>
 

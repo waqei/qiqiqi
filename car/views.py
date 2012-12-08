@@ -4,10 +4,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from form import ItemsForm,StoreForm,SortForm,BrandForm,AddForm
+from form import ItemsForm,StoreForm,AddForm,AdForm,LinkForm
 from car.models import *
-import os
-from qiqiqi import settings
+
 
 
 def addItems(request,muser):
@@ -23,7 +22,7 @@ def addItems(request,muser):
         if form.is_valid():
             form.save()
 
-            return HttpResponse('<script>alert("添加成功！");top.location="/goods/item/add";</script>')
+            return HttpResponse('<script>alert("添加成功！");top.location="/goods/item/manage";</script>')
     template_var['form']=form
     return  render_to_response('goods/add.html',template_var,context_instance=RequestContext(request))
 
@@ -47,53 +46,30 @@ def addStore(request):
 
 
 #添加品牌
-def addbrand(request):
-    allbrand=Brands.objects.all()
-    template_var={}
-    form=BrandForm()
-    if request.method=='POST':
-        form = BrandForm(request.POST,request.FILES)
-        if form.is_valid():
-#            name=form.cleaned_data['name']
-#            img=form.cleaned_data['img']
-#            img_1=img.save_FOO_file()
-            form.save()
-
-
-            return HttpResponse('<script>alert("添加成功");top.location="/goods/add_brand";</script>')
-        else:
-            HttpResponseRedirect(reverse('add_brand'))
-    template_var['form']=form
-    template_var['allbrand']=allbrand
-    return render_to_response('goods/add_brand.html',template_var,context_instance=RequestContext(request))
-
-#上传图片函数
-#def _upload(file):
-#    if file:
-#        path=os.path.join(settings.MEDIA_ROOT,'upload')
-#        file_name=str(uuid.uuid1())+".jpg"
-#        path_file=os.path.join(path,file_name)
-#        parser = ImageFile.Parser()
-#        for chunk in file.chunks():
-#            parser.feed(chunk)
-#        img = parser.close()
-#        try:
-#            if img.mode != "RGB":
-#                img = img.convert("RGB")
-#            img.save(path_file, 'jpeg',quality=100)
-#        except:
-#            return False
-#        return True
-#    return False
-
-#删除品牌
-def delebrand(request,id):
-    if id:
-        dele=Brands.objects.get(id=id)
-        dele.delete()
-        return HttpResponse('<script>alert("已删除！");top.location="/goods/add_brand"</script>')
-    else:
-        HttpResponseRedirect(reverse('addbrand'))
+#def addbrand(request):
+#    allbrand=Brands.objects.all()
+#    template_var={}
+#    form=BrandForm()
+#    if request.method=='POST':
+#        form = BrandForm(request.POST,request.FILES)
+#        if form.is_valid():
+#            form.save()
+#            return HttpResponse('<script>alert("添加成功");top.location="/goods/add_brand";</script>')
+#        else:
+#            HttpResponseRedirect(reverse('add_brand'))
+#    template_var['form']=form
+#    template_var['allbrand']=allbrand
+#    return render_to_response('goods/add_brand.html',template_var,context_instance=RequestContext(request))
+#
+#
+##删除品牌
+#def delebrand(request,id):
+#    if id:
+#        dele=Brands.objects.get(id=id)
+#        dele.delete()
+#        return HttpResponse('<script>alert("已删除！");top.location="/goods/add_brand"</script>')
+#    else:
+#        HttpResponseRedirect(reverse('addbrand'))
 
 
 #管理商品
@@ -142,10 +118,51 @@ def add_sort(request,parent):
 
 #删除分类
 def dele_sort(request,id):
-    if id !="ROOT" and id:
+    if id :
         p=Sorts.objects.filter(id=id)
         p.delete()
         return HttpResponse('<script>alert("删除成功");top.location="/goods/show_sort/";</script>')
     else:
         return HttpResponseRedirect(reverse('show_sort'))
 
+
+
+#广告管理
+def ad(request):
+    template_var={}
+    form=AdForm()
+    if request.method == 'POST':
+        form=AdForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('<script>alert("添加成功");top.location="/goods/ad";</script>')
+        else:
+            HttpResponseRedirect(reverse('ad_manage'))
+    template_var['form']=form
+    return render_to_response('goods/ad.html',template_var,context_instance=RequestContext(request))
+
+
+#友情链接管理
+def links(request):
+    template_var={}
+    alllinks=Links.objects.all()
+    form=LinkForm()
+    form['url'].field.help_text ='<p class="alert alert-info">请输入有效网址,包含&nbsp;<em><strong>http://</strong></em></p>'
+    if request.method == 'POST':
+        form = LinkForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('<script>alert("添加成功");top.location="/goods/links";</script>')
+        else:
+            HttpResponseRedirect(reverse('m_links'))
+    template_var['alllinks']=alllinks
+    template_var['form']=form
+    return  render_to_response('goods/link.html',template_var,context_instance=RequestContext(request))
+
+def dele_link(request,id):
+    if id:
+        tar=Links.objects.filter(id=id)
+        tar.delete()
+        return HttpResponse('<script>alert("删除成功");top.location="/goods/links/";</script>')
+    else:
+        return HttpResponseRedirect(reverse('m_links'))

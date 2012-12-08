@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>汽配商城</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static "reset-gird-min_11.css" %}">
+    <link rel="stylesheet" href="{% static "i20110122.css" %}">
+    <script language="javascript" src="{% static "getuname.js" %}"></script>
+</head>
+<body>
+<div id="page" class="w950">
+
+<div id="header">
+    <div id="mini-nav">
+        <p class="login-info">您好，欢迎光临汽配商城！</p>
+
+        <div class="quick-menu">
+            <ul>
+                <li><a href="/" target="_blank">汽配商城</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="top-header">
+        <div class="logo-search">
+            <div class="logo">
+                <a href="/" title="汽配"><img src="{% static "logo.png" %}" width="154" height="56" alt="汽配人网" /></a>
+                <span>汽车汽配网上市场</span>
+            </div>
+            <div class="search">
+                <div class="search-tab">
+                    <ul class="clearfix indser">
+                        <li class="current" tit="输入产品名称或关键词" ac="#:index.asp"><a href="javascript:void(0);">产品</a></li>
+                        <li tit="输入公司名称或关键词" ac="#"><a href="javascript:void(0);">公司</a></li>
+                    </ul>
+                </div>
+                <div class="search-panel clearfix">
+                    <form id="searchPanel" action="http://www.qipeiren.com/Supply/index.asp" method="get" name="searchPanel" target="_blank">
+                        <div class="search-panel-field">
+                            <input id="mSearch" type="text" name="KeyWord" value="输入产品名称" tabindex="1" />
+                            <b class="lt"></b>
+                            <b class="lb"></b>
+                        </div>
+                        <button type="submit" tabindex="2">搜索</button>
+                        <!--<a href="#" class="g">使用帮助</a> -->
+                    </form>
+                    <b class="tl"></b>
+                    <b class="tr"></b>
+                    <b class="bl"></b>
+                    <b class="br"></b>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav">
+            <ul class="clearfix">
+                <li class="w2 current"><a href="http://www.qipeiren.com/">首页</a></li>
+                <li class="w3"><a href="http://www.qipeiren.com/Supply/">找产品</a></li>
+                <li class="w3"><a href="http://www.qipeiren.com/Company/">找公司</a></li>
+                <li class="w4"><a href="http://www.qipeiren.com/so/">配件目录</a></li>
+                <li class="w3"><a href="http://www.qipeiren.com/Need/">找求购</a></li>
+                <li class="w2"><a href="http://www.qipeiren.com/News/" target="_blank">资讯</a></li>
+                <li class="w2"><a href="http://www.qipeiren.com/ask/" target="_blank">问答</a></li>
+                <li class="w2"><a href="http://www.qipeiren.com/DFNews/" target="_blank">车型</a></li>
+            </ul>
+            <b></b>
+            <div class="new hidden"><img src="images_11/new.gif" width="19" height="23" alt="最全供应信息" /></div>
+            <div class="hot hidden"><img src="images_11/hot.gif" width="19" height="23" alt="配件目录" /></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{% static "jquery-1.4.2.js" %}"></script>
+<script type="text/javascript" src="{% static "index_2011.js" %}"></script>
+<div id="content">
+<div class="layout grid-s6m0">
+    <div class="col-main">
+        <div class="main-wrap" >
+            <div class="left-col">
+                <div id="main-slider" class="box">
+                    <div class="bd">
+                        <div class="slider" >
+                            <ul class="picture" >
+
+                                <li><a href="http://www.qipeiren.com/minglu/2012/" target="_blank"><img src="images_11/hyml.jpg" width="470" height="168" alt="汽配人行业名录" /></a></li>
+                                <li><a href="http://www.qipeiren.com/winport/" target="_blank"><img src="images_11/m1.jpg" width="470" height="168" alt="汽配旺铺" /></a></li>
+                                <li><a href="http://www.qipeiren.com/helper/" target="_blank"><img src="images_11/m3.jpg" width="470" height="168" alt="汽配助手" /></a></li>
+                                <!--<li><a href="http://www.qipeiren.com/gold/" target="_blank"><img src="images_11/m2.jpg" width="470" height="168" alt="黄金展位" /></a></li>
+
+                                                                            <li><a href="http://www.qipeiren.com/station/shandong.asp" target="_blank"><img src="images_11/m3_b.jpg" width="470" height="168" alt="汽配人网山东站" /></a>--></li>
+                            </ul>
+                            <ul class="num clearfix" >
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="supply" class="box">
+                    <div class="hd"><h3>最新供应</h3></div>
+                    <div class="bd">
+                        <ul class="info-list clearfix">
+                            <li><a href='http://www.qipeiren.com/Supply/supply-582734.htm' target='_blank' title='东风康明斯欧3电喷电控系列发动机吊耳C4894100'>供应东风康明斯欧3电喷...</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-582401.htm' target='_blank' title='风扇支架'>供应风扇支架</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-537025.htm' target='_blank' title='东风天锦蓄电池盖拉条'>供应东风天锦蓄电池盖拉...</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-369314.htm' target='_blank' title='东风天龙限位块支架K2000'>供应东风天龙限位块支架...</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-528790.htm' target='_blank' title='JN牌-153双桥前'>供应JN牌-153双桥前</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-352726.htm' target='_blank' title='斯太尔中间支座'>供应斯太尔中间支座</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-532234.htm' target='_blank' title='东风小康13寸---14寸纲圈'>供应东风小康13寸---14...</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-545093.htm' target='_blank' title='东风康明斯/天龙ISLE机燃油滤清器座/FF5488滤座/东风康明斯发动机配件'>供应东风康明斯/天龙IS...</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-567635.htm' target='_blank' title='雷诺发动机副线束  带制动'>供应雷诺发动机副线束 ...</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-361683.htm' target='_blank' title='原厂天锦驾驶室总成'>供应原厂天锦驾驶室总成...</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-350064.htm' target='_blank' title='空气滤清器总成1109010-K0401'>供应空气滤清器总成110...</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-582777.htm' target='_blank' title='东风雷诺系列输油泵'>供应东风雷诺系列输油泵...</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-566862.htm' target='_blank' title='天龙付水箱铁管'>供应天龙付水箱铁管</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-582743.htm' target='_blank' title='天龙驾驶室前翻转臂支架（左）'>供应天龙驾驶室前翻转臂...</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-498764.htm' target='_blank' title='空气压缩机天龙双缸3930041'>供应空气压缩机天龙双缸...</a> <i>(12/4)</i></li><li><a href='http://www.qipeiren.com/Supply/supply-249032.htm' target='_blank' title='平衡悬架总成'>供应平衡悬架总成</a> <i>(12/4)</i></li>
+                        </ul>
+                        <span id="btn1" class="list-up"></span>
+                        <span id="btn2" class="list-down"></span>
+                    </div>
+                    <div class="ft"><a href="http://www.qipeiren.com/Supply/" target="_blank">更多</a></div>
+                </div>
+
+                <div id="buy" class="box">
+                    <div class="hd"><h3>最新求购</h3></div>
+                    <div class="bd">
+                        <ul class="info-list clearfix">
+                            <li><a href='http://www.qipeiren.com/Need/need-582434.htm' target='_blank' title='求购Q68620  ，规格6.5的，表面黑胶'>求购求购Q68620  ，规格6.5的，...</a></li><li><a href='http://www.qipeiren.com/Need/need-580621.htm' target='_blank' title='求购24v发电机'>求购求购24v发电机</a></li><li><a href='http://www.qipeiren.com/Need/need-580491.htm' target='_blank' title='4.5米轴距自卸车大梁.8+8'>求购4.5米轴距自卸车大梁.8+8</a></li><li><a href='http://www.qipeiren.com/Need/need-578472.htm' target='_blank' title='金笛配套锡柴6DL（奥威）柴油机 QDJ2761起动机'>求购金笛配套锡柴6DL（奥威）柴...</a></li><li><a href='http://www.qipeiren.com/Need/need-576339.htm' target='_blank' title='重汽滤清器需求'>求购重汽滤清器需求</a></li><li><a href='http://www.qipeiren.com/Need/need-569339.htm' target='_blank' title='增压器连接管1203015-K1200'>求购增压器连接管1203015-K1200...</a></li><li><a href='http://www.qipeiren.com/Need/need-565282.htm' target='_blank' title='东风客车'>求购东风客车</a></li><li><a href='http://www.qipeiren.com/Need/need-560578.htm' target='_blank' title='库存配件'>求购库存配件</a></li><li><a href='http://www.qipeiren.com/Need/need-559619.htm' target='_blank' title='东风康明斯东风天龙的盆角齿'>求购东风康明斯东风天龙的盆角齿...</a></li><li><a href='http://www.qipeiren.com/Need/need-559434.htm' target='_blank' title='0---2Mpa'>求购0---2Mpa</a></li><li><a href='http://www.qipeiren.com/Need/need-556516.htm' target='_blank' title='陕汽德龙斯太尔减振器'>求购陕汽德龙斯太尔减振器</a></li><li><a href='http://www.qipeiren.com/Need/need-555202.htm' target='_blank' title='天龙车操纵机构总成'>求购天龙车操纵机构总成</a></li><li><a href='http://www.qipeiren.com/Need/need-553749.htm' target='_blank' title='吊耳支架'>求购吊耳支架</a></li><li><a href='http://www.qipeiren.com/Need/need-549331.htm' target='_blank' title='求购东风天龙排气软管，波纹管垫片。'>求购求购东风天龙排气软管，波纹...</a></li><li><a href='http://www.qipeiren.com/Need/need-547875.htm' target='_blank' title='双桥储气筒'>求购双桥储气筒</a></li><li><a href='http://www.qipeiren.com/Need/need-546231.htm' target='_blank' title='采购 十字轴 CA-2201030'>求购采购 十字轴 CA-2201030</a></li>
+                        </ul>
+                        <span id="btn3" class="list-up"></span>
+                        <span id="btn4" class="list-down"></span>
+                    </div>
+                    <div class="ft"><a href="http://www.qipeiren.com/Need/" target="_blank">更多</a></div>
+                </div>
+            </div>
+
+            <div class="right-col">
+                <div id="help">
+                    <a href="http://www.qipeiren.com/User/Register1.asp" class="help-reg" target="_blank"><img src="images_11/help.png" /></a>
+                    <a href="http://www.qipeiren.com/User/UserLogin.asp" class="help-login" target="_blank"><img src="images_11/help.png" /></a>
+                </div>
+
+                <div id="news" class="box">
+                    <div class="hd">
+                        <ul class="tab-t clearfix">
+                            <li class="selected"><a href="http://www.qipeiren.com/About/" target="_blank">网站动态</a></li>
+                            <li class="last">网站服务</li>
+                        </ul>
+                    </div>
+                    <div class="bd">
+                        <div id="tabCnt">
+                            <div class="tab-c">
+                                <ul class="info-list clearfix">
+                                    <li><a href='' target='_blank'>走进汽配市场,2012汽配人网宣传行</a></li><li><a href='http://www.qipeiren.com/About/show.asp?newsid=32737' target='_blank'>《汽配人行业名录》编印成册</a></li><li><a href='http://www.qipeiren.com/About/show.asp?newsid=27078' target='_blank'>汽配人网在济南成功开设分公司</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-c hidden">
+                                <ul class="info-list clearfix">
+                                    <li><a href='http://www.qipeiren.com/winport/' target='_blank'>建站，推广，做生意就选汽配旺铺</a></li><li><a href='http://www.qipeiren.com/gold/' target='_blank'>黄金展位为你提供精准营销推广服务</a></li><li><a href='http://www.qipeiren.com/helper/' target='_blank'>汽配助手——你贴心的生意小助手</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="qprser clearfix"><a href="http://www.qipeiren.com/winport/" target="_blank">汽配旺铺</a><a href="http://www.qipeiren.com/gold/" target="_blank">黄金展位</a><a href="http://www.qipeiren.com/helper/" target="_blank">汽配助手</a></p>
+                    </div>
+                </div>
+
+                <div id="supplier" class="box">
+                    <div class="hd"><h3>供应商精选</h3></div>
+                    <div class="bd">
+                        <ul class="info-list clearfix">
+
+                            <li><a href="http://syjjqc.cn.qipeiren.com" target="_blank" title="十堰竞佳汽车零部件有限公司" class="gray">十堰竞佳汽车零部件有限公司</a></li>
+
+                            <li><a href="http://sybcgs.cn.qipeiren.com" target="_blank" title="十堰博驰工贸有限公司" class="gray">十堰博驰工贸有限公司</a></li>
+
+                            <li><a href="http://jincheng168.cn.qipeiren.com" target="_blank" title="山东宏成重汽配件有限公司" class="gray">山东宏成重汽配件有限公司</a></li>
+
+                            <li><a href="http://jnsqgs.cn.qipeiren.com" target="_blank" title="济南三全汽配有限公司" class="gray">济南三全汽配有限公司</a></li>
+
+                            <li><a href="http://sytiankai.cn.qipeiren.com" target="_blank" title="湖北天凯贸易有限公司--诚接各种车型起动机发电机外贸定单及市场销售" class="gray">湖北天凯贸易有限公司--诚接各种...</a></li>
+
+                            <li><a href="http://syrdlm.cn.qipeiren.com" target="_blank" title="十堰市瑞达联贸工业有限公司" class="gray">十堰市瑞达联贸工业有限公司</a></li>
+
+                            <li><a href="http://syxijie.cn.qipeiren.com" target="_blank" title="十堰希杰汽车换热装置有限公司" class="gray">十堰希杰汽车换热装置有限公司</a></li>
+
+                            <li><a href="http://jinke.cn.qipeiren.com" target="_blank" title="广州金可贸易有限公司" class="gray">广州金可贸易有限公司</a></li>
+
+                            <li><a href="http://syhwgs.cn.qipeiren.com" target="_blank" title="十堰恒威汽车零部件有限公司" class="gray">十堰恒威汽车零部件有限公司</a></li>
+
+                            <li><a href="http://syjzgm.cn.qipeiren.com" target="_blank" title="十堰佳智工贸有限公司" class="gray">十堰佳智工贸有限公司</a></li>
+
+                            <li><a href="http://xfdongde.cn.qipeiren.com" target="_blank" title="襄樊东德汽车零部件有限公司" class="gray">襄樊东德汽车零部件有限公司</a></li>
+
+                            <li><a href="http://jianfu.cn.qipeiren.com" target="_blank" title="山东建富齿轮有限公司（十堰办事处）" class="gray">山东建富齿轮有限公司（十堰办事...</a></li>
+
+                            <li><a href="http://yaoshanlin1123.cn.qipeiren.com" target="_blank" title="十堰东普公司(装配康明斯.雷诺零件)" class="gray">十堰东普公司(装配康明斯.雷诺零...</a></li>
+
+                            <li><a href="http://sypygm.cn.qipeiren.com" target="_blank" title="十堰普亿汽车零部件有限公司" class="gray">十堰普亿汽车零部件有限公司</a></li>
+
+                            <li><a href="http://sybd.cn.qipeiren.com" target="_blank" title="十堰百迪工贸有限公司" class="gray">十堰百迪工贸有限公司</a></li>
+
+                        </ul>
+                        <span id="btn5" class="list-up"></span>
+                        <span id="btn6" class="list-down"></span>
+                    </div>
+                    <div class="ft"><a href="http://www.qipeiren.com/Company/" target="_blank">更多</a></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sub">
+        <div id="recommend" class="box">
+            <div class="hd"><h3>今日热荐</h3></div>
+            <div class="bd">
+                <ul class="info-list clearfix">
+                    <li><a href='http://www.qipeiren.com/minglu/2012/' target='_blank' style='color:#ff6600'>汽配人行业名录电子版上线啦</a></li><li><a href='http://www.qipeiren.com/About/show.asp?newsid=30515' target='_blank'>促销栏目助力汽配商户，用途介绍</a></li><li><a href='http://www.qipeiren.com/About/show.asp?newsid=30160' target='_blank'>库存促销信息在网站上如何优先展示？</a></li><li><a href='http://www.qipeiren.com/News/news-34062.htm' target='_blank'>十堰开建汽车零部件国检中心</a></li>
+                </ul>
+                <div class="rec-ad"><a href="http://www.qipeiren.com/station/shandong.asp" target="_blank"><img src="images_11/zq.jpg" width="208" height="30" alt="汽配人网山东及重汽频道" /></a></div>
+            </div>
+            <div class="ft"><!--<a href="#">更多</a> --></div>
+        </div>
+
+        <div id="latest" class="box">
+            <div class="hd"><h3>库存促销</h3></div>
+            <div class="bd">
+                <ul class="info-list clearfix">
+
+                    <li><a title="大量促销东风康明斯系列起动机总成QD2802(C3415538)" href="http://www.qipeiren.com/Supply/supply-581963.htm" target="_blank">大量促销东风康明斯系列起动机总成...</a></li>
+
+                    <li><a title="促销东风商用车空气滤芯" href="http://www.qipeiren.com/Supply/supply-580607.htm" target="_blank">促销东风商用车空气滤芯</a></li>
+
+                    <li><a title="东风天龙大力神-康明斯6CT230机油泵C3966840" href="http://www.qipeiren.com/Supply/supply-580226.htm" target="_blank">东风天龙大力神-康明斯6CT230机油...</a></li>
+
+                    <li><a title="东风天龙康明斯发动机后悬支架" href="http://www.qipeiren.com/Supply/supply-575580.htm" target="_blank">东风天龙康明斯发动机后悬支架</a></li>
+
+                    <li><a title="东风天龙雷诺发动机飞轮壳左右支臂" href="http://www.qipeiren.com/Supply/supply-575573.htm" target="_blank">东风天龙雷诺发动机飞轮壳左右支臂...</a></li>
+
+                    <li><a title="促销大力神轮边减速桥单齿圈" href="http://www.qipeiren.com/Supply/supply-573123.htm" target="_blank">促销大力神轮边减速桥单齿圈</a></li>
+
+                </ul>
+            </div>
+            <div class="ft"><a href="http://www.qipeiren.com/Supply/index.asp?action=kccx">更多</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="layout grid-m">
+    <div id="banner" class="box">
+        <div class="bd">
+            <a href='http://www.qipeiren.com/ad.asp?139' target='_blank'><img src='http://www.qipeiren.com/IndexPic/Ad/pp/139.gif' alt='' /></a><a href='http://www.qipeiren.com/ad.asp?622' target='_blank'><img src='http://www.qipeiren.com/IndexPic/Ad/pp/622.gif' alt='' /></a><a href='http://www.qipeiren.com/ad.asp?646' target='_blank'><img src='http://www.qipeiren.com/IndexPic/Ad/pp/646.gif' alt='' /></a><a href='http://www.qipeiren.com/ad.asp?1118' target='_blank'><img src='http://www.qipeiren.com/IndexPic/Ad/pp/1118.gif' alt='' /></a><a href='http://www.qipeiren.com/ad.asp?1119' target='_blank'><img src='http://www.qipeiren.com/IndexPic/Ad/pp/1119.gif' alt='' /></a><a class='nomr' href='http://www.qipeiren.com/ad.asp?1120' target='_blank'><img src='http://www.qipeiren.com/IndexPic/Ad/pp/1120.gif' alt='' /></a>
+        </div>
+    </div>
+</div>
+
+<div class="layout grid-m">
+    <div id="J_CategoryHover" class="category-main">
+        <div class="category-item category-first">
+            <div class="category-list">
+                <div class="category-title clearfix">
+                    <h4><a href="http://www.qipeiren.com/Supply/101000p.htm" target="_blank">发动机系统</a></h4>
+                    <span class="category-pop"><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=L系列' target='_blank'>L系列</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=6BT' target='_blank'>6BT</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%BF%B5%C3%F7%CB%B9' target='_blank'>康明斯</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=dCi' target='_blank'>dCi</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B8%A5%C1%D0%BC%D3' target='_blank'>弗列加</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=6CT' target='_blank'>6CT</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=雷诺' target='_blank'>雷诺</a></span>
+                </div>
+                <ul class="clearfix">
+                    <li><a href="http://www.qipeiren.com/Supply/101001p.htm" target="_blank" class="h">发动机总成</a><a href="http://www.qipeiren.com/Supply/101002p.htm" target="_blank">缸体</a><a href="http://www.qipeiren.com/Supply/101003p.htm" target="_blank">缸盖/垫</a><a href="http://www.qipeiren.com/Supply/101004p.htm" target="_blank">曲轴组</a><a href="http://www.qipeiren.com/Supply/101005p.htm" target="_blank">凸轮轴</a><a href="http://www.qipeiren.com/Supply/101006p.htm" target="_blank" class="nomr">连杆</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/101020p.htm" target="_blank" class="h">中冷器</a><a href="http://www.qipeiren.com/Supply/101021p.htm" target="_blank">化油器</a><a href="http://www.qipeiren.com/Supply/101022p.htm" target="_blank">汽车三滤</a><a href="http://www.qipeiren.com/Supply/101023p.htm" target="_blank">空气滤清器</a><a href="http://www.qipeiren.com/Supply/101024p.htm" target="_blank" class="nomr">扭振减震器</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/101015p.htm" target="_blank">空气压缩机</a><a href="http://www.qipeiren.com/Supply/101007p.htm" target="_blank">活塞</a><a href="http://www.qipeiren.com/Supply/101008p.htm" target="_blank">活塞环</a><a href="http://www.qipeiren.com/Supply/101009p.htm" target="_blank">活塞销</a><a href="http://www.qipeiren.com/Supply/101010p.htm" target="_blank">缸套</a><a href="http://www.qipeiren.com/Supply/101011p.htm" target="_blank">轴瓦</a><a href="http://www.qipeiren.com/Supply/101012p.htm" target="_blank" class="nomr">飞轮</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/101025p.htm" target="_blank">风扇及附件</a><a href="http://www.qipeiren.com/Supply/101026p.htm" target="_blank">进气预热装置</a><a href="http://www.qipeiren.com/Supply/101027p.htm" target="_blank">皮带及皮带轮</a><a href="http://www.qipeiren.com/Supply/101028p.htm" target="_blank" class="nomr">油箱油管</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/101013p.htm" target="_blank">飞轮壳</a><a href="http://www.qipeiren.com/Supply/101014p.htm" target="_blank">增压器</a><a href="http://www.qipeiren.com/Supply/101016p.htm" target="_blank">机油泵</a><a href="http://www.qipeiren.com/Supply/101017p.htm" target="_blank">水泵</a><a href="http://www.qipeiren.com/Supply/101018p.htm" target="_blank">燃油泵</a><a href="http://www.qipeiren.com/Supply/101019p.htm" target="_blank">散热器</a><a href="http://www.qipeiren.com/Supply/101033p.htm" target="_blank" class="nomr">气门</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/101032p.htm" target="_blank">齿轮室组</a><a href="http://www.qipeiren.com/Supply/101034p.htm" target="_blank">输油泵</a><a href="http://www.qipeiren.com/Supply/101038p.htm" target="_blank">叶片泵</a><a href="http://www.qipeiren.com/Supply/101035p.htm" target="_blank">喷油器</a><a href="http://www.qipeiren.com/Supply/101029p.htm" target="_blank">修理包</a><a href="http://www.qipeiren.com/Supply/101030p.htm" target="_blank" class="nomr">其他附件</a></li>
+                </ul>
+            </div>
+            <div class="category-info">
+                <div class="category-text">
+                    <ul class="info-list clearfix">
+                        <li><a href='http://www.qipeiren.com/Supply/%B6%AB%B7%E7%C0%D7%C5%B5--101001p.htm' target='_blank'>原厂东风雷诺发动机大全</a></li><li><a href='http://www.qipeiren.com/Supply/%CE%AB%B2%F1--101008p.htm' target='_blank'>活塞环优质商家找潍柴</a></li><li><a href='http://www.qipeiren.com/Supply/%CE%AB%B2%F1--101006p.htm' target='_blank'>潍柴连杆最优供应商家</a></li><li><a href='http://www.qipeiren.com/Supply/%B8%A5%C1%D0%BC%D3--101022p.htm' target='_blank'>弗列加三滤系列商家</a></li>
+                    </ul>
+                </div>
+                <div class="category-ad"><a href='http://syzy.qipeiren.com' target='_blank' class='g'><img src='/UploadFile/WebDataPic/2011112913355586472.gif' width='95' height='65' alt='#' /><br />康明斯系列配件</a><a href='http://www.qipeiren.com/ad.asp?287' target='_blank' class='g'><img src='/UploadFile/WebDataPic/2011318955165297.gif' width='95' height='65' alt='#' /><br />纯正康明斯配件</a></div>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <div class="category-list">
+                <div class="category-title clearfix">
+                    <h4><a href="http://www.qipeiren.com/Supply/103000p.htm" target="_blank">行走系统</a></h4>
+                    <span class="category-pop"><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B6%AB%B7%E7%B5%C2%C4%C9' target='_blank'>东风德纳</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=457%C7%C5&actionid=1' target='_blank'>457桥</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=153%C7%C5&actionid=1' target='_blank'>153桥</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=460%C7%C5' target='_blank'>460桥 </a></span>
+                </div>
+                <ul class="clearfix">
+                    <li><a href="http://www.qipeiren.com/Supply/103001p.htm" target="_blank">车架及散件</a><a href="http://www.qipeiren.com/Supply/103002p.htm" target="_blank">车厢及附件</a><a href="http://www.qipeiren.com/Supply/103003p.htm" target="_blank">减振器</a><a href="http://www.qipeiren.com/Supply/103004p.htm" target="_blank" class="nomr">钢板弹簧及支架</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/103015p.htm" target="_blank" class="h">差速器</a><a href="http://www.qipeiren.com/Supply/103014p.htm" target="_blank">主从动惰轮</a><a href="http://www.qipeiren.com/Supply/103016p.htm" target="_blank">贯通轴</a><a href="http://www.qipeiren.com/Supply/103017p.htm" target="_blank">钢圈</a><a href="http://www.qipeiren.com/Supply/103018p.htm" target="_blank">轮毂</a><a href="http://www.qipeiren.com/Supply/103019p.htm" target="_blank" class="nomr">轮胎</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/103006p.htm" target="_blank">中桥及壳体</a><a href="http://www.qipeiren.com/Supply/103007p.htm" target="_blank">后桥及壳体</a><a href="http://www.qipeiren.com/Supply/103005p.htm" target="_blank">前桥</a><a href="http://www.qipeiren.com/Supply/103008p.htm" target="_blank">半轴</a><a href="http://www.qipeiren.com/Supply/103009p.htm" target="_blank" class="nomr">减速器总成</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/103020p.htm" target="_blank">冲压件</a><a href="http://www.qipeiren.com/Supply/103021p.htm" target="_blank">平衡轴及支架</a><a href="http://www.qipeiren.com/Supply/103023p.htm" target="_blank">空气悬架系统</a><a href="http://www.qipeiren.com/Supply/103022p.htm" target="_blank" class="nomr">其他</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/103010p.htm" target="_blank" class="h">盆角齿</a><a href="http://www.qipeiren.com/Supply/103011p.htm" target="_blank">半轴齿</a><a href="http://www.qipeiren.com/Supply/103012p.htm" target="_blank">行星齿</a><a href="http://www.qipeiren.com/Supply/103013p.htm" target="_blank" class="nomr">十字轴</a></li>
+                </ul>
+            </div>
+            <div class="category-info">
+                <div class="category-text">
+                    <ul class="info-list clearfix">
+                        <li><a href='http://www.qipeiren.com/Supply/%D6%D8%C6%FB--103016p.htm' target='_blank'>贯通轴重汽的品质没错</a></li><li><a href='http://www.qipeiren.com/Supply/-%B6%AB%B7%E7%CC%EC%C1%FA-103003p.htm' target='_blank'>天龙减震器优质商家集结</a></li><li><a href='http://www.qipeiren.com/Supply/-%B6%AB%B7%E7%CC%EC%C1%FA-103013p.htm' target='_blank'>精选商家供应天龙十字轴</a></li><li><a href='http://www.qipeiren.com/Supply/%B5%C2%C4%C9--103010p.htm' target='_blank'>德纳盆角齿好配件好商家</a></li>
+                    </ul>
+                </div>
+                <div class="category-ad"><a href='http://www.qipeiren.com/Supply/103000p.htm' target='_blank' class='g'><img src='/UploadFile/WebDataPic/20112181435014608.jpg' width='95' height='65' alt='#' /><br />全车底盘件</a><a href='http://www.qipeiren.com/Supply/103007p.htm' target='_blank' class='g'><img src='/UploadFile/WebDataPic/201121814371954598.jpg' width='95' height='65' alt='#' /><br />精品底盘件</a></div>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <div class="category-list">
+                <div class="ct">
+                    <div class="category-title clearfix">
+                        <h4><a href="http://www.qipeiren.com/Supply/102000p.htm" target="_blank">传动系统</a></h4>
+                        <span class="category-pop"><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B4%F3%B3%DD' target='_blank'>大齿</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%C9%C2%B3%DD&actionid=1' target='_blank'>陕齿</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%BA%BC%B3%DD' target='_blank'>杭齿</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B7%A8%CA%BF%CC%D8' target='_blank'>法士特</a></span>
+                    </div>
+                    <ul class="clearfix">
+                        <li><a href="http://www.qipeiren.com/Supply/102001p.htm" target="_blank" class="h">离合器从动盘</a><a href="http://www.qipeiren.com/Supply/102002p.htm" target="_blank">压盘</a><a href="http://www.qipeiren.com/Supply/102003p.htm" target="_blank">离合器壳</a><a href="http://www.qipeiren.com/Supply/102004p.htm" target="_blank">离合器总泵</a><a href="http://www.qipeiren.com/Supply/102005p.htm" target="_blank" class="nomr">助力器</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/102006p.htm" target="_blank">变速箱及附件</a><a href="http://www.qipeiren.com/Supply/102007p.htm" target="_blank">分动箱及附件</a><a href="http://www.qipeiren.com/Supply/102008p.htm" target="_blank" class="h">变速箱齿轮</a><a href="http://www.qipeiren.com/Supply/102009p.htm" target="_blank" class="nomr">取力器</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/102010p.htm" target="_blank">传动轴及附件</a><a href="http://www.qipeiren.com/Supply/102012p.htm" target="_blank">同步器</a><a href="http://www.qipeiren.com/Supply/102014p.htm" target="_blank">万向节</a><a href="http://www.qipeiren.com/Supply/102013p.htm" target="_blank">操纵机构</a><a href="http://www.qipeiren.com/Supply/102011p.htm" target="_blank" class="nomr">其他传动</a></li>
+                    </ul>
+                </div>
+                <div class="ct">
+                    <div class="category-title clearfix">
+                        <h4><a href="http://www.qipeiren.com/Supply/104000p.htm" target="_blank">制动系统</a></h4>
+                        <span class="category-pop"><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%D6%C6%B6%AF%C6%F7' target='_blank'>制动器</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B8%C9%D4%EF%C6%F7' target='_blank'>干燥器</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B6%AB%B7%E7%BF%C6%BC%BC&actionid=1' target='_blank'>东风科技</a></span>
+                    </div>
+                    <ul class="clearfix">
+                        <li><a href="http://www.qipeiren.com/Supply/104001p.htm" target="_blank">刹车毂</a><a href="http://www.qipeiren.com/Supply/104002p.htm" target="_blank">制动器总成</a><a href="http://www.qipeiren.com/Supply/104003p.htm" target="_blank" class="h">弹簧制动室</a><a href="http://www.qipeiren.com/Supply/104004p.htm" target="_blank">卸载阀</a><a href="http://www.qipeiren.com/Supply/104005p.htm" target="_blank" class="nomr">制动阀</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/104006p.htm" target="_blank">手控阀</a><a href="http://www.qipeiren.com/Supply/104007p.htm" target="_blank">感载阀</a><a href="http://www.qipeiren.com/Supply/104008p.htm" target="_blank">继动阀</a><a href="http://www.qipeiren.com/Supply/104009p.htm" target="_blank">制动阀类</a><a href="http://www.qipeiren.com/Supply/104010p.htm" target="_blank" class="nomr">空气干燥类</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/104011p.htm" target="_blank">贮气筒</a><a href="http://www.qipeiren.com/Supply/104012p.htm" target="_blank">制动凸轮轴</a><a href="http://www.qipeiren.com/Supply/104014p.htm" target="_blank">摩擦片</a><a href="http://www.qipeiren.com/Supply/104015p.htm" target="_blank">防抱死系统</a><a href="http://www.qipeiren.com/Supply/104013p.htm" target="_blank" class="nomr">其他</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="category-info">
+                <div class="category-text">
+                    <ul class="info-list clearfix">
+                        <li><a href='http://www.qipeiren.com/Supply/-%B6%AB%B7%E7-104012p.htm' target='_blank'>制动凸轮轴东风制造</a></li><li><a href='http://www.qipeiren.com/Supply/%D6%D8%C6%FB--102012p.htm' target='_blank'>最新重汽同步器供应信息</a></li><li><a href='http://www.qipeiren.com/Supply/%B6%AB%B7%E7%BF%C6%BC%BC--104007p.htm' target='_blank'>东风科技感应阀好商家</a></li><li><a href='http://www.qipeiren.com/Supply/%C8%F8%BF%CB%CB%B9--102002p.htm' target='_blank'>萨克斯离合压盘商家精选</a></li>
+                    </ul>
+                </div>
+                <div class="category-ad"><a href='http://www.qipeiren.com/ad.asp?77' target='_blank' class='g'><img src='/UploadFile/WebDataPic/201121817324519416.gif' width='95' height='65' alt='#' /><br />东风系列离合器</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B7%A8%CA%BF%CC%D8&actionid=1' target='_blank' class='g'><img src='/UploadFile/WebDataPic/201121811594841743.jpg' width='95' height='65' alt='#' /><br />法士特配件热销</a></div>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <div class="category-list">
+                <div class="ct">
+                    <div class="category-title clearfix">
+                        <h4><a href="http://www.qipeiren.com/Supply/107000p.htm" target="_blank">驾驶室类</a></h4>
+                        <span class="category-pop"><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=D310&actionid=1' target='_blank'>D310</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B8%B2%B8%C7%BC%FE&actionid=1' target='_blank'>覆盖件</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%CC%EC%C1%FA%BC%DD%CA%BB%CA%D2&actionid=1' target='_blank'>天龙驾驶室</a></span>
+                    </div>
+                    <ul class="clearfix">
+                        <li><a href="http://www.qipeiren.com/Supply/107001p.htm" target="_blank" class="h">驾驶室总成</a><a href="http://www.qipeiren.com/Supply/107002p.htm" target="_blank">车门</a><a href="http://www.qipeiren.com/Supply/107003p.htm" target="_blank">座椅</a><a href="http://www.qipeiren.com/Supply/107004p.htm" target="_blank">卧铺</a><a href="http://www.qipeiren.com/Supply/107005p.htm" target="_blank" class="nomr">驾驶室仪表台</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/107006p.htm" target="_blank">汽车玻璃</a><a href="http://www.qipeiren.com/Supply/107007p.htm" target="_blank">汽车空调</a><a href="http://www.qipeiren.com/Supply/107008p.htm" target="_blank">暖风系统</a><a href="http://www.qipeiren.com/Supply/107009p.htm" target="_blank">雨刷系统</a><a href="http://www.qipeiren.com/Supply/107010p.htm" target="_blank" class="nomr">保险杠</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/107012p.htm" target="_blank">举升油缸</a><a href="http://www.qipeiren.com/Supply/107011p.htm" target="_blank">面罩</a><a href="http://www.qipeiren.com/Supply/107013p.htm" target="_blank">油泵</a><a href="http://www.qipeiren.com/Supply/107014p.htm" target="_blank">汽车镜</a><a href="http://www.qipeiren.com/Supply/107015p.htm" target="_blank" class="nomr">其他驾驶室类</a></li>
+                    </ul>
+                </div>
+                <div class="ct">
+                    <div class="category-title clearfix">
+                        <h4><a href="http://www.qipeiren.com/Supply/106000p.htm" target="_blank">电器</a></h4>
+                        <span class="category-pop"><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%CC%EC%C1%FA%B5%E7%C6%F7&actionid=1' target='_blank'>天龙电器</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B6%AB%B7%E7%B5%E7%C6%F7&actionid=1' target='_blank'>东风电器</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B5%E7%C5%E7&actionid=1' target='_blank'>电喷</a></span>
+                    </div>
+                    <ul class="clearfix">
+                        <li><a href="http://www.qipeiren.com/Supply/106015p.htm" target="_blank">蓄电池</a><a href="http://www.qipeiren.com/Supply/106001p.htm" target="_blank" class="h">起动机</a><a href="http://www.qipeiren.com/Supply/106002p.htm" target="_blank">发电机</a><a href="http://www.qipeiren.com/Supply/106003p.htm" target="_blank">灯具</a><a href="http://www.qipeiren.com/Supply/106004p.htm" target="_blank" class="h">仪表</a><a href="http://www.qipeiren.com/Supply/106005p.htm" target="_blank">电控系统</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/106009p.htm" target="_blank">开关类</a><a href="http://www.qipeiren.com/Supply/106006p.htm" target="_blank">配电盒</a><a href="http://www.qipeiren.com/Supply/106008p.htm" target="_blank">传感器</a><a href="http://www.qipeiren.com/Supply/106010p.htm" target="_blank">继电器</a><a href="http://www.qipeiren.com/Supply/106011p.htm" target="_blank">电磁阀</a><a href="http://www.qipeiren.com/Supply/106007p.htm" target="_blank" class="nomr">线束</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/106012p.htm" target="_blank">控制器</a><a href="http://www.qipeiren.com/Supply/106013p.htm" target="_blank">汽车喇叭</a><a href="http://www.qipeiren.com/Supply/106014p.htm" target="_blank">电动升降器</a><a href="http://www.qipeiren.com/Supply/106016p.htm" target="_blank">音响</a><a href="http://www.qipeiren.com/Supply/106017p.htm" target="_blank" class="nomr">其他</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="category-info">
+                <div class="category-text">
+                    <ul class="info-list clearfix">
+                        <li><a href='http://www.qipeiren.com/Supply/-%B6%AB%B7%E7-107002p.htm' target='_blank'>东风车门配件汇集销售</a></li><li><a href='http://www.qipeiren.com/Supply/-%D6%D8%C6%FB%BA%C0%BF%A8-107001p.htm' target='_blank'>豪沃驾驶室总成供销中</a></li><li><a href='http://www.qipeiren.com/Supply/-%B6%AB%B7%E7-106001p.htm' target='_blank'>东风启动机原厂配件供应</a></li><li><a href='http://www.qipeiren.com/Supply/%CC%EC%D4%CB--106001p.htm' target='_blank'>天运起动机品牌供应商家</a></li>
+                    </ul>
+                </div>
+                <div class="category-ad"><a href='http://www.qipeiren.com/ad.asp?357' target='_blank' class='g'><img src='/UploadFile/WebDataPic/201131917163356543.gif' width='95' height='65' alt='#' /><br />东风系列驾驶室</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B6%AB%B7%E7%B5%E7%C6%F7&actionid=1' target='_blank' class='g'><img src='/UploadFile/WebDataPic/201121811534797772.jpg' width='95' height='65' alt='#' /><br />东风汽车电器</a></div>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <div class="category-list">
+                <div class="ct">
+                    <div class="category-title clearfix">
+                        <h4><a href="http://www.qipeiren.com/Supply/105000p.htm" target="_blank">转向系统</a></h4>
+                        <span class="category-pop"><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%D7%AA%CF%F2%BD%DA&actionid=1' target='_blank'>转向节</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%D7%AA%CF%F2%C6%F7&actionid=1' target='_blank'>转向器</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%D7%AA%CF%F2%BB%FA&actionid=1' target='_blank'>转向机</a></span>
+                    </div>
+                    <ul class="clearfix">
+                        <li><a href="http://www.qipeiren.com/Supply/105001p.htm" target="_blank" class="h">方向机</a><a href="http://www.qipeiren.com/Supply/105002p.htm" target="_blank">方向盘</a><a href="http://www.qipeiren.com/Supply/105003p.htm" target="_blank">转向拉杆</a><a href="http://www.qipeiren.com/Supply/105004p.htm" target="_blank">动力转向油罐</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/105006p.htm" target="_blank">随动器</a><a href="http://www.qipeiren.com/Supply/105005p.htm" target="_blank">转向传动装置</a><a href="http://www.qipeiren.com/Supply/105007p.htm" target="_blank">转向垂臂</a><a href="http://www.qipeiren.com/Supply/105009p.htm" target="_blank">转向节</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/105010p.htm" target="_blank">主销及球头销</a><a href="http://www.qipeiren.com/Supply/105008p.htm" target="_blank" class="nomr">其他转向</a></li>
+                    </ul>
+                </div>
+                <div class="ct">
+                    <div class="category-title clearfix">
+                        <h4><a href="http://www.qipeiren.com/Supply/108000p.htm" target="_blank">通用件</a></h4>
+                        <span class="category-pop"><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%D0%DE%B0%FC' target='_blank'>修包</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%B6%AB%B7%E7%D3%CD%B7%E2' target='_blank'>东风油封</a></span>
+                    </div>
+                    <ul class="clearfix">
+                        <li><a href="http://www.qipeiren.com/Supply/108001p.htm" target="_blank">油品</a><a href="http://www.qipeiren.com/Supply/108002p.htm" target="_blank" class="h">轴承</a><a href="http://www.qipeiren.com/Supply/108003p.htm" target="_blank">油封</a><a href="http://www.qipeiren.com/Supply/108004p.htm" target="_blank">密封件</a><a href="http://www.qipeiren.com/Supply/108014p.htm" target="_blank">液压件</a><a href="http://www.qipeiren.com/Supply/108005p.htm" target="_blank">油漆</a><a href="http://www.qipeiren.com/Supply/108006p.htm" target="_blank" class="nomr">车用工具</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/108007p.htm" target="_blank">衬套</a><a href="http://www.qipeiren.com/Supply/108008p.htm" target="_blank">管路</a><a href="http://www.qipeiren.com/Supply/108009p.htm" target="_blank">紧固件</a><a href="http://www.qipeiren.com/Supply/108010p.htm" target="_blank">标准件</a><a href="http://www.qipeiren.com/Supply/108011p.htm" target="_blank">塑料件</a><a href="http://www.qipeiren.com/Supply/108012p.htm" target="_blank">毛胚铸件</a><a href="http://www.qipeiren.com/Supply/108013p.htm" target="_blank" class="nomr">其他</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="category-info">
+                <div class="category-text">
+                    <ul class="info-list clearfix">
+                        <li><a href='http://www.qipeiren.com/Supply/-%B6%AB%B7%E7%CC%EC%BD%F5-108008p.htm' target='_blank'>天锦专用管道优质供应</a></li><li><a href='http://www.qipeiren.com/Supply/%B6%AB%B7%E7--105006p.htm' target='_blank'>东风随动器优质商家推荐</a></li><li><a href='http://www.qipeiren.com/Supply/205013p.htm' target='_blank'>天龙标准件商家精选</a></li><li><a href='http://www.qipeiren.com/Supply/%B7%E7%C9%F1--108004p.htm' target='_blank'>优质商家供应风神密封件</a></li>
+                    </ul>
+                </div>
+                <div class="category-ad"><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%D7%AA%CF%F2&actionid=1' target='_blank' class='g'><img src='/UploadFile/WebDataPic/201121814515813938.jpg' width='95' height='65' alt='#' /><br />转向系统配件</a><a href='http://www.qipeiren.com/Supply/index.asp?KeyWord=%D3%CD%B7%E2&actionid=1' target='_blank' class='g'><img src='/UploadFile/WebDataPic/20112161643786835.jpg' width='95' height='65' alt='#' /><br />全车通用件</a></div>
+            </div>
+        </div>
+
+        <div class="category-item category-last">
+            <div class="category-list">
+                <div class="ct">
+                    <div class="category-title clearfix">
+                        <h4><a href="http://www.qipeiren.com/Supply/" target="_blank">整车</a></h4>
+                        <span class="category-pop"></span>
+                    </div>
+                    <ul class="clearfix">
+                        <li><a href="http://www.qipeiren.com/Supply/201000p.htm" target="_blank" class="h">载货汽车</a><a href="http://www.qipeiren.com/Supply/202000p.htm" target="_blank">越野汽车</a><a href="http://www.qipeiren.com/Supply/203000p.htm" target="_blank">自卸汽车</a><a href="http://www.qipeiren.com/Supply/204000p.htm" target="_blank">牵引汽车</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/206000p.htm" target="_blank">客车</a><a href="http://www.qipeiren.com/Supply/207000p.htm" target="_blank">轿车</a><a href="http://www.qipeiren.com/Supply/208000p.htm" target="_blank">挂车</a><a href="http://www.qipeiren.com/Supply/205000p.htm" target="_blank">专用汽车</a><a href="http://www.qipeiren.com/Supply/209000p.htm" target="_blank">客车非完整车辆</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/210000p.htm" target="_blank">货车非完整车辆</a><a href="http://www.qipeiren.com/Supply/211000p.htm" target="_blank" class="nomr">其他车辆</a></li>
+                    </ul>
+                </div>
+                <div class="ct">
+                    <div class="category-title clearfix">
+                        <h4><a href="http://www.qipeiren.com/Supply/205000p.htm" target="_blank">专用汽车</a></h4>
+                        <span class="category-pop"></span>
+                    </div>
+                    <ul class="clearfix">
+                        <li><a href="http://www.qipeiren.com/Supply/205001p.htm" target="_blank">道路清扫车</a><a href="http://www.qipeiren.com/Supply/205002p.htm" target="_blank" class="h">高压清洗车</a><a href="http://www.qipeiren.com/Supply/205003p.htm" target="_blank">垃圾车</a><a href="http://www.qipeiren.com/Supply/205004p.htm" target="_blank">喷洒车</a><a href="http://www.qipeiren.com/Supply/205005p.htm" target="_blank">液罐车</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/205011p.htm" target="_blank">高空作业车</a><a href="http://www.qipeiren.com/Supply/205009p.htm" target="_blank">粉粒物料运输车</a><a href="http://www.qipeiren.com/Supply/205010p.htm" target="_blank">混凝土搅拌车</a><a href="http://www.qipeiren.com/Supply/205013p.htm" target="_blank" class="nomr">救险车</a></li>
+                        <li><a href="http://www.qipeiren.com/Supply/205012p.htm" target="_blank">道路清障车</a><a href="http://www.qipeiren.com/Supply/205006p.htm" target="_blank">消防车</a><a href="http://www.qipeiren.com/Supply/205007p.htm" target="_blank">吸污车</a><a href="http://www.qipeiren.com/Supply/205008p.htm" target="_blank">保温车</a><a href="http://www.qipeiren.com/Supply/205020p.htm" target="_blank">其他专用车</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="category-info">
+                <div class="category-text">
+                    <ul class="info-list clearfix">
+                        <li><a href='http://www.qipeiren.com/Supply/205002p.htm' target='_blank'>高压清洗车好车好品质</a></li><li><a href='http://www.qipeiren.com/Supply/205016p.htm' target='_blank'>专业的教练车供应信息</a></li><li><a href='http://www.qipeiren.com/Supply/205004p.htm' target='_blank'>喷洒专用车安全放心</a></li><li><a href='http://www.qipeiren.com/Supply/205011p.htm' target='_blank'>高空作业专用车汇集</a></li>
+                    </ul>
+                </div>
+                <div class="category-ad"><a href='http://www.qipeiren.com/Supply/205000p.htm' target='_blank' class='g'><img src='/UploadFile/WebDataPic/20127199265451746.jpg' width='95' height='65' alt='#' /><br />专用车精选</a><a href='http://www.qipeiren.com/Supply/204000p.htm' target='_blank' class='g'><img src='/UploadFile/WebDataPic/20127199252368879.jpg' width='95' height='65' alt='#' /><br />牵引车系列推荐</a></div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="layout grid-m">
+    <div id="links" class="box">
+        <div class="bd"><strong>友情链接：</strong> <a target="_blank" href="http://www.qipeiren.com/">汽配人网</a>&nbsp;
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="foot-nav">
+        <a
+                href="http://www.qipeiren.com/About/" target="_blank" rel="nofollow">关于我们</a> | <a
+            href="http://www.qipeiren.com/About/Exempt.asp" target="_blank" rel="nofollow">法律声明</a> | <a
+            href="http://www.qipeiren.com/About/Link.asp" target="_blank">友情链接</a> | <a
+            href="http://www.qipeiren.com/sitemap.html" target="_blank">网站地图</a> | <a
+            href="http://www.qipeiren.com/peijian/" target="_blank">产品大全</a> | <a
+            href="http://www.qipeiren.com/chanpin/" target="_blank">产品归档</a> | <a
+            href="http://www.qipeiren.com/qiye/" target="_blank">企业名录</a> | <a
+            href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">鄂ICP备05024915号</a>
+    </div>
+    <div class="copyright">
+        <p>版权所有 汽配人网 qipeiren@qipeiren.com 服务热线：0719-8311727</p>
+        <p>Copyright &copy; 2005-2012 qipeiren.com, All Rights Reserved</p><p>主管单位：中国(十堰)汽配城管理办公室</p>
+    </div>
+</div>
+	<span style="display:none">
+	<script type="text/javascript">
+        document.write("<scr"+"ipt src=\"http://js.users.51.la/378264.js\" language=\"JavaScript\"></sc"+"ript>")
+    </script>
+	</span>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=0&amp;mini=1&amp;pos=left&amp;uid=724880" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    var bds_config={"bdTop":250};
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END -->
+
+</div>
+</body>
+</html>

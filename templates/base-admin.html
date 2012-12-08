@@ -80,10 +80,13 @@
                                     <li><a href="{% url add_store %}">增加商铺</a></li>
 
                                     <li><a href="{% url show_sort %}">分类管理</a></li>
-                                    <li><a href="{% url add_brand %}">品牌管理</a></li>
+{#                                    <li><a href="{% url add_brand %}">品牌管理</a></li>#}
+                                    <li><a href="{% url ad_manage %}">AD管理</a></li>
+                                    <li><a href="{% url m_links %}">友情链接管理</a></li>
+
                                     <hr>
                                 {% endif %}
-                                    <li><a href="/item/add/{{ request.user }}/">增加商品</a></li>
+                                    <li><a href="/goods/item/add/{{ request.user }}/">增加商品</a></li>
                                     <li><a href="{% url manage_items %}">商品管理</a></li>
                                     <li><a href="#">更改商铺信息</a></li>
                                     <hr>

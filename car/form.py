@@ -2,7 +2,7 @@
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from django.forms import ModelForm,Textarea
-from models import Items,Stores,Sorts,Brands
+from models import Items,Stores,Sorts,Brands,Ads,Links
 from django.utils.translation import ugettext_lazy as _
 
 class ItemsForm(ModelForm):
@@ -12,7 +12,6 @@ class ItemsForm(ModelForm):
         widgets={
             'description':Textarea(attrs={'cols':10,'rows':10}),
             }
-
 
 class StoreForm(ModelForm):
     class Meta:
@@ -40,3 +39,11 @@ class AddForm(forms.Form):
         if not name:
             return self.cleaned_data["name"]
         return HttpResponse('<script>alert("该项已经存在,请检查名称");history.go(-1);</script>')
+
+class AdForm(ModelForm):
+    class Meta:
+        model=Ads
+
+class LinkForm(ModelForm):
+    class Meta:
+        model=Links
