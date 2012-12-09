@@ -80,10 +80,11 @@ class Messages(models.Model):
 
 
 class Ads(models.Model):
-    loc1=models.ImageField(verbose_name='loc1',upload_to="ad")
-    loc2=models.ImageField(verbose_name='loc2',upload_to="ad")
-    loc3=models.ImageField(verbose_name='loc3',upload_to="ad")
-    loc4=models.ImageField(verbose_name='loc4',upload_to="ad")
+    loc1=models.ImageField(verbose_name='首页小图1',upload_to="ad")
+    loc2=models.ImageField(verbose_name='首页小图2',upload_to="ad")
+    loc3=models.ImageField(verbose_name='首页小图3',upload_to="ad")
+    loc4=models.ImageField(verbose_name='首页小图4',upload_to="ad")
+    loc5=models.ImageField(verbose_name='首页小图5',upload_to="ad")
 
 
 class Links(models.Model):

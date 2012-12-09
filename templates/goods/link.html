@@ -17,7 +17,7 @@
             <tr>
                 <th>{{ link.site }}</th>
                 <th><a href="{{ link.url }}">{{ link.url }}</a></th>
-                <th><a href="dele/{{ link.id }}" class="btn btn-danger" onclick="{if(confirm('确定要删除链接 『{{ link.site }}』 吗?\n')){return true;}return false;}">删除</a></th>
+                <th><a href="/goods/links/dele/{{ link.id }}/" class="btn btn-danger" onClick="{if(confirm('确定要删除 『{{ link.site }}』 吗?\n')){return true;}return false;}">删除</a></th>
             </tr>
         {% endfor %}
      </tbody>
@@ -26,6 +26,7 @@
 
     </div>
     <hr>
+    <h4>添加</h4>
     <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
         <table border="0" cellpadding="0" >
             {{ form.as_p }}

@@ -28,10 +28,10 @@ by: liu <roccoliu@gmail.com>
 }
 
 body, .box .hd, .box .ft, .box .list-up, .box .list-down, .info-list li, .login-panel button, .login-panel a, .quick-menu li, .search b, .search-panel .search-panel-field, .search-panel input, .search-panel button, #news .qprser a {
-	background: url(images_11/sprite.png) no-repeat; 
+	background-color: #ffffff;
 }
 #top-header .nav, .nav ul, .nav li, .nav .current, .nav .current a, .nav b {
-	background: url(images_11/nav.png) no-repeat; 
+	background-color: #808080;
 }
 
 body {
@@ -89,7 +89,7 @@ a.g:hover, a.g:active {
 .box .list-down-h {
 	position: absolute;height: 13px; width: 13px; left: 210px; top:96px; background-position: -153px -18px; 
 }
-/** ÃÔÄãµ¼º½ **/
+/** ï¿½ï¿½ï¿½ãµ¼ï¿½ï¿½ **/
 #mini-nav {
     position: relative; width: 100%; height: 27px; 
 }
@@ -99,7 +99,7 @@ a.g:hover, a.g:active {
 #mini-nav a:hover {
 	color: #ff6600; 
 }
-/* µÇÂ¼Ãæ°å */
+/* ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ */
 .login-panel {
 	position: absolute; top: 2px; left: 365px; z-index: 99; 
 }
@@ -121,14 +121,14 @@ a.g:hover, a.g:active {
 .login-panel a {
     width: 65px; background-position: -15px -34px; background-color: #ff6600; text-indent: -999em; 
 }
-/* µÇÂ¼ÐÅÏ¢ */
+/* ï¿½ï¿½Â¼ï¿½ï¿½Ï¢ */
 .login-info, .login-out, .quick-menu {
 	height: 21px; margin-top: 2px; line-height: 21px; 
 }
 .login-info, .login-out {
 	float: left; 
 }
-/* ¿ì½Ý²Ëµ¥ */
+/* ï¿½ï¿½Ý²Ëµï¿½ */
 .quick-menu {
 	float: right; 
 }
@@ -147,11 +147,11 @@ a.g:hover, a.g:active {
 .quick-menu .title-service li {
 	position: relative;  padding: 0 10px;  float: none; 
 }
-/** Í·²¿ **/
+/** Í·ï¿½ï¿½ **/
 #top-header {
 	width: 100%; height: 129px; 
 }
-/* ±êÖ¾ */
+/* ï¿½ï¿½Ö¾ */
 #top-header .logo-search {
 	position: relative; height: 84px; 
 }
@@ -164,7 +164,7 @@ a.g:hover, a.g:active {
 .logo span {
 	position: absolute; color: #000000; top: 5px; left: 159px; 
 }
-/* ËÑË÷Ñ¡Ïî¿¨ */
+/* ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½î¿¨ */
 .search {
 	float: right; width: 600px; padding-top: 10px; 
 }
@@ -204,7 +204,7 @@ a.g:hover, a.g:active {
 .search-tab .current a {
     height: 23px; line-height: 23px; padding-bottom: 1px; border: 1px solid #e5e5e5; border-bottom: none; color: #ff6600; font-weight: bold; background-color: #f5f5f5; 
 }
-/* ËÑË÷Ãæ°å */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .search-panel {
 	clear: left; position: relative; width: 518px; border: 1px solid #e5e5e5; background-color: #f5f5f5; top: -1px; z-index: 5; 
 }
@@ -244,7 +244,7 @@ a.g:hover, a.g:active {
 .search-panel a {
 	position: absolute; top: 10px; right: -58px; 
 }
-/* µ¼º½ */
+/* ï¿½ï¿½ï¿½ï¿½ */
 #top-header .nav {
 	position: relative; height: 35px; line-height: 35px; font-size: 14px; font-weight: bold; background-position: 0 0; background-repeat: repeat-x; 
 }
@@ -289,8 +289,8 @@ a.g:hover, a.g:active {
 .left-col {
 	float: left; width: 470px; height: 339px; overflow: hidden; 
 }
-/** ½¹µãÍ¼ÂÖ»» **/
-/* Í¼Æ¬ÂÖ»» common style */
+/** ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Ö»ï¿½ **/
+/* Í¼Æ¬ï¿½Ö»ï¿½ common style */
 .slider { 
 	position: relative; overflow: hidden; 
 }
@@ -312,7 +312,7 @@ a.g:hover, a.g:active {
 .slider .num li.on {
 	width: 18px; height: 18px; margin-top: -2px; font: bold 11px/18px tahoma, \5b8b\4f53; color: #fff; background: #ff6600; overflow: hidden; 
 }
-/* ÂÖ»» */
+/* ï¿½Ö»ï¿½ */
 #main-slider {
 	position: relative; float: left; width: 470px; overflow: hidden; 
 }
@@ -326,14 +326,14 @@ a.g:hover, a.g:active {
 	width: 470px; height: 168px; 
 }
 
-/** ×îÐÂ¹©Ó¦ **/
+/** ï¿½ï¿½ï¿½Â¹ï¿½Ó¦ **/
 #supply {
 	position: relative; float: left; width: 230px; overflow: hidden; 
 }
 #supply .bd {
 	height:110px; overflow: hidden;
 }
-/** ×îÐÂÇó¹º **/
+/** ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ **/
 #buy {
 	position: relative; float: right; width: 230px; overflow: hidden; 
 }
@@ -344,7 +344,7 @@ a.g:hover, a.g:active {
 .right-col {
 	float: right; width: 230px; height: 339px; overflow: hidden; 
 }
-/** °ïÖú×¢²áµÇÂ¼ **/
+/** ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½Â¼ **/
 #help {
 	width: 230px; margin-bottom: 5px; overflow: hidden; 
 }
@@ -370,8 +370,8 @@ a.g:hover, a.g:active {
 	margin-left: -131px; 
 }
 
-/** ÍøÕ¾²úÆ·¶¯Ì¬ **/
-/* Ñ¡Ïî¿¨ common style */
+/** ï¿½ï¿½Õ¾ï¿½ï¿½Æ·ï¿½ï¿½Ì¬ **/
+/* Ñ¡ï¿½î¿¨ common style */
 .tab-t {
 	height: 29px; 
 }
@@ -393,7 +393,7 @@ a.g:hover, a.g:active {
 .tab-t .selected a:hover {
 	color: #ff6600; 
 }
-/* ÇÐ»» */
+/* ï¿½Ð»ï¿½ */
 #news {
 	position: relative; width: 230px; overflow: hidden; 
 }
@@ -413,14 +413,14 @@ a.g:hover, a.g:active {
 	float: left; padding-left: 8px; margin-right: 8px; font-weight: bold; color: #ff6600; background-position: -202px -57px; 
 }
 
-/** ¹©Ó¦ÉÌ¾«Ñ¡ **/
+/** ï¿½ï¿½Ó¦ï¿½Ì¾ï¿½Ñ¡ **/
 #supplier {
 	position: relative; width: 230px; overflow: hidden; 
 }
 #supplier .bd {
 	height:110px; overflow: hidden;
 }
-/** ½ñÈÕÈÈ¼ö **/
+/** ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½ **/
 #recommend {
 	position: relative; width: 230px; margin-bottom: 0; overflow: hidden; 
 }
@@ -443,7 +443,7 @@ a.g:hover, a.g:active {
 	vertical-align: top; 
 }
 
-/** ×îÐÂ×ÊÑ¶ **/
+/** ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¶ **/
 #latest {
 	position: relative; width: 230px; overflow: hidden; 
 }
@@ -457,7 +457,7 @@ a.g:hover, a.g:active {
 	padding: 0 10px 5px; 
 }
 
-/** Í¨À¸¹ã¸æ **/
+/** Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ **/
 #banner {
 	position: relative; width: 100%; overflow: hidden; 
 }
@@ -474,7 +474,7 @@ a.g:hover, a.g:active {
 	margin-right: 0; 
 }
 
-/** ²úÆ··ÖÀà **/
+/** ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ **/
 .category-main {
 	position: relative; margin-bottom: 10px; border: 1px solid #e5e5e5; *zoom: 1; 
 }
@@ -544,7 +544,7 @@ a.g:hover, a.g:active {
 	height: 20px; line-height: 20px; background-position: -202px -33px; 
 }
 
-/** ÐÐÒµ×ÊÑ¶ **/
+/** ï¿½ï¿½Òµï¿½ï¿½Ñ¶ **/
 #industry {
 	position: relative; height: 285px; padding-left: 250px; overflow: hidden; 
 }
@@ -555,7 +555,7 @@ a.g:hover, a.g:active {
 	padding: 5px; background: url(images_11/industry_bg.png) no-repeat; 
 }
 #industry .indcon-focus h3 {
-	height: 24px; padding: 0 5px; line-height: 24px; font-family: "ºÚÌå"; font-weight: 400; font-size: 16px; text-align: center; overflow: hidden; 
+	height: 24px; padding: 0 5px; line-height: 24px; font-family: "ï¿½ï¿½ï¿½ï¿½"; font-weight: 400; font-size: 16px; text-align: center; overflow: hidden; 
 }
 #industry .indcon-focus p {
 	height: 46px; line-height: 15px; text-indent: 2em; 
@@ -579,7 +579,7 @@ a.g:hover, a.g:active {
 	display: inline; float: left; width: 240px; height: 90px; margin-left: -250px; margin-top: 195px; 
 }
 
-/** ×¨Ìâ±¨µÀ **/
+/** ×¨ï¿½â±¨ï¿½ï¿½ **/
 #item {
 	position: relative; width: 310px; overflow: hidden; 
 }
@@ -611,7 +611,7 @@ a.g:hover, a.g:active {
 	vertical-align: top; 
 }
 
-/** ÆûÅäÖªÊ¶ **/
+/** ï¿½ï¿½ï¿½ï¿½ÖªÊ¶ **/
 #redi {
 	position: relative; width: 310px; overflow: hidden; 
 }
@@ -634,7 +634,7 @@ a.g:hover, a.g:active {
 	margin-top: 10px; 
 }
 
-/** ³µÐÍ¿â **/
+/** ï¿½ï¿½ï¿½Í¿ï¿½ **/
 #model {
 	position: relative; width: 310px; overflow: hidden; 
 }
@@ -669,7 +669,7 @@ a.g:hover, a.g:active {
 	color: #333333; 
 }
 
-/** ³µÐÍ¿â **/
+/** ï¿½ï¿½ï¿½Í¿ï¿½ **/
 #books {
 	position: relative; width: 310px; overflow: hidden; 
 }
@@ -695,7 +695,7 @@ a.g:hover, a.g:active {
 	width: 288px; line-height: 22px; margin-left: -117px; 
 }
 
-/** ÓÑÇéÁ´½Ó **/
+/** ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ **/
 #links {
 	position: relative;  width: 100%; overflow: hidden; 
 }
@@ -703,7 +703,7 @@ a.g:hover, a.g:active {
 	border-top: 1px solid #e5e5e5; 
 }
 
-/** Ò³½Å **/
+/** Ò³ï¿½ï¿½ **/
 #footer {
 	clear: both; width: 100%; border-top: 1px solid #e5e5e5; text-align: center; line-height: 22px; 
 }

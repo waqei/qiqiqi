@@ -6,8 +6,20 @@ from django.template import RequestContext
 
 from form import ItemsForm,StoreForm,AddForm,AdForm,LinkForm
 from car.models import *
+import re
 
 
+##############################工具函数############################
+#验证是否是正整数
+def IsNUM(varObj):
+    rule = '^\+?[1-9][0-9]*$'
+    match = re.match( rule , varObj )
+    if match:
+        return True
+    return False
+
+
+##################################################################
 
 def addItems(request,muser):
     """
@@ -116,14 +128,18 @@ def add_sort(request,parent):
     template_var['form']=form
     return  render_to_response("goods/add_sort.html",template_var,context_instance=RequestContext(request))
 
-#删除分类
-def dele_sort(request,id):
-    if id :
-        p=Sorts.objects.filter(id=id)
-        p.delete()
-        return HttpResponse('<script>alert("删除成功");top.location="/goods/show_sort/";</script>')
+
+#删除
+def dele(request,id,model):
+    if IsNUM(id):
+        p=model.objects.filter(id=id)
+        if p:
+            p.delete()
+        else:
+            return HttpResponse('<script>alert("删除对象不存在");top.location="/accounts/index";</script>')
+        return HttpResponse('<script>alert("删除成功");location.href=document.referrer;</script>')
     else:
-        return HttpResponseRedirect(reverse('show_sort'))
+        return HttpResponse('<script>alert("删除错误!");top.location="/accounts/index";</script>')
 
 
 
@@ -158,11 +174,3 @@ def links(request):
     template_var['alllinks']=alllinks
     template_var['form']=form
     return  render_to_response('goods/link.html',template_var,context_instance=RequestContext(request))
-
-def dele_link(request,id):
-    if id:
-        tar=Links.objects.filter(id=id)
-        tar.delete()
-        return HttpResponse('<script>alert("删除成功");top.location="/goods/links/";</script>')
-    else:
-        return HttpResponseRedirect(reverse('m_links'))

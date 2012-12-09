@@ -38,11 +38,12 @@ class AddForm(forms.Form):
         name = Sorts.objects.filter(name__iexact=self.cleaned_data["name"])
         if not name:
             return self.cleaned_data["name"]
-        return HttpResponse('<script>alert("该项已经存在,请检查名称");history.go(-1);</script>')
+        raise forms.ValidationError(_(u"该项已经被使用请使用其他的"))
 
 class AdForm(ModelForm):
     class Meta:
         model=Ads
+
 
 class LinkForm(ModelForm):
     class Meta:

@@ -24,7 +24,7 @@ body, .box .hd, .box .ft, .box .list-up, .box .list-down, .info-list li, .login-
     background: url(images_11/sprite.png) no-repeat;
 }
 #top-header .nav, .nav ul, .nav li, .nav .current, .nav .current a, .nav b {
-    background: url(images_11/nav.png) no-repeat;
+    background-color: #808080;
 }
 
 body {

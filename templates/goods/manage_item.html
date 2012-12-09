@@ -28,15 +28,17 @@
             </ul>
         </div>
     <hr>
-    <table bgcolor="#faebd7" align="center">
+    <table class="table table-bordered">
         <tr><td>图片</td><td>商品名</td><td>所属商铺</td><td>价格</td><td>功能</td></tr>
         {% for item in allitem %}
         <tr>
-            <td width="150px">{{ item.img.get_url }}</td>
+            <td width="100px"><img src="{{ item.img.url }}" alt="{{ item.it_name }}"></td>
             <td width="150px">{{ item.it_name }}</td>
             <td width="150px">{{ item.company }}</td>
             <td>{{ item.price }}</td>
-            <td width="50px" align="center"><a href="#" class="btn-mini btn-primary">修改</a><br><a href="#" class="btn-mini btn-danger">删除</a></td>
+            <td width="50px" align="center">
+                <a href="dele/{{ item.id }}" class="btn btn-danger" onClick="{if(confirm('确定要删除 『{{ item.it_name }}』 吗?\n')){return true;}return false;}">删除</a>
+            </td>
         </tr>
         {% endfor %}
     </table>

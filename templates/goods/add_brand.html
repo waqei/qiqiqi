@@ -1,42 +1,5 @@
 {% extends "base-admin.html" %}
 {% block title %}添加品牌{% endblock %}
-{#{% block head %}#}
-{#    {% load static %}#}
-{#    <link rel="stylesheet" href="{% static "uploadify.css" %}"/>#}
-{#    <script type="text/javascript" src="{% static "jquery.js" %}"></script>#}
-{#    <script type="text/javascript" src="{% static "swfobject.js" %}"></script>#}
-{#    <script type="text/javascript" src="{% static "jquery.uploadify.v2.1.4.min.js" %}"></script>#}
-{##}
-{#    <script type="text/javascript">#}
-{#        $(document).ready(function() {#}
-{#            $('#file_upload').uploadify({#}
-{#                'uploader'  : '/templates/plugin/uploadify_214/uploadify.swf',#}
-{#                'script'    : '{%url add_brand %}',#}
-{#                'cancelImg' : '/site_media/plugin/uploadify_214/cancel.png',#}
-{#                'folder'    : '/templates/static/image/image/',#}
-{#                'auto'      : false,//#}
-{#                'multi': false,//设置可以上传多个文件#}
-{#                'queueSizeLimit':20,//设置可以同时20个文件#}
-{#                'removeCompleted':false,//#}
-{#                'sizeLimit':10240000,//设置上传文件大小单位kb#}
-{#                'fileExt':'*.jpg;*.gif;*.png',//设置上传文件类型为常用图片格式#}
-{#                'fileDesc':'Image Files',#}
-{#                'onInit': function () {},#}
-{#                'onError' : function (event,ID,fileObj,errorObj) {#}
-{#                    $('#id_span_msg').html("上传失败，错误码:"+errorObj.type+" "+errorObj.info);#}
-{#                },#}
-{#                'onSelect': function (e, queueId, fileObj) {#}
-{#                    $('#id_span_msg').html("");#}
-{#                },#}
-{#                'onAllComplete': function (event, data) {#}
-{#                    if(data.filesUploaded>=1){#}
-{#                        $('#id_span_msg').html("上传成功！");#}
-{#                    }#}
-{#                }#}
-{#            });#}
-{#        });#}
-{#    </script>#}
-{#{% endblock %}#}
 {% block main %}
     <div>
         <h3>全部品牌</h3>

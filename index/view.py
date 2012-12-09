@@ -5,10 +5,23 @@ from django.http import HttpResponse
 from django.template import RequestContext
 #from django.template.loader import get_template
 #from django.template import Template,Context
-from car.models import Items,Stores
+from car.models import *
 
 def index(request):
-    return render_to_response('index/index2.html')
+    template_var={}
+    #links
+    links=Links.objects.all()
+    template_var['links']=links
+
+    #sorts
+    parents=Sorts.objects.filter(level= 0)
+    template_var['parents']=parents
+
+    #ad_5
+    ad_5=Ads.objects.
+    template_var['ad_5']=ad_5
+
+    return render_to_response("index/index2.html",template_var,context_instance=RequestContext(request))
 
 def err_404(request):
     return  render_to_response('404.html')
@@ -32,3 +45,4 @@ def ad(request):
 
 def test(request):
     return render_to_response('accounts/test.html')
+
