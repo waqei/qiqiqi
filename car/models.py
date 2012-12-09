@@ -85,6 +85,8 @@ class Ads(models.Model):
     loc3=models.ImageField(verbose_name='首页小图3',upload_to="ad")
     loc4=models.ImageField(verbose_name='首页小图4',upload_to="ad")
     loc5=models.ImageField(verbose_name='首页小图5',upload_to="ad")
+    def __unicode__(self):
+        return self.loc1,self.loc2,self.loc3,self.loc4,self.loc5
 
 
 class Links(models.Model):

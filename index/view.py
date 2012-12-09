@@ -18,7 +18,7 @@ def index(request):
     template_var['parents']=parents
 
     #ad_5
-    ad_5=Ads.objects.
+    ad_5=Ads.objects.latest('id')
     template_var['ad_5']=ad_5
 
     return render_to_response("index/index2.html",template_var,context_instance=RequestContext(request))
