@@ -1,6 +1,7 @@
 #coding=utf-8
 from django.conf.urls import patterns, url
 from car.models import Links,Sorts,Items
+from form import Ad6Form,AdmiddleForm
 
 urlpatterns = patterns('',
     ##item
@@ -17,7 +18,9 @@ urlpatterns = patterns('',
     url(r'^store/add','car.views.addStore',name="add_store"),
 
     ##ad
-    url(r'^ad/','car.views.ad',name='ad_manage'),
+    url(r'^ad/$','car.views.ad',name='ad_manage'),
+    url(r'^ad/ad6/$','car.views.ad_m',{'Form':Ad6Form},name='ad_6'),
+    url(r'^ad/admiddle/$','car.views.ad_m',{'Form':AdmiddleForm},name='ad_middle'),
 
     ##links
     url(r'^links/$','car.views.links',name='links'),

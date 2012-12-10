@@ -2,7 +2,7 @@
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from django.forms import ModelForm,Textarea
-from models import Items,Stores,Sorts,Brands,Ads,Links
+from models import Items,Stores,Sorts,Brands,Ad_6,Links,Ad_middle
 from django.utils.translation import ugettext_lazy as _
 
 class ItemsForm(ModelForm):
@@ -40,10 +40,13 @@ class AddForm(forms.Form):
             return self.cleaned_data["name"]
         raise forms.ValidationError(_(u"该项已经被使用请使用其他的"))
 
-class AdForm(ModelForm):
+class Ad6Form(ModelForm):
     class Meta:
-        model=Ads
+        model=Ad_6
 
+class AdmiddleForm(ModelForm):
+    class Meta:
+        model=Ad_middle
 
 class LinkForm(ModelForm):
     class Meta:

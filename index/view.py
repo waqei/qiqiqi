@@ -11,15 +11,19 @@ def index(request):
     template_var={}
     #links
     links=Links.objects.all()
-    template_var['links']=links
-
     #sorts
     parents=Sorts.objects.filter(level= 0)
-    template_var['parents']=parents
-
     #ad_5
-    ad_5=Ads.objects.latest('id')
-    template_var['ad_5']=ad_5
+    ad_6=Ad_6.objects.latest('id')
+    #ad_middle
+    ad_middle=Ad_middle.objects.latest('id')
+
+    template_var={
+        'links':links,
+        'parents':parents,
+        'ad_6':ad_6,
+        'ad_middle':ad_middle,
+    }
 
     return render_to_response("index/index2.html",template_var,context_instance=RequestContext(request))
 
@@ -36,12 +40,17 @@ def search(request,model,name):
         return HttpResponse("<script>alert('输入错误!');history.go(-1);</script>")
     return render_to_response("index/result.html",template_var,context_instance=RequestContext(request))
 
+def classify(request,sort):
+    template_var={}
+    if sort:
+        items = Items.objects.filter(sort__icontains=sort)
+        if items =="":
+            HttpResponse("<script>alert('不存在该分类!');history.go(-1);</script>")
+    else:
+        items=Items.objects.all()
 
-
-#ad manager
-def ad(request):
-    pass
-
+    template_var['items'] = items
+    return render_to_response('index/classify.html',template_var,context_instance=RequestContext(request))
 
 def test(request):
     return render_to_response('accounts/test.html')

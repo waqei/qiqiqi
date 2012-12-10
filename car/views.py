@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from form import ItemsForm,StoreForm,AddForm,AdForm,LinkForm
+from form import ItemsForm,StoreForm,AddForm,LinkForm
 from car.models import *
 import re
 
@@ -145,17 +145,22 @@ def dele(request,id,model):
 
 #广告管理
 def ad(request):
+    return render_to_response('goods/ad/ad.html',context_instance=RequestContext(request))
+
+
+def ad_m(request,Form):
     template_var={}
-    form=AdForm()
+    form=Form()
     if request.method == 'POST':
-        form=AdForm(request.POST,request.FILES)
+        form=Form(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponse('<script>alert("添加成功");top.location="/goods/ad";</script>')
         else:
             HttpResponseRedirect(reverse('ad_manage'))
     template_var['form']=form
-    return render_to_response('goods/ad.html',template_var,context_instance=RequestContext(request))
+    return render_to_response('goods/ad/ad_6.html',template_var,context_instance=RequestContext(request))
+
 
 
 #友情链接管理

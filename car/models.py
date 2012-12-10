@@ -79,14 +79,36 @@ class Messages(models.Model):
         return self.contact_number
 
 
-class Ads(models.Model):
+class Ad_6(models.Model):
+    url1=models.URLField(verbose_name='图片链接1')
     loc1=models.ImageField(verbose_name='首页小图1',upload_to="ad")
+
+    url2=models.URLField(verbose_name='图片链接2')
     loc2=models.ImageField(verbose_name='首页小图2',upload_to="ad")
+
+    url3=models.URLField(verbose_name='图片链接3')
     loc3=models.ImageField(verbose_name='首页小图3',upload_to="ad")
+
+    url4=models.URLField(verbose_name='图片链接4')
     loc4=models.ImageField(verbose_name='首页小图4',upload_to="ad")
+
+    url5=models.URLField(verbose_name='图片链接5')
     loc5=models.ImageField(verbose_name='首页小图5',upload_to="ad")
-    def __unicode__(self):
-        return self.loc1,self.loc2,self.loc3,self.loc4,self.loc5
+
+    url6=models.URLField(verbose_name='图片链接6')
+    loc6=models.ImageField(verbose_name='首页小图6',upload_to="ad")
+
+
+class Ad_middle(models.Model):
+    url1=models.URLField(verbose_name='图片链接1')
+    loc1=models.ImageField(verbose_name='首页中图1',upload_to="ad_middle")
+
+    url2=models.URLField(verbose_name='图片链接2')
+    loc2=models.ImageField(verbose_name='首页中图2',upload_to="ad_middle")
+
+    url3=models.URLField(verbose_name='图片链接3')
+    loc3=models.ImageField(verbose_name='首页中图3',upload_to="ad_middle")
+
 
 
 class Links(models.Model):

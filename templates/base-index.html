@@ -1,58 +1,53 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
+
+<!DOCTYPE html>
+<html>
 <head>
     <title>{% block title %}{% endblock %}</title>
+    <meta name="keywords" content="{% block keywords %}{% endblock %}" />
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-
-    {#css#}
     {% load static %}
-{#    <link rel="stylesheet" href="{% static "bootstrap.css" %}" type="text/css">#}
-    {#    <link rel="stylesheet" href="{% static "bootstrap-responsive.css" %}" type="text/css">#}
-    {#    <link rel="stylesheet" href="{% static "bootstrap.min.css" %}" type="text/css" >#}
-        <link rel="stylesheet" href="{% static "style.css" %}" type="text/css" >
-        <link rel="stylesheet" href="{% static "style2.css" %}" type="text/css" >
-{#    <script type="text/javascript" src="{% static "bootstrap.js" %}"></script>#}
-{#    <script type="text/javascript" src="{% static "bootstrap.min.js" %}"></script>#}
-
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-    <style type="text/css">
-        body {
-            padding-top: 60px;
-            padding-bottom: 40px;
-        }
-        .sidebar-nav {
-            padding: 9px 0;
-        }
-    </style>
-    {% block head %}{% endblock %}
+    <link rel="stylesheet" href="{% static "reset-gird-min_11.css" %}">
+    <link rel="stylesheet" href="{% static "i20110122.css" %}">
+    <script language="javascript" src="{% static "getuname.js" %}"></script>
+    <script type="text/javascript" src="{% static "jquery-1.4.2.js" %}"></script>
+    <script type="text/javascript" src="{% static "index_2011.js" %}"></script>
+    {% block header %}
+    
+    {% endblock %}
 </head>
-<body>
+    <body>
+        <div id="page" class="w950">
 
-<div class="container-fluid">
-    {% block content %}{% endblock %}
-</div>
-{% block foot %}
-    <br /><br /><div style="height:3px;background-color: #092d70;"></div><br />
-    <div style="float:left; width:800px;margin-top:3px;">
-        <p align="center"">
-            Copyright &copy;  2012
-            <a href="#" style="text-decoration:none;">
-                汽配商城
-            </a>. All right reserved.  |  技术支持:
-            <a href="http://sdutlinux.org">
-                SLUG
-            </a>
-        </p>
-    </div>
-{% endblock %}
-</body>
+            {% block main %}
+            
+            {% endblock %}
+
+            <div id="footer">
+                <div class="foot-nav">
+                    <a  href="about/" target="_blank" rel="nofollow">关于我们</a> | <a
+                        href="http://www.qipeiren.com/About/Exempt.asp" target="_blank" rel="nofollow">法律声明</a> | <a
+                        href="http://www.qipeiren.com/About/Link.asp" target="_blank">友情链接</a>
+                </div>
+                <div class="copyright">
+                    <p>版权所有 汽配商城</p>
+                </div>
+            </div>
+            <span style="display:none">
+                <script type="text/javascript">
+                    document.write("<scr"+"ipt src=\"http://js.users.51.la/378264.js\" language=\"JavaScript\"></sc"+"ript>")
+                </script>
+            </span>
+            <!-- Baidu Button BEGIN -->
+            <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=0&amp;mini=1&amp;pos=left&amp;uid=724880" ></script>
+            <script type="text/javascript" id="bdshell_js"></script>
+            <script type="text/javascript">
+                var bds_config={"bdTop":250};
+                document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+            </script>
+            <!-- Baidu Button END -->
+        
+        </div>
+    </body>
 </html>
