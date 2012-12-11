@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>{% block title %}{% endblock %}</title>
+
+<meta name="keywords" content="{% block keywords %}{% endblock %}">
+
+<meta name="description" content="{% block description %}{% endblock %}">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'base-min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '3.css' %}">
+<link type="text/css" rel="stylesheet" href="{% static 'wq_online.css' %}">
+<script type="text/javascript" src="{% static 'jquery-1.js' %}"></script>
+<script type="text/javascript" src="{% static 'common.js' %}"></script>
+<script type="text/javascript" src="{% static 'wp_online.js' %}"></script>
+</head>
+<body>
+
+{#	<div id="top-wrap">#}
+{#		<div class="tbar clearfix">#}
+{#			<ul class="user-login">#}
+{#				<li class="qpr"><a class="" href="http://www.qipeiren.com/" title="汽配人网" target="_blank">汽配人网</a></li>#}
+{#				<li id="nosigned" class="welcome"><span id="memberId1">您好, 欢迎来到汽配人网</span><a target="_self" href="http://www.qipeiren.com/User/UserLogin.asp">请登录</a><a target="_blank" href="http://www.qipeiren.com/User/Register1.asp">免费注册</a></li>#}
+{#				<li class="rborder"><a target="_blank" title="汽配人首页" href="http://www.qipeiren.com/">汽配人首页</a><a target="_blank" title="找供应" href="http://www.qipeiren.com/Supply/">找供应</a><a target="_blank" title="找公司" href="http://www.qipeiren.com/Company/">找公司</a></li>#}
+{#			</ul>#}
+{#				<ul class="user-search">#}
+{#					<li class=""><div class="tpanel"><input class="top-key" name="tkey" id="tkey" type="text"></div></li>#}
+{#					<li class=""><input value="搜汽配人" class="top-but1" name="wholeSearch" id="wholeSearch" onclick="location.href='http://www.qipeiren.com/Supply/index.asp?KeyWord='+document.getElementById('tkey').value;" type="button"></li>#}
+{#					<li><input value="搜本旺铺" class="top-but2" name="localSearch" id="localSearch" onclick="location.href='supplylist.asp?skey='+document.getElementById('tkey').value;" type="button"></li>#}
+{#				</ul>#}
+{#			#}
+{#		</div>#}
+{#	</div>#}
+{##}
+
+	<div id="header">
+	
+		<div id="wrap">
+		
+			<div class="logo" style="no-repeat center center;" >
+                <img src="{{ com.logo.url }}" alt="{{ com.name }}">
+            </div>
+		
+			<h1 class="name">&nbsp;{{ com.name }}</h1>
+			<div class="favorite">
+                <a onclick="this.style.behavior='url(#default#homepage)';this.setHomePage({{ com.url }});" href="#">设为首页</a> |
+                <a href="#" onclick="javascript:window.external.AddFavorite('{{ com.url }}','{{ com.name }}');">加入收藏</a></div>
+		</div>
+	
+		<div id="nav">
+			<ul class="clearfix">
+			
+				<li class="current" onclick="window.location.href='index.asp'">返回首页</li>
+			
+				<li class="" onclick="window.location.href='#'"><a class="" href="#">供应产品</a></li>
+			
+				<li class="" onclick="window.location.href='#'"><a class="" href="#">公司介绍</a></li>
+			
+				<li class="" onclick="window.location.href='#'"><a class="" href="#">公司动态</a></li>
+			
+				<li class="" onclick="window.location.href='#'"><a class="" href="#">产品目录</a></li>
+			
+				<li class="" onclick="window.location.href='#'"><a class="" href="#">在线留言</a></li>
+			
+				<li class="" onclick="window.location.href='#'"><a class="" href="#">联系方式</a></li>
+			
+			</ul>
+		</div>
+	
+		<div id="ban">
+			<div class="slide"> 
+				 <ul style="top: -226px;" class="slide-list">
+					<li class=""><img src="{{ com.loc1.url }}" alt="" height="226" width="950"></li>
+                     <li class=""><img src="{{ com.loc2.url }}" alt="" height="226" width="950"></li>
+                     <li class=""><img src="{{ com.loc3.url }}" alt="" height="226" width="950"></li>
+			  	  </ul>
+				  <ul class="slide-triggers">
+					<li class="">1</li><li class="on">2</li><li class="">3</li>
+				  </ul>
+			</div>
+		</div>
+	
+		<div id="crumbs">主营产品：{{ com.sell }}</div>
+	
+	</div>
+	<div id="content">
+		<div class="layout grid-s200m0">
+			<div class="col-main">
+				<div class="main-wrap">
+					<div id="news" class="box">
+						<div class="hd">
+							<h3>公司动态</h3>
+							<a class="more" href="http://xichai.cn.qipeiren.com/comnewslist.asp">更多&gt;&gt;</a>
+						</div>
+						<div class="bd">
+													
+							<div class="imgbox">
+								<div class="gw_tab">
+									<ul id="gw_b_i" class="gw_tab_menu pic_loop clearfix">
+										<li class="on" style="display: block;"><div class="imgBox"><img style="width: 160px; height: 77.3818px;" alt="#" src="../static/store/20127916163282639.jpg"></div></li><li class="" style="display: none;"><div class="imgBox"><img style="width: 160px; height: 67.7818px;" alt="#" src="../static/store/20127916595373294.jpg"></div></li><li class="" style="display: none;"><div class="imgBox"><img style="width: 160px; height: 59.0545px;" alt="#" src="../static/store/2012791702618165.jpg"></div></li>
+									</ul>
+									<ul id="gw_s" class="gw_tab_box num_loop clearfix">
+										<li class="on"></li><li class=""></li><li class=""></li>
+									</ul>
+								</div>
+							</div>
+						
+							<ul class="info-list clearfix">
+							
+								<li class=""><a class="" target="_blank" href="http://xichai.cn.qipeiren.com/comnewsshow.asp?id=30620" title="锡柴双杰走俏市场">锡柴双杰走俏市场</a></li>
+							
+								<li class=""><a class="" target="_blank" href="http://xichai.cn.qipeiren.com/comnewsshow.asp?id=29861" title="网站建设中">网站建设中</a></li>
+							
+								<li class=""><a class="" target="_blank" href="http://xichai.cn.qipeiren.com/comnewsshow.asp?id=29820" title="锡柴动力成为时风新风驰主配动力">锡柴动力成为时风新风驰主配动力</a></li>
+							
+								<li class=""><a class="" target="_blank" href="http://xichai.cn.qipeiren.com/comnewsshow.asp?id=29819" title="锡柴天然气发动机“冰城”受宠获大单">锡柴天然气发动机“冰城”受宠获大单</a></li>
+							
+								<li class=""><a class="" target="_blank" href="http://xichai.cn.qipeiren.com/comnewsshow.asp?id=29801" title="内燃机工业协会专家参观大豪再制造发动机">内燃机工业协会专家参观大豪再制造发动机</a></li>
+							 
+							</ul>
+						</div>
+					</div>
+
+					<div id="announce" class="box">
+						<div class="hd">
+							<h3>企业公告</h3>
+						</div>
+						<div class="bd">
+							<div class="cnt">
+                                <p>{{ com.notice }}</p>
+                            </div>
+						</div>
+					</div>
+					
+					<div class="product box">
+						<div class="hd">
+							<h3>一汽锡柴系列发动机总成</h3>
+							<a class="more" href="http://xichai.cn.qipeiren.com/supplylist.asp">更多&gt;&gt;</a>
+						</div>
+						<div class="bd" id="a0">
+							<ul class="item-list clearfix">
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-512196.htm" title="一汽锡柴发动机 锡柴490发动机 锡柴84马力国3发动机4DW93-84E34DW93-84E3" target="_blank"><img alt="一汽锡柴发动机 锡柴490发动机 锡柴84马力国3发动机4DW93-84E34DW93-84E3" src="../static/store/201272416232885213_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-512196.htm" title="一汽锡柴发动机 锡柴490发动机 锡柴84马力国3发动机4DW93-84E34DW93-84E3" target="_blank">一汽锡柴发动机 锡柴49...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-512196.htm" title="一汽锡柴发动机 锡柴490发动机 锡柴84马力国3发动机4DW93-84E34DW93-84E3" target="_blank">4DW93-84E3</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499293.htm" title="一汽锡柴发动机4DW92-734DW92-73" target="_blank"><img alt="一汽锡柴发动机4DW92-734DW92-73" src="../static/store/201272423151654612_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499293.htm" title="一汽锡柴发动机4DW92-734DW92-73" target="_blank">一汽锡柴发动机4DW92-7...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499293.htm" title="一汽锡柴发动机4DW92-734DW92-73" target="_blank">4DW92-73</a></div>
+								</li>
+							
+								<li class="">
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-504571.htm" title="一汽锡柴奥威欧二320马力CA6DL1-32发动机CA6DL1-32" target="_blank"><img alt="一汽锡柴奥威欧二320马力CA6DL1-32发动机CA6DL1-32" src="../static/store/201271314234866388_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-504571.htm" title="一汽锡柴奥威欧二320马力CA6DL1-32发动机CA6DL1-32" target="_blank">一汽锡柴奥威欧二320马...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-504571.htm" title="一汽锡柴奥威欧二320马力CA6DL1-32发动机CA6DL1-32" target="_blank">CA6DL1-32</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-504632.htm" title="一汽锡柴发动机CA6DF1D-12G 工程机械发动机CA6DF1D-12G" target="_blank"><img alt="一汽锡柴发动机CA6DF1D-12G 工程机械发动机CA6DF1D-12G" src="../static/store/201271318282468037_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-504632.htm" title="一汽锡柴发动机CA6DF1D-12G 工程机械发动机CA6DF1D-12G" target="_blank">一汽锡柴发动机CA6DF1D...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-504632.htm" title="一汽锡柴发动机CA6DF1D-12G 工程机械发动机CA6DF1D-12G" target="_blank">CA6DF1D-12G</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499297.htm" title="一汽锡柴发动机CA4DX22-110E3F，锡柴4102发动机CA4DX22-110E3F" target="_blank"><img alt="一汽锡柴发动机CA4DX22-110E3F，锡柴4102发动机CA4DX22-110E3F" src="../static/store/201282012375721617_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499297.htm" title="一汽锡柴发动机CA4DX22-110E3F，锡柴4102发动机CA4DX22-110E3F" target="_blank">一汽锡柴发动机CA4DX22...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499297.htm" title="一汽锡柴发动机CA4DX22-110E3F，锡柴4102发动机CA4DX22-110E3F" target="_blank">CA4DX22-110E3...</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-504605.htm" title="一汽锡柴4110发动机，锡柴CA4110/125T，锡柴4110装载机用发动机CA4110/125T" target="_blank"><img alt="一汽锡柴4110发动机，锡柴CA4110/125T，锡柴4110装载机用发动机CA4110/125T" src="../static/store/20128201395047539_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-504605.htm" title="一汽锡柴4110发动机，锡柴CA4110/125T，锡柴4110装载机用发动机CA4110/125T" target="_blank">一汽锡柴4110发动机，锡...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-504605.htm" title="一汽锡柴4110发动机，锡柴CA4110/125T，锡柴4110装载机用发动机CA4110/125T" target="_blank">CA4110/125T</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499026.htm" title="一汽锡柴发动机CA4DX21-96四缸不带增压96马力锡柴4102发动机CA4DX21-96" target="_blank"><img alt="一汽锡柴发动机CA4DX21-96四缸不带增压96马力锡柴4102发动机CA4DX21-96" src="../static/store/201282012341584249_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499026.htm" title="一汽锡柴发动机CA4DX21-96四缸不带增压96马力锡柴4102发动机CA4DX21-96" target="_blank">一汽锡柴发动机CA4DX21...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499026.htm" title="一汽锡柴发动机CA4DX21-96四缸不带增压96马力锡柴4102发动机CA4DX21-96" target="_blank">CA4DX21-96</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499300.htm" title="一汽锡柴发动机CA4DX22-110E3，锡柴110马力发动机，锡柴4102国三电喷发动机CA4DX22-110E3" target="_blank"><img alt="一汽锡柴发动机CA4DX22-110E3，锡柴110马力发动机，锡柴4102国三电喷发动机CA4DX22-110E3" src="../static/store/20127131204196900_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499300.htm" title="一汽锡柴发动机CA4DX22-110E3，锡柴110马力发动机，锡柴4102国三电喷发动机CA4DX22-110E3" target="_blank">一汽锡柴发动机CA4DX22...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499300.htm" title="一汽锡柴发动机CA4DX22-110E3，锡柴110马力发动机，锡柴4102国三电喷发动机CA4DX22-110E3" target="_blank">CA4DX22-110E3...</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-520514.htm" title="一汽锡柴490发动机，锡柴CA4DW91-63，一汽锡柴工程机械用发动机CA4DW91-63" target="_blank"><img alt="一汽锡柴490发动机，锡柴CA4DW91-63，一汽锡柴工程机械用发动机CA4DW91-63" src="../static/store/201282012554348446_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-520514.htm" title="一汽锡柴490发动机，锡柴CA4DW91-63，一汽锡柴工程机械用发动机CA4DW91-63" target="_blank">一汽锡柴490发动机，锡...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-520514.htm" title="一汽锡柴490发动机，锡柴CA4DW91-63，一汽锡柴工程机械用发动机CA4DW91-63" target="_blank">CA4DW91-63</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-512198.htm" title="一汽锡柴发动机 CA4DF3-13E3F 锡柴4110发动机 锡柴130马力发动机CA4DF3-13E3F" target="_blank"><img alt="一汽锡柴发动机 CA4DF3-13E3F 锡柴4110发动机 锡柴130马力发动机CA4DF3-13E3F" src="../static/store/201272416281467169_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-512198.htm" title="一汽锡柴发动机 CA4DF3-13E3F 锡柴4110发动机 锡柴130马力发动机CA4DF3-13E3F" target="_blank">一汽锡柴发动机 CA4DF3...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-512198.htm" title="一汽锡柴发动机 CA4DF3-13E3F 锡柴4110发动机 锡柴130马力发动机CA4DF3-13E3F" target="_blank">CA4DF3-13E3F</a></div>
+								</li>
+							</ul></div><div class="bd" style="display: none;" id="b0"><ul class="item-list clearfix">
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-512230.htm" title="一汽锡柴发动机 485发动机 4DW83-73E3发动机锡柴73马力发动机4DW83-73E3" target="_blank"><img alt="一汽锡柴发动机 485发动机 4DW83-73E3发动机锡柴73马力发动机4DW83-73E3" src="../static/store/201272417272737476_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-512230.htm" title="一汽锡柴发动机 485发动机 4DW83-73E3发动机锡柴73马力发动机4DW83-73E3" target="_blank">一汽锡柴发动机 485发动...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-512230.htm" title="一汽锡柴发动机 485发动机 4DW83-73E3发动机锡柴73马力发动机4DW83-73E3" target="_blank">4DW83-73E3</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-512204.htm" title="一汽锡柴发动机 锡柴170马力发动机 CA4DF3-17E3CA4DF3-17E3" target="_blank"><img alt="一汽锡柴发动机 锡柴170马力发动机 CA4DF3-17E3CA4DF3-17E3" src="../static/store/201272416391313077_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-512204.htm" title="一汽锡柴发动机 锡柴170马力发动机 CA4DF3-17E3CA4DF3-17E3" target="_blank">一汽锡柴发动机 锡柴17...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-512204.htm" title="一汽锡柴发动机 锡柴170马力发动机 CA4DF3-17E3CA4DF3-17E3" target="_blank">CA4DF3-17E3</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499020.htm" title="一汽锡柴发动机 4DW91-63 锡柴490不带增压发动机 锡柴自吸气发动机4DW91-63" target="_blank"><img alt="一汽锡柴发动机 4DW91-63 锡柴490不带增压发动机 锡柴自吸气发动机4DW91-63" src="../static/store/201271311295839448_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499020.htm" title="一汽锡柴发动机 4DW91-63 锡柴490不带增压发动机 锡柴自吸气发动机4DW91-63" target="_blank">一汽锡柴发动机 4DW91-...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499020.htm" title="一汽锡柴发动机 4DW91-63 锡柴490不带增压发动机 锡柴自吸气发动机4DW91-63" target="_blank">4DW91-63</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-504606.htm" title="CA4110/125Z一汽锡柴4110增压发动机，136马力CA4110/125Z" target="_blank"><img alt="CA4110/125Z一汽锡柴4110增压发动机，136马力CA4110/125Z" src="../static/store/201271218342844657_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-504606.htm" title="CA4110/125Z一汽锡柴4110增压发动机，136马力CA4110/125Z" target="_blank">CA4110/125Z一汽锡柴41...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-504606.htm" title="CA4110/125Z一汽锡柴4110增压发动机，136马力CA4110/125Z" target="_blank">CA4110/125Z</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-504604.htm" title="一汽锡柴4110发动机，CA4110/125，锡柴4110普机CA4110/125" target="_blank"><img alt="一汽锡柴4110发动机，CA4110/125，锡柴4110普机CA4110/125" src="../static/store/201282013112332994_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-504604.htm" title="一汽锡柴4110发动机，CA4110/125，锡柴4110普机CA4110/125" target="_blank">一汽锡柴4110发动机，C...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-504604.htm" title="一汽锡柴4110发动机，CA4110/125，锡柴4110普机CA4110/125" target="_blank">CA4110/125</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499016.htm" title="一汽锡柴4缸45马力装载机发动机4DW91-45" target="_blank"><img alt="一汽锡柴4缸45马力装载机发动机4DW91-45" src="../static/store/201271311444535218_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499016.htm" title="一汽锡柴4缸45马力装载机发动机4DW91-45" target="_blank">一汽锡柴4缸45马力装载...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499016.htm" title="一汽锡柴4缸45马力装载机发动机4DW91-45" target="_blank">4DW91-45</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499055.htm" title="一汽锡柴发动机CA6DF3-17E3F锡柴170马力发动机CA6DF3-17" target="_blank"><img alt="一汽锡柴发动机CA6DF3-17E3F锡柴170马力发动机CA6DF3-17" src="../static/store/201271015544996321_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499055.htm" title="一汽锡柴发动机CA6DF3-17E3F锡柴170马力发动机CA6DF3-17" target="_blank">一汽锡柴发动机CA6DF3-...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499055.htm" title="一汽锡柴发动机CA6DF3-17E3F锡柴170马力发动机CA6DF3-17" target="_blank">CA6DF3-17</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499057.htm" title="一汽锡柴发动机CA6DF3-18E3F锡柴180马力发动机CA6DF3-18E3F" target="_blank"><img alt="一汽锡柴发动机CA6DF3-18E3F锡柴180马力发动机CA6DF3-18E3F" src="../static/store/201271015571689292_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499057.htm" title="一汽锡柴发动机CA6DF3-18E3F锡柴180马力发动机CA6DF3-18E3F" target="_blank">一汽锡柴发动机CA6DF3-...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499057.htm" title="一汽锡柴发动机CA6DF3-18E3F锡柴180马力发动机CA6DF3-18E3F" target="_blank">CA6DF3-18E3F</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499066.htm" title="一汽锡柴发动机CA6DF3-23E3F锡柴230马力发动机锡柴国3发动机CA6DF3-23E3F" target="_blank"><img alt="一汽锡柴发动机CA6DF3-23E3F锡柴230马力发动机锡柴国3发动机CA6DF3-23E3F" src="../static/store/20127101615344930_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499066.htm" title="一汽锡柴发动机CA6DF3-23E3F锡柴230马力发动机锡柴国3发动机CA6DF3-23E3F" target="_blank">一汽锡柴发动机CA6DF3-...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499066.htm" title="一汽锡柴发动机CA6DF3-23E3F锡柴230马力发动机锡柴国3发动机CA6DF3-23E3F" target="_blank">CA6DF3-23E3F</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499097.htm" title="一汽锡柴发动机CA6DF3-26E3F锡柴260马力发动机CA6DF3-26E3F" target="_blank"><img alt="一汽锡柴发动机CA6DF3-26E3F锡柴260马力发动机CA6DF3-26E3F" src="../static/store/201271016364074994_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499097.htm" title="一汽锡柴发动机CA6DF3-26E3F锡柴260马力发动机CA6DF3-26E3F" target="_blank">一汽锡柴发动机CA6DF3-...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499097.htm" title="一汽锡柴发动机CA6DF3-26E3F锡柴260马力发动机CA6DF3-26E3F" target="_blank">CA6DF3-26E3F</a></div>
+								</li>
+							
+							</ul>
+						</div>
+							
+							<div class="flip">
+								<a id="c0" style="cursor:hand" onclick="this.className='disabled';document.getElementById('d0').className ='';document.getElementById('a0').style.display ='none';document.getElementById('b0').style.display =''">下一页&gt;&gt;</a>
+								<a id="d0" class="disabled" style="cursor:hand" onclick="this.className='disabled';;document.getElementById('c0').className ='';document.getElementById('b0').style.display ='none';document.getElementById('a0').style.display =''">&lt;&lt;上一页</a>
+								<a href="http://xichai.cn.qipeiren.com/supplylist.asp">所有产品</a>
+							</div>
+							
+					</div>
+					
+					<div class="product box">
+						<div class="hd">
+							<h3>一汽锡柴大豪再制造系列发动机</h3>
+							<a class="more" href="http://xichai.cn.qipeiren.com/supplylist.asp">更多&gt;&gt;</a>
+						</div>
+						<div class="bd" id="a1">
+							<ul class="item-list clearfix">
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-498880.htm" title="一汽锡柴大豪动力CA6DL1-26再制造发动机总CA6DL1-26" target="_blank"><img alt="一汽锡柴大豪动力CA6DL1-26再制造发动机总CA6DL1-26" src="../static/store/201271013322998841_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-498880.htm" title="一汽锡柴大豪动力CA6DL1-26再制造发动机总CA6DL1-26" target="_blank">一汽锡柴大豪动力CA6DL...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-498880.htm" title="一汽锡柴大豪动力CA6DL1-26再制造发动机总CA6DL1-26" target="_blank">CA6DL1-26</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-498763.htm" title="一汽锡大豪动CA6DF1-24再制造发动机CA6DF1-24" target="_blank"><img alt="一汽锡大豪动CA6DF1-24再制造发动机CA6DF1-24" src="../static/store/201271010262479225_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-498763.htm" title="一汽锡大豪动CA6DF1-24再制造发动机CA6DF1-24" target="_blank">一汽锡大豪动CA6DF1-24...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-498763.htm" title="一汽锡大豪动CA6DF1-24再制造发动机CA6DF1-24" target="_blank">CA6DF1-24</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-498748.htm" title="一汽锡柴无锡大豪动力6DF2D-19再制造发动机CA6DF2D-19" target="_blank"><img alt="一汽锡柴无锡大豪动力6DF2D-19再制造发动机CA6DF2D-19" src="../static/store/20127101001631388_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-498748.htm" title="一汽锡柴无锡大豪动力6DF2D-19再制造发动机CA6DF2D-19" target="_blank">一汽锡柴无锡大豪动力6...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-498748.htm" title="一汽锡柴无锡大豪动力6DF2D-19再制造发动机CA6DF2D-19" target="_blank">CA6DF2D-19</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-498742.htm" title="一汽锡柴大豪6DF2D-17-LQ3A再制造发动机CA6DF2D-17-LQ3A" target="_blank"><img alt="一汽锡柴大豪6DF2D-17-LQ3A再制造发动机CA6DF2D-17-LQ3A" src="../static/store/20127109443079953_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-498742.htm" title="一汽锡柴大豪6DF2D-17-LQ3A再制造发动机CA6DF2D-17-LQ3A" target="_blank">一汽锡柴大豪6DF2D-17-...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-498742.htm" title="一汽锡柴大豪6DF2D-17-LQ3A再制造发动机CA6DF2D-17-LQ3A" target="_blank">CA6DF2D-17-LQ...</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-498735.htm" title="锡柴再制造6DF2D-16的160马力发动机CA6DF2D-16-JH10" target="_blank"><img alt="锡柴再制造6DF2D-16的160马力发动机CA6DF2D-16-JH10" src="../static/store/20127109374612490_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-498735.htm" title="锡柴再制造6DF2D-16的160马力发动机CA6DF2D-16-JH10" target="_blank">锡柴再制造6DF2D-16的1...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-498735.htm" title="锡柴再制造6DF2D-16的160马力发动机CA6DF2D-16-JH10" target="_blank">CA6DF2D-16-JH...</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499286.htm" title="一汽锡柴6DM390马力大豪动力发动机CA6DM2－39E3" target="_blank"><img alt="一汽锡柴6DM390马力大豪动力发动机CA6DM2－39E3" src="../static/store/201271313105385942_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499286.htm" title="一汽锡柴6DM390马力大豪动力发动机CA6DM2－39E3" target="_blank">一汽锡柴6DM390马力大豪...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499286.htm" title="一汽锡柴6DM390马力大豪动力发动机CA6DM2－39E3" target="_blank">CA6DM2－39E3</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499277.htm" title="一汽锡柴大豪动力M系列390马力发动机CA6DM2－39" target="_blank"><img alt="一汽锡柴大豪动力M系列390马力发动机CA6DM2－39" src="../static/store/20127131313073802_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499277.htm" title="一汽锡柴大豪动力M系列390马力发动机CA6DM2－39" target="_blank">一汽锡柴大豪动力M系列...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499277.htm" title="一汽锡柴大豪动力M系列390马力发动机CA6DM2－39" target="_blank">CA6DM2－39</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-498789.htm" title="一汽锡柴大豪动CA6DF2-26再制造发动机CA6DF2-26" target="_blank"><img alt="一汽锡柴大豪动CA6DF2-26再制造发动机CA6DF2-26" src="../static/store/20127241865359203_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-498789.htm" title="一汽锡柴大豪动CA6DF2-26再制造发动机CA6DF2-26" target="_blank">一汽锡柴大豪动CA6DF2-...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-498789.htm" title="一汽锡柴大豪动CA6DF2-26再制造发动机CA6DF2-26" target="_blank">CA6DF2-26</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-498766.htm" title="一汽锡柴大豪CA6DF1-26再制造发动机CA6DF1-26" target="_blank"><img alt="一汽锡柴大豪CA6DF1-26再制造发动机CA6DF1-26" src="../static/store/201271010325942578_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-498766.htm" title="一汽锡柴大豪CA6DF1-26再制造发动机CA6DF1-26" target="_blank">一汽锡柴大豪CA6DF1-26...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-498766.htm" title="一汽锡柴大豪CA6DF1-26再制造发动机CA6DF1-26" target="_blank">CA6DF1-26</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-499275.htm" title="一汽锡柴大豪动力M系列350马力发动机CA6DM2－35" target="_blank"><img alt="一汽锡柴大豪动力M系列350马力发动机CA6DM2－35" src="../static/store/20127131315555149_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-499275.htm" title="一汽锡柴大豪动力M系列350马力发动机CA6DM2－35" target="_blank">一汽锡柴大豪动力M系列...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-499275.htm" title="一汽锡柴大豪动力M系列350马力发动机CA6DM2－35" target="_blank">CA6DM2－35</a></div>
+								</li>
+							</ul></div><div class="bd" style="display: none;" id="b1"><ul class="item-list clearfix">
+							</ul>
+						</div>
+							
+					</div>
+					
+					<div class="product box">
+						<div class="hd">
+							<h3>一汽锡柴发动机配件备品系列</h3>
+							<a class="more" href="http://xichai.cn.qipeiren.com/supplylist.asp">更多&gt;&gt;</a>
+						</div>
+						<div class="bd" id="a2">
+							<ul class="item-list clearfix">
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544789.htm" title="CA6DF2D-19D 一汽锡柴190马力发电机组用柴油机备用功率138KW常用功率125KWCA6DF2D-119D" target="_blank"><img alt="CA6DF2D-19D 一汽锡柴190马力发电机组用柴油机备用功率138KW常用功率125KWCA6DF2D-119D" src="../static/store/2012111315164772299_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544789.htm" title="CA6DF2D-19D 一汽锡柴190马力发电机组用柴油机备用功率138KW常用功率125KWCA6DF2D-119D" target="_blank">CA6DF2D-19D 一汽锡柴1...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544789.htm" title="CA6DF2D-19D 一汽锡柴190马力发电机组用柴油机备用功率138KW常用功率125KWCA6DF2D-119D" target="_blank">CA6DF2D-119D</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544786.htm" title="CA6DF2D-14D 一汽锡柴6缸140马力发电机组用柴油机常用功率105KW备用功率96KWCA6DF2D-14D" target="_blank"><img alt="CA6DF2D-14D 一汽锡柴6缸140马力发电机组用柴油机常用功率105KW备用功率96KWCA6DF2D-14D" src="../static/store/201211131518695822_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544786.htm" title="CA6DF2D-14D 一汽锡柴6缸140马力发电机组用柴油机常用功率105KW备用功率96KWCA6DF2D-14D" target="_blank">CA6DF2D-14D 一汽锡柴6...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544786.htm" title="CA6DF2D-14D 一汽锡柴6缸140马力发电机组用柴油机常用功率105KW备用功率96KWCA6DF2D-14D" target="_blank">CA6DF2D-14D</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544742.htm" title="4DW92-35D 490增压一汽锡柴发电机组用柴油机价格表备用功率29常用功率264DW92-35D" target="_blank"><img alt="4DW92-35D 490增压一汽锡柴发电机组用柴油机价格表备用功率29常用功率264DW92-35D" src="../static/store/2012111315202264291_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544742.htm" title="4DW92-35D 490增压一汽锡柴发电机组用柴油机价格表备用功率29常用功率264DW92-35D" target="_blank">4DW92-35D 490增压一汽...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544742.htm" title="4DW92-35D 490增压一汽锡柴发电机组用柴油机价格表备用功率29常用功率264DW92-35D" target="_blank">4DW92-35D</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544741.htm" title="4DW91-29D 一汽锡柴发电机组用柴油机 备用功率23KW常用功率21KW4DW91-29D" target="_blank"><img alt="4DW91-29D 一汽锡柴发电机组用柴油机 备用功率23KW常用功率21KW4DW91-29D" src="../static/store/2012111315205346707_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544741.htm" title="4DW91-29D 一汽锡柴发电机组用柴油机 备用功率23KW常用功率21KW4DW91-29D" target="_blank">4DW91-29D 一汽锡柴发电...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544741.htm" title="4DW91-29D 一汽锡柴发电机组用柴油机 备用功率23KW常用功率21KW4DW91-29D" target="_blank">4DW91-29D</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544738.htm" title="4DW81-23D 一汽锡柴发电机组用柴油机 备用功率19KW常用功率17KW4DW81-23D" target="_blank"><img alt="4DW81-23D 一汽锡柴发电机组用柴油机 备用功率19KW常用功率17KW4DW81-23D" src="../static/store/2012111315213585412_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544738.htm" title="4DW81-23D 一汽锡柴发电机组用柴油机 备用功率19KW常用功率17KW4DW81-23D" target="_blank">4DW81-23D 一汽锡柴发电...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544738.htm" title="4DW81-23D 一汽锡柴发电机组用柴油机 备用功率19KW常用功率17KW4DW81-23D" target="_blank">4DW81-23D</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544994.htm" title="CA6DN1J-45D 一汽锡柴发电机组常用功率365备用功率332KWCA6DN1J-45D" target="_blank"><img alt="CA6DN1J-45D 一汽锡柴发电机组常用功率365备用功率332KWCA6DN1J-45D" src="../static/store/2012111314591577094_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544994.htm" title="CA6DN1J-45D 一汽锡柴发电机组常用功率365备用功率332KWCA6DN1J-45D" target="_blank">CA6DN1J-45D 一汽锡柴发...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544994.htm" title="CA6DN1J-45D 一汽锡柴发电机组常用功率365备用功率332KWCA6DN1J-45D" target="_blank">CA6DN1J-45D</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544993.htm" title="CA6DN1-45D 一汽锡柴发电机组常用功率365备用功率332KWCA6DN1-45D" target="_blank"><img alt="CA6DN1-45D 一汽锡柴发电机组常用功率365备用功率332KWCA6DN1-45D" src="../static/store/201211131504959462_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544993.htm" title="CA6DN1-45D 一汽锡柴发电机组常用功率365备用功率332KWCA6DN1-45D" target="_blank">CA6DN1-45D 一汽锡柴发...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544993.htm" title="CA6DN1-45D 一汽锡柴发电机组常用功率365备用功率332KWCA6DN1-45D" target="_blank">CA6DN1-45D</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544992.htm" title="CA6DM2J-41D 一汽锡柴发电机组410马力 备用功率330KW常用功率300KWCA6DM2J-41D" target="_blank"><img alt="CA6DM2J-41D 一汽锡柴发电机组410马力 备用功率330KW常用功率300KWCA6DM2J-41D" src="../static/store/201211131515897794_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544992.htm" title="CA6DM2J-41D 一汽锡柴发电机组410马力 备用功率330KW常用功率300KWCA6DM2J-41D" target="_blank">CA6DM2J-41D 一汽锡柴发...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544992.htm" title="CA6DM2J-41D 一汽锡柴发电机组410马力 备用功率330KW常用功率300KWCA6DM2J-41D" target="_blank">CA6DM2J-41D</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544988.htm" title="CA6DL2-30D 一汽锡柴奥威发电机组 300马力备用功率251KW 常用功率227KWCA6DL2-30D" target="_blank"><img alt="CA6DL2-30D 一汽锡柴奥威发电机组 300马力备用功率251KW 常用功率227KWCA6DL2-30D" src="../static/store/20121113156180519_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544988.htm" title="CA6DL2-30D 一汽锡柴奥威发电机组 300马力备用功率251KW 常用功率227KWCA6DL2-30D" target="_blank">CA6DL2-30D 一汽锡柴奥...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544988.htm" title="CA6DL2-30D 一汽锡柴奥威发电机组 300马力备用功率251KW 常用功率227KWCA6DL2-30D" target="_blank">CA6DL2-30D</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544987.htm" title="CA6DL2-27D 一汽锡柴奥威发电机组 270马力备用功率226KW 常用功率205KWCA6DL2-27D" target="_blank"><img alt="CA6DL2-27D 一汽锡柴奥威发电机组 270马力备用功率226KW 常用功率205KWCA6DL2-27D" src="../static/store/201211131565923434_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544987.htm" title="CA6DL2-27D 一汽锡柴奥威发电机组 270马力备用功率226KW 常用功率205KWCA6DL2-27D" target="_blank">CA6DL2-27D 一汽锡柴奥...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544987.htm" title="CA6DL2-27D 一汽锡柴奥威发电机组 270马力备用功率226KW 常用功率205KWCA6DL2-27D" target="_blank">CA6DL2-27D</a></div>
+								</li>
+							</ul></div><div class="bd" style="display: none;" id="b2"><ul class="item-list clearfix">
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544986.htm" title="CA6DL1-24D 一汽锡柴奥威发动机用于发电机组240马力备用功率194KW常用功率176KWCA6DL1-24D" target="_blank"><img alt="CA6DL1-24D 一汽锡柴奥威发动机用于发电机组240马力备用功率194KW常用功率176KWCA6DL1-24D" src="../static/store/2012111315144140575_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544986.htm" title="CA6DL1-24D 一汽锡柴奥威发动机用于发电机组240马力备用功率194KW常用功率176KWCA6DL1-24D" target="_blank">CA6DL1-24D 一汽锡柴奥...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544986.htm" title="CA6DL1-24D 一汽锡柴奥威发动机用于发电机组240马力备用功率194KW常用功率176KWCA6DL1-24D" target="_blank">CA6DL1-24D</a></div>
+								</li>
+							
+								<li>
+									<div class="photo"><a href="http://www.qipeiren.com/Supply/supply-544985.htm" title="CA6DF2-20D一汽锡柴200马力 6缸发电机组用柴油机备用功率165KW常用功率150KWCA6DF2-20D" target="_blank"><img alt="CA6DF2-20D一汽锡柴200马力 6缸发电机组用柴油机备用功率165KW常用功率150KWCA6DF2-20D" src="../static/store/2012111315154169991_s.jpg"></a></div>
+									<div class="desc"><a href="http://www.qipeiren.com/Supply/supply-544985.htm" title="CA6DF2-20D一汽锡柴200马力 6缸发电机组用柴油机备用功率165KW常用功率150KWCA6DF2-20D" target="_blank">CA6DF2-20D一汽锡柴200...</a></div>
+									<div class="numb"><a href="http://www.qipeiren.com/Supply/supply-544985.htm" title="CA6DF2-20D一汽锡柴200马力 6缸发电机组用柴油机备用功率165KW常用功率150KWCA6DF2-20D" target="_blank">CA6DF2-20D</a></div>
+								</li>
+							
+							</ul>
+						</div>
+							
+							<div class="flip">
+								<a id="c2" style="cursor:hand" onclick="this.className='disabled';document.getElementById('d2').className ='';document.getElementById('a2').style.display ='none';document.getElementById('b2').style.display =''">下一页&gt;&gt;</a>
+								<a id="d2" class="disabled" style="cursor:hand" onclick="this.className='disabled';;document.getElementById('c2').className ='';document.getElementById('b2').style.display ='none';document.getElementById('a2').style.display =''">&lt;&lt;上一页</a>
+								<a href="http://xichai.cn.qipeiren.com/supplylist.asp">所有产品</a>
+							</div>
+							
+					</div>
+					
+				</div>
+			</div>
+						<div class="col-sub">
+			
+				<div id="years" class="box">
+					<div class="m-t clearfix">
+						<span class="vip"><img src="../static/store/s_vip.gif" title="汽配旺铺会员" alt="汽配旺铺会员" height="24" width="90"></span>
+						<span class="time-point-1"></span>
+					</div>
+					<div class="m-c">
+						<ul class="namewrap clearfix">
+							<li class="m"><a href="http://xichai.cn.qipeiren.com/index.asp" class="blue m">湖北大豪动力设备有限公司</a></li>
+							<li class="n"><span>联系人：黄金国</span><a href="tencent://message/?Uin=1938934135"><img src="../static/store/pa.gif" alt="点击这里给我发消息" height="24" width="71"></a></li>
+						</ul>
+						<ul class="featurewrap clearfix">
+							<li><strong>主营产品：</strong>一汽锡柴发动机,锡柴490发动机,锡柴4102机器,锡柴6110机器,锡柴奥威发动机,锡柴再制造发动机...</li>
+							
+						</ul>				
+					</div>
+					<div class="m-b"></div>
+				</div>
+			
+				<div id="search" class="box">
+					<div class="hd">
+						<h3>产品搜索</h3>
+					</div>
+					<div class="bd">
+						<div class="panel clearfix">
+							<form method="get" action="supplylist.asp">
+								<input name="skey" id="skey" type="text"> 
+								<button type="submit">搜索</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				
+				<div class="category box">
+					<div class="hd">
+						<h3>产品分类</h3>
+					</div>
+					
+					<div id="navigation" class="bd">
+						<ul class="info-list clearfix">
+									
+							<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15090" title="一汽解放无锡柴油机厂">一汽解放无锡柴油机厂</a>
+							
+								<ul class="info-list clearfix hidden">
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15091" title="锡柴4缸机">锡柴4缸机</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15092" title="锡柴6缸机">锡柴6缸机</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15105" title="W系列发动机">W系列发动机</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15106" title="X系列发动机">X系列发动机</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15107" title="K系列发动机">K系列发动机</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15108" title="F系列发动机">F系列发动机</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15109" title="L系列发动机">L系列发动机</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15110" title="M系列发动机">M系列发动机</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15111" title="N系列发动机">N系列发动机</a></li>
+								
+								</ul>
+							
+							</li><li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15100" title="锡柴大豪F  L  M系列发动机">锡柴大豪F  L  M系列发动...</a>
+							
+								<ul class="info-list clearfix hidden">
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15102" title="大豪F系列发动机">大豪F系列发动机</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15103" title="大豪L系列发动机">大豪L系列发动机</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15104" title="大豪M系列发动机">大豪M系列发动机</a></li>
+								
+								</ul>
+							
+							</li><li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15101" title="锡柴发电机组系列">锡柴发电机组系列</a>
+							
+								<ul class="info-list clearfix hidden">
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15112" title="缸体">缸体</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15113" title="缸盖">缸盖</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15114" title="曲轴">曲轴</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15115" title="四配套">四配套</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15116" title="高压油泵">高压油泵</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15117" title="电器件">电器件</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=15118" title="增压器">增压器</a></li>
+								
+									<li><a href="http://xichai.cn.qipeiren.com/supplylist.asp?classid=17956" title="锡柴发电机组">锡柴发电机组</a></li>
+								
+								</ul>
+							
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="contact" class="box">
+					<div class="hd">
+						<h3>联系方式</h3>
+					</div>
+					<div class="bd clearfix">
+						<p>联系人：黄金国<br>电话：0719-8368338<br>传真：0719-8368878<br>手机：13597870330</p>
+						<p></p>
+                        
+					</div>
+				</div>
+				<div id="links" class="box">
+					<div class="hd">
+						<h3>友情链接</h3>
+					</div>
+					<div class="bd clearfix">
+						<ul class="info-list clearfix">
+							<li><a href="http://www.qipeiren.com/" title="汽配人网">汽配人网</a></li>
+							
+							<li><a href="http://www.yuchai6k.com/" title="玉柴发动机专卖网站" target="_blank">玉柴发动机专卖网站</a></li>
+							
+							<li><a href="http://www.hbdhdl.com/" title="湖北大豪动力设备有限公司" target="_blank">湖北大豪动力设备有限公司</a></li>
+							
+							<li><a href="http://hbdh1688.cn.alibaba.com/" title="阿里巴巴发动机专卖中文站" target="_blank">阿里巴巴发动机专卖中文站</a></li>
+							
+							<li><a href="http://hbdhdl.en.alibaba.com/" title="阿里巴巴发动机出口通国际站" target="_blank">阿里巴巴发动机出口通国际站</a></li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div id="footer">
+        <p>
+            <a title="{{ com.name }}" href="{{ com.url }}" target="_blank">{{ com.name }}</a>
+            电话：{{ com.tel }} <br>地址：{{ com.address }}<br>
+            技术支持：<a title="SLUG" href="http://sdutlinux.org/" target="_blank">SLUG</a>
+        </p>
+    </div>
+
+</body>
+</html>

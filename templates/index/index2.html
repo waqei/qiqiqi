@@ -5,63 +5,8 @@
 
 {% block main %}
 
-<div id="header">
-    <div id="mini-nav">
-        <p class="login-info">您好，欢迎光临汽配商城！</p>
-
-        <div class="quick-menu">
-            <ul>
-                <li><a href="/" target="_blank">汽配商城</a></li>
-            </ul>
-        </div>
-    </div>
 
 
-    <div id="top-header">
-        <div class="logo-search">
-            <div class="logo">
-                {% load static %}
-                <a href="/" title="汽配"><img src="{% static "logo1.jpg" %}" width="154" height="56" alt="汽配人网" /></a>
-            </div>
-            <div class="search">
-                <div class="search-tab">
-                    <ul class="clearfix indser">
-                        <li class="current" tit="输入产品名称或关键词" ac="#:index.asp"><a href="javascript:void(0);">产品</a></li>
-                        <li tit="输入公司名称或关键词" ac="#"><a href="javascript:void(0);">公司</a></li>
-                    </ul>
-                </div>
-                <div class="search-panel clearfix">
-                    <form id="searchPanel" action="http://www.qipeiren.com/Supply/index.asp" method="get" name="searchPanel" target="_blank">
-                        <div class="search-panel-field">
-                            <input id="mSearch" type="text" name="KeyWord" value="输入产品名称" tabindex="1" />
-                            <b class="lt"></b>
-                            <b class="lb"></b>
-                        </div>
-                        <button type="submit" tabindex="2">搜索</button>
-                        <!--<a href="#" class="g">使用帮助</a> -->
-                    </form>
-                    <b class="tl"></b>
-                    <b class="tr"></b>
-                    <b class="bl"></b>
-                    <b class="br"></b>
-                </div>
-            </div>
-        </div>
-
-        <div class="nav">
-            <ul class="clearfix">
-                <li class="w2 current"><a href="http://www.qipeiren.com/">首页</a></li>
-                <li class="w3"><a href="search">找产品</a></li>
-                <li class="w3"><a href="need">找求购</a></li>
-                <li class="w2"><a href="news" target="_blank">资讯</a></li>
-                <li class="w2"><a href="sorts" target="_blank">分类</a></li>
-            </ul>
-            <b></b>
-            <div class="new hidden"><img src="images_11/new.gif" width="19" height="23" alt="最全供应信息" /></div>
-            <div class="hot hidden"><img src="images_11/hot.gif" width="19" height="23" alt="配件目录" /></div>
-        </div>
-    </div>
-</div>
 
 
 <div id="content">
@@ -77,10 +22,7 @@
                                 <li><a href="{{ ad_middle.url1 }}" target="_blank"><img src="{{ ad_middle.loc1.url }}" width="470" height="168" alt="" /></a></li>
                                 <li><a href="{{ ad_middle.url2 }}" target="_blank"><img src="{{ ad_middle.loc2.url }}" width="470" height="168" alt="" /></a></li>
                                 <li><a href="{{ ad_middle.url3 }}" target="_blank"><img src="{{ ad_middle.loc3.url }}" width="470" height="168" alt="" /></a></li>
-                                <!--<li><a href="http://www.qipeiren.com/gold/" target="_blank">
-                                    <img src="images_11/m2.jpg" width="470" height="168" alt="黄金展位" /></a></li>
-                                <li><a href="http://www.qipeiren.com/station/shandong.asp" target="_blank">
-                                    <img src="images_11/m3_b.jpg" width="470" height="168" alt="汽配人网山东站" /></a>-->
+
                             </ul>
                             <ul class="num clearfix" >
                                 <li>1</li>
@@ -155,33 +97,6 @@
 
                             <li><a href="http://syjjqc.cn.qipeiren.com" target="_blank" title="十堰竞佳汽车零部件有限公司" class="gray">十堰竞佳汽车零部件有限公司</a></li>
 
-                            <li><a href="http://sybcgs.cn.qipeiren.com" target="_blank" title="十堰博驰工贸有限公司" class="gray">十堰博驰工贸有限公司</a></li>
-
-                            <li><a href="http://jincheng168.cn.qipeiren.com" target="_blank" title="山东宏成重汽配件有限公司" class="gray">山东宏成重汽配件有限公司</a></li>
-
-                            <li><a href="http://jnsqgs.cn.qipeiren.com" target="_blank" title="济南三全汽配有限公司" class="gray">济南三全汽配有限公司</a></li>
-
-                            <li><a href="http://sytiankai.cn.qipeiren.com" target="_blank" title="湖北天凯贸易有限公司--诚接各种车型起动机发电机外贸定单及市场销售" class="gray">湖北天凯贸易有限公司--诚接各种...</a></li>
-
-                            <li><a href="http://syrdlm.cn.qipeiren.com" target="_blank" title="十堰市瑞达联贸工业有限公司" class="gray">十堰市瑞达联贸工业有限公司</a></li>
-
-                            <li><a href="http://syxijie.cn.qipeiren.com" target="_blank" title="十堰希杰汽车换热装置有限公司" class="gray">十堰希杰汽车换热装置有限公司</a></li>
-
-                            <li><a href="http://jinke.cn.qipeiren.com" target="_blank" title="广州金可贸易有限公司" class="gray">广州金可贸易有限公司</a></li>
-
-                            <li><a href="http://syhwgs.cn.qipeiren.com" target="_blank" title="十堰恒威汽车零部件有限公司" class="gray">十堰恒威汽车零部件有限公司</a></li>
-
-                            <li><a href="http://syjzgm.cn.qipeiren.com" target="_blank" title="十堰佳智工贸有限公司" class="gray">十堰佳智工贸有限公司</a></li>
-
-                            <li><a href="http://xfdongde.cn.qipeiren.com" target="_blank" title="襄樊东德汽车零部件有限公司" class="gray">襄樊东德汽车零部件有限公司</a></li>
-
-                            <li><a href="http://jianfu.cn.qipeiren.com" target="_blank" title="山东建富齿轮有限公司（十堰办事处）" class="gray">山东建富齿轮有限公司（十堰办事...</a></li>
-
-                            <li><a href="http://yaoshanlin1123.cn.qipeiren.com" target="_blank" title="十堰东普公司(装配康明斯.雷诺零件)" class="gray">十堰东普公司(装配康明斯.雷诺零...</a></li>
-
-                            <li><a href="http://sypygm.cn.qipeiren.com" target="_blank" title="十堰普亿汽车零部件有限公司" class="gray">十堰普亿汽车零部件有限公司</a></li>
-
-                            <li><a href="http://sybd.cn.qipeiren.com" target="_blank" title="十堰百迪工贸有限公司" class="gray">十堰百迪工贸有限公司</a></li>
 
                         </ul>
                         <span id="btn5" class="list-up"></span>
@@ -211,16 +126,6 @@
                 <ul class="info-list clearfix">
 
                     <li><a title="大量促销东风康明斯系列起动机总成QD2802(C3415538)" href="http://www.qipeiren.com/Supply/supply-581963.htm" target="_blank">大量促销东风康明斯系列起动机总成...</a></li>
-
-                    <li><a title="促销东风商用车空气滤芯" href="http://www.qipeiren.com/Supply/supply-580607.htm" target="_blank">促销东风商用车空气滤芯</a></li>
-
-                    <li><a title="东风天龙大力神-康明斯6CT230机油泵C3966840" href="http://www.qipeiren.com/Supply/supply-580226.htm" target="_blank">东风天龙大力神-康明斯6CT230机油...</a></li>
-
-                    <li><a title="东风天龙康明斯发动机后悬支架" href="http://www.qipeiren.com/Supply/supply-575580.htm" target="_blank">东风天龙康明斯发动机后悬支架</a></li>
-
-                    <li><a title="东风天龙雷诺发动机飞轮壳左右支臂" href="http://www.qipeiren.com/Supply/supply-575573.htm" target="_blank">东风天龙雷诺发动机飞轮壳左右支臂...</a></li>
-
-                    <li><a title="促销大力神轮边减速桥单齿圈" href="http://www.qipeiren.com/Supply/supply-573123.htm" target="_blank">促销大力神轮边减速桥单齿圈</a></li>
 
                 </ul>
             </div>

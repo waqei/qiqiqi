@@ -12,7 +12,7 @@
                 <li>分类:</li>
                 <li><a href="#" class="label active">全部</a></li>
                 {% for sort in allsort %}
-                    <li><a href="#" class="label-inverse">{{ sort }}</a></li>
+                    <li><a href="#" class="label">{{ sort }}</a></li>
                 {% endfor %}
             </ul>
         </div>
@@ -23,7 +23,7 @@
                 <li>品牌:</li>
                 <li><a href="#" class="label active">全部</a></li>
                 {% for brand in allbrand %}
-                    <li><a href="#" class="label-inverse">{{ brand }}</a></li>
+                    <li><a href="#" class="label">{{ brand }}</a></li>
                 {% endfor %}
             </ul>
         </div>
@@ -32,7 +32,7 @@
         <tr><td>图片</td><td>商品名</td><td>所属商铺</td><td>价格</td><td>功能</td></tr>
         {% for item in allitem %}
         <tr>
-            <td width="100px"><img src="{{ item.img.url }}" alt="{{ item.it_name }}"></td>
+            <td width="100px"><img src="{{ item.img.url }}" alt="{{ item.it_name }}" width="98" height="98"></td>
             <td width="150px">{{ item.it_name }}</td>
             <td width="150px">{{ item.company }}</td>
             <td>{{ item.price }}</td>

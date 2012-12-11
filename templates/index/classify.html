@@ -1,31 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
-<title>产品库_汽配人网，最全的汽车及配件批发市场</title>
-<meta name="keywords" content="汽配人,汽配,汽车配件,汽车配件网,卡车,商用车,零部件">
-<meta name="description" content="汽配人网是国内最具活力的汽车及配件专业网站,涵盖东风、解放、重汽、陕汽、北汽等品牌汽车及配件信息,为汽车汽配行业人士提供即时供求商机、企业信息、行业动态、行业展会、产品参数、汽车及配件价格、维修和保养等...">
+{% extends 'base-index.html' %}
+{% block title %}
+    产品库
+{% endblock %}
+{% block header %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'reset-gitd-min_11.css' %}">
+    <link rel="stylesheet" href="{% static 'c2100106_11.css' %}">
+    <link rel="stylesheet" href="{% static 'bdsstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'others.css' %}">
+    <script language="javascript" src="{% static 'func.js' %}"></script>
+    <script language="javascript" src="{% static 'logger.js' %}"></script>
+    <script language="javascript" src="{% static 'getuname.js' %}"></script>
+{% endblock %}
 
-<link rel="stylesheet" href="./产品库_汽配人网，最全的汽车及配件批发市场_files/reset-gird-min_11.css" type="text/css">
-<link rel="stylesheet" href="./产品库_汽配人网，最全的汽车及配件批发市场_files/c20100106_11.css" type="text/css">
-<script language="javascript" src="./产品库_汽配人网，最全的汽车及配件批发市场_files/func.js"></script>
-<script src="./产品库_汽配人网，最全的汽车及配件批发市场_files/logger.js"></script><link href="./产品库_汽配人网，最全的汽车及配件批发市场_files/bdsstyle.css" rel="stylesheet" type="text/css"><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></head><style type="text/css"></style>
-<body>
-<iframe style="display: none;" frameborder="0"></iframe>
-<div id="bdshare" style="right: 1276px; left: 0px; top: 250px; position: fixed; height: 330px; overflow: hidden; width: 24px;">
-    <img src="./产品库_汽配人网，最全的汽车及配件批发市场_files/l0.gif" alt="" style="float:right;margin-top:58px;">
-    <iframe id="bdsIfr" style="position: absolute; display: none; z-index: 9999; width: 0px; top: 0px; left: 0px; height: 330px;" frameborder="0"></iframe><div id="bdshare_m" style="display: block; right: 24px;">
-    <div id="bdshare_m_c"><h6>分享到</h6>
-        <ul><li><a href="http://www.qipeiren.com/Supply/#" class="bds_mshare mshare">一键分享</a>
-        </li><li><a href="http://www.qipeiren.com/Supply/#" class="bds_qzone qqkj">QQ空间</a></li>
-            <li><a href="http://www.qipeiren.com/Supply/#" class="bds_tsina xlwb">新浪微博</a></li>
-            <li><a href="http://www.qipeiren.com/Supply/#" class="bds_baidu bdsc">百度搜藏</a></li>
-            <li><a href="http://www.qipeiren.com/Supply/#" class="bds_renren rrw">人人网</a></li>
-            <li><a href="http://www.qipeiren.com/Supply/#" class="bds_tqq txwb">腾讯微博</a></li>
-            <li><a href="http://www.qipeiren.com/Supply/#" class="bds_bdxc bdxc">百度相册</a></li>
-            <li><a href="http://www.qipeiren.com/Supply/#" class="bds_more">更多...</a></li>
-        </ul><p><a href="http://www.qipeiren.com/Supply/#" class="goWebsite">百度分享</a></p>
-    </div></div></div>
+
+{% block main %}
 <div id="page" class="w950">
-    	<script language="javascript" src="./产品库_汽配人网，最全的汽车及配件批发市场_files/getuname.js"></script>
+
 		<div id="header">
 						<div id="mini-nav">
 				<p class="login-info">您好，欢迎光临汽配人网！</p>
@@ -154,7 +145,7 @@
                             
                         </div>
 					</div>
-                    <div class="layout grid-m0s170">
+            <div class="layout grid-m0s170">
 			<div class="col-main">
 				<div class="main-wrap">
 					<div class="list-content">
@@ -549,31 +540,5 @@
 		</div>
         
 	</div>
-		<div id="footer">
-		<div class="foot-nav">
-			<a href="http://www.qipeiren.com/About/" target="_blank" rel="nofollow">关于我们</a> | <a href="http://www.qipeiren.com/About/Exempt.asp" target="_blank" rel="nofollow">法律声明</a> | <a href="http://www.qipeiren.com/About/Link.asp" target="_blank">友情链接</a> | <a href="http://www.qipeiren.com/sitemap.html" target="_blank">网站地图</a> | <a href="http://www.qipeiren.com/peijian/" target="_blank">产品大全</a> | <a href="http://www.qipeiren.com/chanpin/" target="_blank">产品归档</a> | <a href="http://www.qipeiren.com/qiye/" target="_blank">企业名录</a> | <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">鄂ICP备05024915号</a>		
-		</div>
-		<div class="copyright">
-			<p>版权所有 汽配人网 qipeiren@qipeiren.com 服务热线：0719-8311727</p>
-			<p>Copyright &#169; 2005-2012 qipeiren.com, All Rights Reserved</p><p>主管单位：中国(十堰)汽配城管理办公室</p>
-		</div>
-	</div>
-	<span style="display:none">
-	<script type="text/javascript">
-		document.write("<scr"+"ipt src=\"http://js.users.51.la/378264.js\" language=\"JavaScript\"></sc"+"ript>")
-	</script><script src="./产品库_汽配人网，最全的汽车及配件批发市场_files/378264.js" language="JavaScript"></script><a href="http://www.51.la/?378264" target="_blank"><img alt="51.la 专业、免费、强健的访问统计" src="./产品库_汽配人网，最全的汽车及配件批发市场_files/icon_9.gif" style="border:none"></a>
-<img style="width:0px;height:0px" src="./产品库_汽配人网，最全的汽车及配件批发市场_files/go.asp">
-	</span> 
-<!-- Baidu Button BEGIN -->
-<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=0&amp;mini=1&amp;pos=left&amp;uid=724880" src="./产品库_汽配人网，最全的汽车及配件批发市场_files/bds_s_v2.js"></script>
-<script type="text/javascript" id="bdshell_js" src="./产品库_汽配人网，最全的汽车及配件批发市场_files/shell_v2.js"></script>
-<script type="text/javascript">
-var bds_config={"bdTop":250};
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
-</script>
-<!-- Baidu Button END -->
-
 </div>
-
-
-</body></html>
+{% endblock %}

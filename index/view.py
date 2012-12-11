@@ -39,19 +39,27 @@ def search(request,model,name):
     else:
         return HttpResponse("<script>alert('输入错误!');history.go(-1);</script>")
     return render_to_response("index/result.html",template_var,context_instance=RequestContext(request))
+#
+#def classify(request,sort):
+#    template_var={}
+#    if sort:
+#        items = Items.objects.filter(sort__icontains=sort)
+#        if items =="":
+#            HttpResponse("<script>alert('不存在该分类!');history .go(-1);</script>")
+#    else:
+#        items=Items.objects.all()
+#
+#    template_var['items'] = items
+#    return render_to_response('index/classify.html',template_var,context_instance=RequestContext(request))
 
-def classify(request,sort):
-    template_var={}
-    if sort:
-        items = Items.objects.filter(sort__icontains=sort)
-        if items =="":
-            HttpResponse("<script>alert('不存在该分类!');history.go(-1);</script>")
-    else:
-        items=Items.objects.all()
-
-    template_var['items'] = items
-    return render_to_response('index/classify.html',template_var,context_instance=RequestContext(request))
+def classify(request):
+    return render_to_response('index/classify.html')
 
 def test(request):
     return render_to_response('accounts/test.html')
 
+
+#store
+
+def store(request):
+    pass

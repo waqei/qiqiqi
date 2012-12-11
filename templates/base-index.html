@@ -18,7 +18,87 @@
     {% endblock %}
 </head>
     <body>
+{#    baidu share#}
+    <iframe style="display: none;" frameborder="0"></iframe>
+    <div id="bdshare" style="right: 1276px; left: 0px; top: 250px; position: fixed; height: 330px; overflow: hidden; width: 24px;">
+        <img src="./产品库_汽配人网，最全的汽车及配件批发市场_files/l0.gif" alt="" style="float:right;margin-top:58px;">
+        <iframe id="bdsIfr" style="position: absolute; display: none; z-index: 9999; width: 0px; top: 0px; left: 0px; height: 330px;" frameborder="0"></iframe>
+        <div id="bdshare_m" style="display: block; right: 24px;">
+            <div id="bdshare_m_c">
+                <h6>分享到</h6>
+                <ul><li><a href="http://www.qipeiren.com/Supply/#" class="bds_mshare mshare">一键分享</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/#" class="bds_qzone qqkj">QQ空间</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/#" class="bds_tsina xlwb">新浪微博</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/#" class="bds_baidu bdsc">百度搜藏</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/#" class="bds_renren rrw">人人网</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/#" class="bds_tqq txwb">腾讯微博</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/#" class="bds_bdxc bdxc">百度相册</a></li>
+                    <li><a href="http://www.qipeiren.com/Supply/#" class="bds_more">更多...</a></li>
+                </ul><p><a href="http://www.qipeiren.com/Supply/#" class="goWebsite">百度分享</a></p>
+            </div>
+        </div>
+    </div>
+{#    baidu share#}
         <div id="page" class="w950">
+
+            <div id="header">
+                <div id="mini-nav">
+                    <p class="login-info">您好，欢迎光临汽配商城！</p>
+
+                    <div class="quick-menu">
+                        <ul>
+                            <li><a href="/" target="_blank">汽配商城</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div id="top-header">
+                    <div class="logo-search">
+                        <div class="logo">
+                            {% load static %}
+                            <a href="/" title="汽配"><img src="{% static "logo1.jpg" %}" width="154" height="56" alt="汽配人网" /></a>
+                        </div>
+                        <div class="search">
+                            <div class="search-tab">
+                                <ul class="clearfix indser">
+                                    <li class="current" tit="输入产品名称或关键词" ac="#:index.asp"><a href="javascript:void(0);">产品</a></li>
+                                    <li tit="输入公司名称或关键词" ac="#"><a href="javascript:void(0);">公司</a></li>
+                                </ul>
+                            </div>
+                            <div class="search-panel clearfix">
+                                <form id="searchPanel" action="http://www.qipeiren.com/Supply/index.asp" method="get" name="searchPanel" target="_blank">
+                                    <div class="search-panel-field">
+                                        <input id="mSearch" type="text" name="KeyWord" value="输入产品名称" tabindex="1" />
+                                        <b class="lt"></b>
+                                        <b class="lb"></b>
+                                    </div>
+                                    <button type="submit" tabindex="2">搜索</button>
+                                    <!--<a href="#" class="g">使用帮助</a> -->
+                                </form>
+                                <b class="tl"></b>
+                                <b class="tr"></b>
+                                <b class="bl"></b>
+                                <b class="br"></b>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav">
+                        <ul class="clearfix">
+                            <li class="w2 current"><a href="http://www.qipeiren.com/">首页</a></li>
+                            <li class="w3"><a href="/index/classify">产品</a></li>
+                            <li class="w3"><a href="need">找求购</a></li>
+                            <li class="w2"><a href="news" target="_blank">资讯</a></li>
+                            <li class="w2"><a href="sorts" target="_blank">分类</a></li>
+                        </ul>
+                        <b></b>
+                        <div class="new hidden"><img src="images_11/new.gif" width="19" height="23" alt="最全供应信息" /></div>
+                        <div class="hot hidden"><img src="images_11/hot.gif" width="19" height="23" alt="配件目录" /></div>
+                    </div>
+                </div>
+            </div>
+
 
             {% block main %}
             

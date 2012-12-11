@@ -13,7 +13,11 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     #index
-    url(r'^$', include('index.urls')),
+    url(r'^$','index.view.index',name='index'),
+    url(r'^index/$', include('index.urls')),
+
+    #store
+#    url(r'^store/(?P<id>\b+)','index.view.store'),
 
     #account pages
     url(r'^accounts/', include("accounts.urls")),
