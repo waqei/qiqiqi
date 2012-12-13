@@ -61,5 +61,9 @@ def test(request):
 
 #store
 
-def store(request):
-    pass
+def store(request,id):
+    store=Stores.objects.get(boss=id)
+    template_var={
+        'com':store,
+    }
+    return render_to_response('store/base-store.html',template_var)

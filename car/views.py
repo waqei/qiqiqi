@@ -55,12 +55,12 @@ def addStore(request):
     template_var['form']=form
     return render_to_response('goods/add_store.html',template_var,context_instance=RequestContext(request))
 
-def showStoreinfo(request,id):
-    store=Stores.objects.get(boss=id)
-    template_var={
-        'com':store,
-    }
-    return render_to_response('goods/showstoreinfo.html',template_var,context_instance=RequestContext(request))
+#def showStoreinfo(request,id):
+#    store=Stores.objects.get(boss=id)
+#    template_var={
+#        'com':store,
+#    }
+#    return render_to_response('goods/showstoreinfo.html',template_var,context_instance=RequestContext(request))
 
 #edit store info
 def editStore(request,id):
@@ -87,6 +87,7 @@ def editStore(request,id):
             return HttpResponse('<script>alert("修改成功！");top.location="/goods/store/edit/";</script>')
         else:
             HttpResponseRedirect(reverse('add_store_info'))
+    template_var['com']=store
     template_var['form']=form
     return render_to_response('goods/edit_store.html',template_var,context_instance=RequestContext(request))
 

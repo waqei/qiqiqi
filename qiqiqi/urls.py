@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     url(r'^index/$', include('index.urls')),
 
     #store
-#    url(r'^store/(?P<id>\b+)','index.view.store'),
+    url(r'^store/(?P<id>\b.*)','index.view.store'),
 
     #account pages
     url(r'^accounts/', include("accounts.urls")),
