@@ -22,13 +22,21 @@ class StoreForm(ModelForm):
 #edit store
 class EditStoreForm(ModelForm):
     class Meta:
-        fields=('name','logo','loc1','loc2','loc3','tel','qq','address','notice','it_description')
+        fields=('name','tel','qq','address','notice','it_description')
         model=Stores
         widgets={
             'notice':Textarea(attrs={'cols':10,'rows':10}),
             'it_description':Textarea(attrs={'cols':10,'rows':10}),
             }
+#store ad
+class StoreAdForm(forms.Form):
+    logo=forms.ImageField(label=_(u'Logo'))
+    loc1=forms.ImageField(label=_(u'广告1'))
+    loc2=forms.ImageField(label=_(u'广告2'))
+    loc3=forms.ImageField(label=_(u'广告3'))
 
+
+#sort form
 class SortForm(ModelForm):
     class Meta:
         model=Sorts

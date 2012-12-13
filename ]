@@ -63,7 +63,6 @@ def test(request):
 
 
 #store
-
 def store(request,id):
     store=Stores.objects.get(boss=id)
     boss=User.objects.get(id=id)
@@ -79,6 +78,7 @@ def store(request,id):
                 result['1']='您查找的产品不存在'
 
     template_var={
+		'form':form,
         'boss':boss,
         'com':store,
     }

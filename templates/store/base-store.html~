@@ -339,29 +339,27 @@
 					</div>
 					<div class="bd">
 						<div class="panel clearfix">
-
-                            <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
-                                <table border="0" cellpadding="0" >
-                                    {{ form.as_p }}
-                                </table>
-                                <input type="submit"  class="" value="查找"/>
+							<form method="get" action="supplylist.asp">
+								<input name="skey" id="skey" type="text"> 
+								<button type="submit">搜索</button>
 							</form>
 						</div>
 					</div>
 				</div>
 
-                <div id="product" class="box">
-                    <div class="hd">
-                        <h3 style="color: rgb(119,0,0)">主营产品</h3>
-                    </div>
-                    <div class="bd">
-                        <div class="panel clearfix">
-                            {% for sell in com.sell.get_sort %}
-                                {{ sell }},
-                            {% endfor %}
-                        </div>
+            <div id="" class="box">
+                <div class="hd">
+                    <h3></h3>
+                </div>
+                <div class="bd">
+                    <div class="panel clearfix">
+                        {% for sell in com.sell.get_sort %}
+                            {{ sell }},
+                        {% endfor %}
+
                     </div>
                 </div>
+            </div>
 				
 				<div class="category box">
 					<div class="hd">

@@ -16,7 +16,9 @@ urlpatterns = patterns('',
 
     ##store
     url(r'^store/add/$','car.views.addStore',name="add_store"),
-    url(r'^store/edit/(?P<id>\b.*)/$','car.views.editStore',name="edit_store_info"),
+    url(r'^store/(?P<id>\b.)/$','car.views.showStoreinfo',name="show_store_info"),
+    url(r'^store/edit/(?P<id>\b.)/$','car.views.editStore',name="edit_store_info"),
+    url(r'^store/edit/(?P<id>\b.)/ad/$','car.views.storeAd',name="edit_store_ad"),
 
     ##ad
     url(r'^ad/$','car.views.ad',name='ad_manage'),

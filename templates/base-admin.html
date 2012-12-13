@@ -73,7 +73,7 @@
                 <div class="span3">
                     <div class="well sidebar-nav">
                         <ul class="nav nav-list">
-                            <li class="nav-header">功能区</li>
+                            <li class="nav-header">管理员功能区</li>
                             {% block function %}
                                 {% if request.user.is_superuser %}
                                     <li><a href="{% url manage_user %}">管理商户</a></li>
@@ -81,15 +81,19 @@
 
                                     <li><a href="{% url show_sort %}">分类管理</a></li>
 {#                                    <li><a href="{% url add_brand %}">品牌管理</a></li>#}
-                                    <li><a href="{% url ad_manage %}">广告管理</a></li>
+                                    <li><a href="{% url ad_manage %}">网站广告管理</a></li>
                                     <li><a href="{% url links %}">友情链接管理</a></li>
 
                                     <hr>
                                 {% endif %}
+                                    <li class="nav-header">普通商户功能区</li>
                                     <li><a href="/goods/item/add/{{ request.user }}/">增加商品</a></li>
                                     <li><a href="{% url manage_items %}">商品管理</a></li>
-                                    <li><a href="/goods/store/edit/{{ request.user.id }}/">商铺信息</a></li>
+                                    <li><a href="/goods/store/{{ request.user.id }}/">商铺信息</a></li>
+                                    <li><a href="/goods/store/edit/{{ request.user.id }}/">修改商铺信息</a></li>
+                                    <li><a href="/goods/store/edit/{{ request.user.id }}/ad/">修改商铺广告</a></li>
                                     <hr>
+                                    <li class="nav-header">用户信息</li>
                                     <li><a href="{% url changepw %}">修改登录密码</a></li>
                             {% endblock %}
                         </ul>

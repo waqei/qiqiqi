@@ -20,11 +20,8 @@ def IsNUM(varObj):
 
 
 ##################################################################
-
+#添加商品
 def addItems(request,muser):
-    """
-    添加商品
-    """
     template_var={}
     form = ItemsForm(initial={'company':muser,})
     form['sort'].field.help_text ='<p class="alert alert-info">按下Ctrl键支持多选</p>'
@@ -36,7 +33,6 @@ def addItems(request,muser):
             return HttpResponse('<script>alert("添加成功！");top.location="/goods/item/manage";</script>')
     template_var['form']=form
     return  render_to_response('goods/add.html',template_var,context_instance=RequestContext(request))
-
 
 
 #添加商铺
@@ -54,13 +50,12 @@ def addStore(request):
             HttpResponseRedirect(reverse('add_store'))
     template_var['form']=form
     return render_to_response('goods/add_store.html',template_var,context_instance=RequestContext(request))
-
-#def showStoreinfo(request,id):
-#    store=Stores.objects.get(boss=id)
-#    template_var={
-#        'com':store,
-#    }
-#    return render_to_response('goods/showstoreinfo.html',template_var,context_instance=RequestContext(request))
+#show store info
+def showStoreinfo(request,id):
+    store=Stores.objects.get(boss=id)
+    template_var={}
+    template_var['com']=store
+    return render_to_response('goods/storeinfo.html',template_var,context_instance=RequestContext(request))
 
 #edit store info
 def editStore(request,id):
@@ -72,25 +67,40 @@ def editStore(request,id):
         if form.is_valid():
             url = DOMAIN+"/store/" + str(store.id)
             name=form.cleaned_data['name']
-            logo=form.cleaned_data['logo']
-            loc1=form.cleaned_data['loc1']
-            loc2=form.cleaned_data['loc2']
-            loc3=form.cleaned_data['loc3']
             tel=form.cleaned_data['tel']
             qq=form.cleaned_data['qq']
             address=form.cleaned_data['address']
 #            sell=form.cleaned_data['sell']
             notice=form.cleaned_data['notice']
             it_description=form.cleaned_data['it_description']
-            Stores.objects.filter(boss=id).update(url=url,name=name,logo=logo,loc1=loc1,loc2=loc2,loc3=loc3,tel=tel,qq=qq,address=address,
+            Stores.objects.filter(boss=id).update(url=url,name=name,tel=tel,qq=qq,address=address,
                         notice=notice,it_description=it_description)
             return HttpResponse('<script>alert("修改成功！");top.location="/goods/store/edit/";</script>')
         else:
             HttpResponseRedirect(reverse('add_store_info'))
-    template_var['com']=store
     template_var['form']=form
-    return render_to_response('goods/edit_store.html',template_var,context_instance=RequestContext(request))
+    return render_to_response('goods/editstore.html',template_var,context_instance=RequestContext(request))
 
+#add store ad
+def storeAd(request,id):
+    store=Stores.objects.get(boss=id)
+    form=StoreAdForm()
+    template_var={}
+    if request.method == 'POST':
+        form = StoreAdForm(request.POST,request.FILES)
+        if form.is_valid():
+            logo=form.cleaned_data['logo']
+            loc1=form.cleaned_data['loc1']
+            loc2=form.cleaned_data['loc2']
+            loc3=form.cleaned_data['loc3']
+            store.logo=logo
+            store.loc1=loc1
+            store.loc2=loc2
+            store.loc3=loc3
+            store.save()
+            return HttpResponse('<script>alert("修改成功！");history.go(-1);</script>')
+    template_var['form']=form
+    return render_to_response('goods/editstoread.html',template_var,context_instance=RequestContext(request))
 
 #管理商品
 def manageitems(request):

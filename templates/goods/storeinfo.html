@@ -6,7 +6,7 @@
     <table class="table-bordered">
         <tbody>
             <tr><td>商铺名称</td><td class="alert alert-success">{{ com.name }}</td></tr>
-            <tr><td>logo</td><td><img src="{{ com.logo.url }}" alt=""></tr>
+            <tr><td>logo</td><td><img src="{{ com.logo.url }}" alt="" width="64" height="64"></tr>
             <tr><td>商铺网址</td><td class="alert alert-success"><a href="{{ com.url }}" target="_blank">{{ com.url }}</a></td></tr>
             <tr><td>主营产品</td><td class="alert alert-success">{{ com.sell }}</td></tr>
             <tr><td>网站公告</td><td class="alert alert-success">{{ com.notice }}</td></tr>
@@ -15,18 +15,5 @@
             <tr><td>商铺地址</td><td class="alert alert-success">{{ com.address }}</td></tr>
         </tbody>
     </table>
-    <hr>
-    <h4>修改信息</h4>
-    <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
-        <table border="0" cellpadding="0" >
-            {{ form.as_p }}
-        </table>
-        <br>
-        <div class="control-group" align="center">
-            <div class="btn-group">
-                <input type="submit"  class="btn btn-primary" value="更改"/>
-            </div>
-        </div>
-    </form>
 
 {% endblock %}
