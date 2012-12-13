@@ -15,7 +15,8 @@ urlpatterns = patterns('',
     url(r'^show_sort/dele/(?P<id>\w.*)/$','car.views.dele',{'model':Sorts},name="dele_sort"),
 
     ##store
-    url(r'^store/add','car.views.addStore',name="add_store"),
+    url(r'^store/add/$','car.views.addStore',name="add_store"),
+    url(r'^store/edit/(?P<id>\b.*)/$','car.views.editStore',name="edit_store_info"),
 
     ##ad
     url(r'^ad/$','car.views.ad',name='ad_manage'),

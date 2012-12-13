@@ -18,16 +18,6 @@
         </div>
 
     <hr>
-        <div class="subnav">
-            <ul class="nav nav-pills">
-                <li>品牌:</li>
-                <li><a href="#" class="label active">全部</a></li>
-                {% for brand in allbrand %}
-                    <li><a href="#" class="label">{{ brand }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-    <hr>
     <table class="table table-bordered">
         <tr><td>图片</td><td>商品名</td><td>所属商铺</td><td>价格</td><td>功能</td></tr>
         {% for item in allitem %}

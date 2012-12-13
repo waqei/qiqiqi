@@ -88,7 +88,7 @@
                                 {% endif %}
                                     <li><a href="/goods/item/add/{{ request.user }}/">增加商品</a></li>
                                     <li><a href="{% url manage_items %}">商品管理</a></li>
-                                    <li><a href="#">更改商铺信息</a></li>
+                                    <li><a href="/goods/store/edit/{{ request.user.id }}/">修改商铺信息</a></li>
                                     <hr>
                                     <li><a href="{% url changepw %}">修改登录密码</a></li>
                             {% endblock %}

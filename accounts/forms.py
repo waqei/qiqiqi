@@ -3,9 +3,6 @@ from django import forms
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
-from django.forms import ModelForm,Textarea
-from car.models import Items,Stores,Sorts,Brands
-
 BOOLE_CHOICES=(
     ('是','1'),
     ('否','0'),

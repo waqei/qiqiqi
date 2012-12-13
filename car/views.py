@@ -4,10 +4,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from form import ItemsForm,StoreForm,AddForm,LinkForm
+from form import *
 from car.models import *
 import re
-
+from qiqiqi.settings import DOMAIN
 
 ##############################工具函数############################
 #验证是否是正整数
@@ -27,8 +27,7 @@ def addItems(request,muser):
     """
     template_var={}
     form = ItemsForm(initial={'company':muser,})
-    form['sort'].field.help_text ='按下Ctrl键支持多选'
-    form['brand'].field.help_text ='按下Ctrl键支持多选'
+    form['sort'].field.help_text ='<p class="alert alert-info">按下Ctrl键支持多选</p>'
     if request.method == 'POST':
         form = ItemsForm(request.POST,request.FILES)
         if form.is_valid():
@@ -42,10 +41,10 @@ def addItems(request,muser):
 
 #添加商铺
 def addStore(request):
+    if not request.user.is_superuser:
+        return HttpResponseRedirect(reverse("404"))
     template_var={}
     form=StoreForm()
-    form['sell'].field.help_text ='按下Ctrl键支持多选'
-    form['s_brand'].field.help_text ='按下Ctrl键支持多选'
     if request.method == 'POST':
         form = StoreForm(request.POST, request.FILES)
         if form.is_valid():
@@ -56,43 +55,49 @@ def addStore(request):
     template_var['form']=form
     return render_to_response('goods/add_store.html',template_var,context_instance=RequestContext(request))
 
+def showStoreinfo(request,id):
+    store=Stores.objects.get(boss=id)
+    template_var={
+        'com':store,
+    }
+    return render_to_response('goods/showstoreinfo.html',template_var,context_instance=RequestContext(request))
 
-#添加品牌
-#def addbrand(request):
-#    allbrand=Brands.objects.all()
-#    template_var={}
-#    form=BrandForm()
-#    if request.method=='POST':
-#        form = BrandForm(request.POST,request.FILES)
-#        if form.is_valid():
-#            form.save()
-#            return HttpResponse('<script>alert("添加成功");top.location="/goods/add_brand";</script>')
-#        else:
-#            HttpResponseRedirect(reverse('add_brand'))
-#    template_var['form']=form
-#    template_var['allbrand']=allbrand
-#    return render_to_response('goods/add_brand.html',template_var,context_instance=RequestContext(request))
-#
-#
-##删除品牌
-#def delebrand(request,id):
-#    if id:
-#        dele=Brands.objects.get(id=id)
-#        dele.delete()
-#        return HttpResponse('<script>alert("已删除！");top.location="/goods/add_brand"</script>')
-#    else:
-#        HttpResponseRedirect(reverse('addbrand'))
+#edit store info
+def editStore(request,id):
+    store=Stores.objects.get(boss=id)
+    form=EditStoreForm()
+    template_var={}
+    if request.method == 'POST':
+        form = EditStoreForm(request.POST,request.FILES)
+        if form.is_valid():
+            url = DOMAIN+"/store/" + str(store.id)
+            name=form.cleaned_data['name']
+            logo=form.cleaned_data['logo']
+            loc1=form.cleaned_data['loc1']
+            loc2=form.cleaned_data['loc2']
+            loc3=form.cleaned_data['loc3']
+            tel=form.cleaned_data['tel']
+            qq=form.cleaned_data['qq']
+            address=form.cleaned_data['address']
+#            sell=form.cleaned_data['sell']
+            notice=form.cleaned_data['notice']
+            it_description=form.cleaned_data['it_description']
+            Stores.objects.filter(boss=id).update(url=url,name=name,logo=logo,loc1=loc1,loc2=loc2,loc3=loc3,tel=tel,qq=qq,address=address,
+                        notice=notice,it_description=it_description)
+            return HttpResponse('<script>alert("修改成功！");top.location="/goods/store/edit/";</script>')
+        else:
+            HttpResponseRedirect(reverse('add_store_info'))
+    template_var['form']=form
+    return render_to_response('goods/edit_store.html',template_var,context_instance=RequestContext(request))
 
 
 #管理商品
 def manageitems(request):
     allitem=Items.objects.all()
     allsort=Sorts.objects.all()
-    allbrand=Brands.objects.all()
     template_var={
         'allitem':allitem,
         'allsort':allsort,
-        'allbrand':allbrand,
 
         }
     return render_to_response("goods/manage_item.html",template_var,context_instance=RequestContext(request))

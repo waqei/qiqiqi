@@ -1,10 +1,8 @@
 #coding=utf-8
 from django.db import models
 from django.contrib.auth.models import User
-#from django.core.files.storage import FileSystemStorage
-#from django.conf import settings
-#import os,time,random
 from mptt.models import MPTTModel,TreeForeignKey
+
 
 BOOLE_CHOICES=(
     ('是','1'),
@@ -24,29 +22,30 @@ class Sorts(MPTTModel):
         return self.name
 
 
-#品牌
-class Brands(models.Model):
-    name= models.CharField(max_length=20,verbose_name="品牌名称",unique=True)
-    image= models.ImageField(verbose_name="品牌标志",upload_to="brand")
-
-    def __unicode__(self):
-        return self.name
-
-
 
 #商铺
 class Stores(models.Model):
     boss=models.OneToOneField(User,verbose_name='商铺主')
-    st_name=models.CharField(max_length=10,verbose_name='商铺名称',unique=True)
-    tele=models.CharField(max_length=11,verbose_name='联系电话')
-    fax=models.CharField(max_length=11,verbose_name='传真',blank=True)
-    sell=models.ManyToManyField(Sorts,max_length=100,verbose_name='主营产品')
-    s_brand=models.ManyToManyField(Brands,max_length=100,verbose_name='主营品牌')
-    it_description=models.CharField(max_length=200,verbose_name='商铺描述')
-    address=models.CharField(max_length=30,verbose_name='地址')
+
+    url=models.URLField(verbose_name='商铺网址',blank=True)
+    name=models.CharField(max_length=10,verbose_name='商铺名称',unique=True)
+
+    logo=models.ImageField(upload_to='logo',verbose_name='商店logo',blank=True)
+    loc1=models.ImageField(upload_to='ad',verbose_name='首页广告1',blank=True)
+    loc2=models.ImageField(upload_to='ad',verbose_name='首页广告2',blank=True)
+    loc3=models.ImageField(upload_to='ad',verbose_name='首页广告3',blank=True)
+
+    tel=models.CharField(max_length=11,verbose_name='联系电话',blank=True)
+    qq=models.CharField(max_length=11,verbose_name='QQ',blank=True)
+    address=models.CharField(max_length=30,verbose_name='地址',blank=True)
+
+    sell=models.ManyToManyField(Sorts,max_length=100,verbose_name='主营产品',blank=True)
+    notice=models.CharField(max_length=600,verbose_name='商铺公告',blank=True)
+    it_description=models.CharField(max_length=200,verbose_name='商铺描述',blank=True)
+
 
     def __unicode__(self):
-        return self.st_name
+        return self.name
 
 
 #商品
@@ -54,7 +53,7 @@ class Items(models.Model):
     it_name=models.CharField(max_length=10,verbose_name='商品名称')
     company=models.ForeignKey(Stores,max_length=20,verbose_name='所属商铺')
     sort=models.ManyToManyField(Sorts,verbose_name='分类')
-    brand=models.ManyToManyField(Brands,max_length=10,verbose_name='品牌',blank=True)
+    brand=models.CharField(max_length=10,verbose_name='品牌',blank=True)
     version=models.CharField(max_length=30,verbose_name='型号',blank=True)
     description=models.CharField(max_length=200,verbose_name='描述')
     exit_date=models.DateField(verbose_name='上市时间',blank=True)
