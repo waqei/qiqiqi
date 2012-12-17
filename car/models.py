@@ -54,14 +54,12 @@ class Items(models.Model):
     company=models.ForeignKey(Stores,max_length=20,verbose_name='所属商铺')
     sort=models.ManyToManyField(Sorts,verbose_name='分类')
     brand=models.CharField(max_length=10,verbose_name='品牌',blank=True)
-    version=models.CharField(max_length=30,verbose_name='型号',blank=True)
+    version=models.CharField(max_length=30,verbose_name='其他参数',blank=True)
     description=models.CharField(max_length=200,verbose_name='描述')
     exit_date=models.DateField(verbose_name='上市时间',blank=True)
     price=models.CharField(max_length=20,verbose_name='价格')
     img=models.ImageField(verbose_name='商品图片',upload_to='image',blank=True)
 
-    def get_company(self):
-        return self.company
 
     def __unicode__(self):
         return self.it_name

@@ -65,7 +65,7 @@ def editStore(request,id):
     if request.method == 'POST':
         form = EditStoreForm(request.POST,request.FILES)
         if form.is_valid():
-            url = DOMAIN+"/store/" + str(store.id)
+            url = DOMAIN+"/store/" + str(store.id) + "/"
             name=form.cleaned_data['name']
             tel=form.cleaned_data['tel']
             qq=form.cleaned_data['qq']

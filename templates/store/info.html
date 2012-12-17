@@ -1,0 +1,59 @@
+{% extends 'store/base-store.html' %}
+{% block title %}
+    {{ com.name }}
+{% endblock %}
+{% block keywords %}
+    {{ com.name }},{{ com.description }}
+{% endblock %}
+{% block description %}
+    {{ com.name }},{{ com.description }}
+{% endblock %}
+{% block main %}
+    <div class="col-main">
+        <div class="main-wrap">
+            <div id="content-wrap" class="box">
+                <div class="hd">
+                    <h3>联系方式</h3>
+                </div>
+                <div class="bd">
+                    <div class="person cbox">
+                        联系人：<strong>{{ boss.first_name }}</strong> <a href='tencent://message/?Uin={{ com.qq }}'><img SRC=http://wpa.qq.com/pa?p=1:1938934135:7 alt='点击这里给我发消息' width='71' height='24' /></a>
+                    </div>
+
+                    <div class="detail">
+                        <table width="100%">
+                            <tr>
+                                <td width="17%" class="infoName"><strong>企业名称：</strong></td>
+                                <td width="33%" class="infoContent">{{ com.name }}</td>
+                                <td width="17%" class="infoName"><strong>网址：</strong></td>
+                                <td width="33%" class="infoContent"><a target="_blank" href="{{ com.url }}" title="{{ com.name }}">{{ com.url }}</a></td>
+                            </tr>
+                            <tr>
+                                <td width="17%" class="infoName"><strong>联系电话：</strong></td>
+                                <td width="33%" class="infoContent">{{ com.tel }}</td>
+                                <td width="17%" class="infoName"><strong>QQ：</strong></td>
+                                <td width="33%" class="infoContent">{{ com.qq }}</td>
+                            </tr>
+                            <tr>
+                                <td width="17%" class="infoName"><strong>地址：</strong></td>
+                                <td width="33%" class="infoContent">{{ com.address }}</td>
+                                <td width="17%" class="infoName"><strong>邮件：</strong></td>
+                                <td width="33%" class="infoContent"><a href="mailto:{{ boss.email }}">{{ boss.email }}</a></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="categories cbox">
+                        <h3>产品供应：</h3>
+                        <ul class="info-list clearfix">
+
+                            {% for sell in store.sell.get_sorts %}
+                                <li><a href="#" title="{{ sell }}">{{ sell }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

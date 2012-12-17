@@ -31,7 +31,8 @@ body, .box .hd, .box .ft, .box .list-up, .box .list-down, .info-list li, .login-
 	background-color: #ffffff;
 }
 #top-header .nav, .nav ul, .nav li, .nav .current, .nav .current a, .nav b {
-	background-color: #808080;
+    background: url("/static/navbar.png") no-repeat scroll 0% 0% transparent;
+
 }
 
 body {

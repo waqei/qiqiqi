@@ -129,7 +129,7 @@ i {
 }
 
 
-/** Í·²¿ **/
+/** Í·ï¿½ï¿½ **/
 /*
 #logo-login {
 	position: relative; width: 950px; height: 73px; color: #000; overflow: hidden; 
@@ -264,7 +264,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 }
 */
 
-/** ÃÔÄãµ¼º½ **/
+/** ï¿½ï¿½ï¿½ãµ¼ï¿½ï¿½ **/
 #mini-nav {
     position: relative; width: 100%; height: 27px; 
 }
@@ -274,7 +274,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 #mini-nav a:hover {
 	color: #ff6600; 
 }
-/* µÇÂ¼Ãæ°å */
+/* ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ */
 .login-panel {
 	position: absolute; top: 2px; left: 365px; z-index: 99; 
 }
@@ -296,14 +296,14 @@ a.toplink-ac:hover, a.toplink-ac:active {
 .login-panel a {
     width: 65px; background-position: -15px -34px; background-color: #ff6600; text-indent: -999em; 
 }
-/* µÇÂ¼ÐÅÏ¢ */
+/* ï¿½ï¿½Â¼ï¿½ï¿½Ï¢ */
 .login-info, .login-out, .quick-menu {
 	height: 21px; margin-top: 2px; line-height: 21px; 
 }
 .login-info, .login-out {
 	float: left; 
 }
-/* ¿ì½Ý²Ëµ¥ */
+/* ï¿½ï¿½Ý²Ëµï¿½ */
 .quick-menu {
 	float: right; 
 }
@@ -317,11 +317,11 @@ a.toplink-ac:hover, a.toplink-ac:active {
 	background: none; padding-right: 0; 
 }
 
-/** Í·²¿ **/
+/** Í·ï¿½ï¿½ **/
 #top-header {
 	width: 100%; height: 129px; 
 }
-/* ±êÖ¾ */
+/* ï¿½ï¿½Ö¾ */
 #top-header .logo-search {
 	position: relative; height: 84px; 
 }
@@ -334,7 +334,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 .logo span {
 	position: absolute; color: #000000; top: 5px; left: 159px; 
 }
-/* ËÑË÷Ñ¡Ïî¿¨ */
+/* ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½î¿¨ */
 .search {
 	float: right; width: 600px; padding-top: 10px; 
 }
@@ -374,7 +374,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 .search-tab .current a {
     height: 23px; line-height: 23px; padding-bottom: 1px; border: 1px solid #e5e5e5; border-bottom: none; color: #ff6600; font-weight: bold; background-color: #f5f5f5; 
 }
-/* ËÑË÷Ãæ°å */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .search-panel {
 	clear: left; position: relative; width: 518px; border: 1px solid #e5e5e5; background-color: #f5f5f5; top: -1px; z-index: 5; 
 }
@@ -414,7 +414,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 .search-panel a {
 	position: absolute; top: 10px; right: -58px; 
 }
-/* µ¼º½ */
+/* ï¿½ï¿½ï¿½ï¿½ */
 #top-header .nav {
 	position: relative; height: 35px; line-height: 35px; font-size: 14px; font-weight: bold; background-position: 0 0; background-repeat: repeat-x; 
 }
@@ -455,7 +455,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 	position: absolute; top: -10px; left: 330px; 
 }
 
-/** Í·²¿ **/
+/** Í·ï¿½ï¿½ **/
 #list-header {
 	position: relative; margin-bottom: 10px; z-index: 200; 
 }
@@ -538,7 +538,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 	position: relative; float: left; width: 88px; height: 28px;	margin-left: 5px; border: none; color: #954200; background-position: -357px 0; cursor: pointer; text-indent: -999em; 
 }
 
-/** ¹«Ë¾¿â **/
+/** ï¿½ï¿½Ë¾ï¿½ï¿½ **/
 #shop {
 	width: 230px; height: 190px; overflow: hidden; 
 }
@@ -733,13 +733,13 @@ a.toplink-ac:hover, a.toplink-ac:active {
 	float: left; width: 136px; height: 18px; background-position: -8px 0; 
 }
 
-/** ¹©Ó¦¡¢Çó¹ºÁÐ±í **/
+/** ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ **/
 .grid-m {
 	width: 100%; overflow: hidden; 
 }
 
 #crumbs {
-	height: 18px; margin: 0px; padding: 5px 8px; border: 1px solid #e2e6ea; text-align: left; background: url("../images_10/img/crumbs.gif") repeat-x center center; 
+	height: 18px; margin: 0px; padding: 5px 8px; border: 1px solid #e2e6ea; text-align: left; background: url("/static/nav.gif") repeat-x center center;
 }
 #crumbs a{ color:#00349A;
 }
@@ -949,7 +949,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 	margin-top: 5px; text-align: center; 
 }
 
-/** ¹©Ó¦¡¢Çó¹ºÏêÏ¸ÐÅÏ¢ **/
+/** ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢ **/
 #winportrec, #productrec {
 	width: 310px; overflow: hidden; 
 }
@@ -1096,7 +1096,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 	height: 1px; margin: 5px 0; background: #eee; overflow: hidden; 
 }
 
-/** Ò³½Å **/
+/** Ò³ï¿½ï¿½ **/
 #footer {
 	clear: both; width: 100%; border-top: 1px solid #e5e5e5; text-align: center; line-height: 22px; 
 }
@@ -1107,7 +1107,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 	width: 480px; margin: 0 auto 10px; color: #000; 
 }
 
-/** ·ÖÒ³ **/
+/** ï¿½ï¿½Ò³ **/
 .pageNav {
 	float: left; width: 710px; padding:30px 20px 20px 10px; font-size: 1.2em; text-align: center; 
 }
@@ -1134,7 +1134,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 .border0{ border:0px !important; font-size:14px; background-color:#FFFFFF;}
 .backgroundimg{ background:none!important; color:#000000; font-weight:normal; text-indent: 0px !important; }
 
-/*ÈÈÃÅÍÆ¼ö*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½*/
 .fontweight{ font-weight:bold; color:#000000;}
 
 .rmtj-box {
@@ -1219,7 +1219,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 
 .spu-items li span{margin-left:10px;background-color:#36c;color:#fff;}
 
-/** °ïÖú×¢²áµÇÂ¼ **/
+/** ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½Â¼ **/
 #help_zc {
 	width: 310px; margin-bottom: 5px; overflow: hidden; 
 }
@@ -1245,8 +1245,8 @@ a.toplink-ac:hover, a.toplink-ac:active {
 	margin-left: -170px; 
 }
 
-/** ÍøÕ¾²úÆ·¶¯Ì¬ **/
-/* Ñ¡Ïî¿¨ common style */
+/** ï¿½ï¿½Õ¾ï¿½ï¿½Æ·ï¿½ï¿½Ì¬ **/
+/* Ñ¡ï¿½î¿¨ common style */
 .tab-t {
 	height: 29px; line-height:29px;
 }
@@ -1268,7 +1268,7 @@ a.toplink-ac:hover, a.toplink-ac:active {
 .tab-t .selected a:hover {
 	color: #ff6600; 
 }
-/* ÇÐ»» */
+/* ï¿½Ð»ï¿½ */
 
 
 #news {
@@ -1299,8 +1299,8 @@ a.toplink-ac:hover, a.toplink-ac:active {
 .strongh a{padding-left:8px;}
 .strongh strong{ font-weight:bold; color:#191919;}
 
-/*2012-3-23 ÕÒ²úÆ·-Äú¿ÉÄÜ»¹¸ÐÐËÈ¤*/
+/*2012-3-23 ï¿½Ò²ï¿½Æ·-ï¿½ï¿½ï¿½ï¿½Ü»ï¿½ï¿½ï¿½ï¿½ï¿½È¤*/
 .nknhgxq{ width:948px; margin:0 auto; margin-bottom:10px; padding-bottom:8px; clear:both; overflow:hidden; border:1px solid #ECECEC; background:#ffffff;}
 .nknhgxq dl dt{line-height:27px; text-align:left; padding-left:10px; margin-bottom:8px; color:#000000; font-size:14px; font-weight:bold; background:url(/images_11/15.png);}
 .nknhgxq dl dd{ width:175px; float:left; background:#FFFFFF; line-height:22px; text-align:left; margin-left:10px;}
-/*2012-3-23 ÕÒ²úÆ·-Äú¿ÉÄÜ»¹¸ÐÐËÈ¤END*/
+/*2012-3-23 ï¿½Ò²ï¿½Æ·-ï¿½ï¿½ï¿½ï¿½Ü»ï¿½ï¿½ï¿½ï¿½ï¿½È¤END*/
