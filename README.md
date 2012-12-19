@@ -4,6 +4,12 @@
 
     CREATE DATABASE `name` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci
 
+后台管理界面  
+http://domains/account/
+
+初始化管理员帐号  
+帐号:zhwei    
+密码:zhw  
 
 
 south
