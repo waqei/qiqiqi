@@ -1,6 +1,6 @@
 {% extends 'store/base-store.html' %}
 {% block title %}
-    {{ com.name }}
+    在线留言-{{ com.name }}
 {% endblock %}
 {% block keywords %}
     {{ com.name }},{{ com.description }}
@@ -21,25 +21,23 @@
     <h1 align="right"><a href="#message">直接留言</a></h1>
     {% load comments %}
     {%get_comment_list for com as comment_list%}
-    {%for comment in comment_list%}
-        {% for comment in comment_list %}
-            <div class="message">
-                <table width="100%">
-                <tbody>
-                    <tr>
-                        <td class="infoName" width="16%"><strong>姓名</strong></td>
-                        <td class="infoContent" width="84%">{{ comment.user.username }}</td>在{{comment.submit_date|date:"Y-m-d H:i"}}的留言
-                    </tr>
+    {% for comment in comment_list %}
+        <div class="message">
+            <table width="100%">
+            <tbody>
                 <tr>
-                    <td class="infoName"><strong>留言内容</strong></td>
-                    <td class="infoContent">{{comment.comment|safe}}<br></td>
+                    <td class="infoName" width="16%"><strong>姓名</strong></td>
+                    <td class="infoContent" width="84%">{{ comment.user.username }}</td>在{{comment.submit_date|date:"Y-m-d H:i"}}的留言
                 </tr>
-                </tbody>
+            <tr>
+                <td class="infoName"><strong>留言内容</strong></td>
+                <td class="infoContent">{{comment.comment|safe}}<br></td>
+            </tr>
+            </tbody>
 
-            </table>
-            </div>
-        {% endfor %}
-    {%endfor%}
+        </table>
+        </div>
+    {% endfor %}
 
 {#    {% render_comment_form for com %}#}
     <br>
@@ -62,7 +60,7 @@
                 <td class="infoContent"><textarea name="comment" id="id_comment" rows="15" style="width:520px; font-family:'宋体'"></textarea></td>
             </tr>
             <tr>
-                <td></td><input type="hidden" name="next" value="{% url comments-comment-done %}"/></td>
+                <td></td><input type="hidden" name="next" value="{% url ok %}"/></td>
                 <td><input name="post" value="提交留言" type="submit"  /></td>
             </tr>
             </table>

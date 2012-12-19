@@ -263,3 +263,5 @@ def message(request,store_id):
     }
     return render_to_response('store/message.html',template_var,context_instance=RequestContext(request))
 
+def ok(request):
+    return render_to_response('store/ok.html',context_instance=RequestContext(request))

@@ -30,7 +30,7 @@
     <h3>添加</h3>
     <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
         <table border="0" cellpadding="0" >
-            {{ form.as_p }}
+            {{ form.as_table }}
         </table>
         <br>
         <div class="control-group" align="center">

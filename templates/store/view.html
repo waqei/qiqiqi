@@ -1,12 +1,12 @@
 {% extends 'store/base-store.html' %}
 {% block title %}
-    {{ com.name }}
+    {{ item.it_name }}-{{ com.name }}
 {% endblock %}
 {% block keywords %}
-    {{ com.name }},{{ com.description }}
+    {{ item.it_name }},{{ item.description }}
 {% endblock %}
 {% block description %}
-    {{ com.name }},{{ com.description }}
+    {{ item.it_name }},{{ item.description }}
 {% endblock %}
 {% block main %}
     <div id="content-wrap" class="box">
@@ -107,8 +107,8 @@
                     <td class="infoContent"><textarea name="comment" id="id_comment" rows="15" style="width:520px; font-family:'宋体'"></textarea></td>
                 </tr>
                 <tr>
-                    <td></td><input type="hidden" name="next" value="{% url comments-comment-done %}"/></td>
-                    <td><input name="post" value="提交留言" type="submit" onClick="{alert('添加成功');location.href=document.referrer;}" /></td>
+                    <td></td><input type="hidden" name="next" value="{% url ok %}"/></td>
+                    <td><input name="post" value="提交留言" type="submit"  /></td>
                 </tr>
             </table>
         </div>

@@ -2,6 +2,7 @@
 from django.conf.urls import patterns, url
 from car.models import Links,Sorts,Items,News
 from form import Ad6Form,AdmiddleForm
+from django.contrib.comments import Comment
 
 urlpatterns = patterns('',
     ##item
@@ -32,4 +33,8 @@ urlpatterns = patterns('',
     ##news
     url(r'^news/$','car.views.news',name='news'),
     url(r'^news/dele/(?P<id>\b.*)/$','car.views.dele',{'model':News}),
+
+
+    url(r'^messages/$','car.views.comments',name='comments'),
+    url(r'^messages/dele/(?P<id>\b.*)/$','car.views.dele',{'model':Comment}),
 )

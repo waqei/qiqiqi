@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-
+from django.contrib.comments import Comment
 from form import ItemsForm,StoreAdForm,StoreForm,EditStoreForm,LinkForm,AddForm,ItemsStaffForm,NewsForm
 from car.models import *
 import re
@@ -254,10 +254,23 @@ def news(request):
                 form.save()
                 return HttpResponse('<script>alert("添加成功");top.location="/goods/news";</script>')
             else:
-                HttpResponseRedirect(reverse('news'))
+                return HttpResponseRedirect(reverse('news'))
         template_var={
             'allnews':allnews,
             'form':form,
         }
         return render_to_response('goods/news/news.html',template_var,context_instance=RequestContext(request))
 
+#messages
+def comments(request):
+    if request.user.is_superuser:
+        comments=Comment.objects.all()
+    elif request.user.is_staff:
+        user_id=request.user.id
+        comments=Comment.objects.filter(user=user_id)
+    else:
+        return HttpResponseRedirect(reverse("404"))
+    template_var={
+        'comments':comments,
+    }
+    return render_to_response('goods/comments.html',template_var,context_instance=RequestContext(request))

@@ -16,4 +16,7 @@ urlpatterns = patterns('',
     url(r'search/its/(?P<name>\w.*)$','index.view.search',{'model':Items}),
     url(r'search/stores/(?P<name>\W.*)$','index.view.search',{'model':Stores}),
     url(r'test','index.view.test',name='test'),
+
+    url(r'ok.html','index.view.ok',name="ok"),
+
 )

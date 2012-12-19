@@ -1,0 +1,21 @@
+{% extends "base-admin.html" %}
+{% block title %}留言管理{% endblock %}
+{% block main %}
+    <h2>留言管理</h2>
+    <hr>
+    <div>
+        <table class="table table-bordered">
+            <tr><td><strong>用户名</strong></td><td><strong>评论</strong></td><td><strong>所在商铺</strong></td><td><strong>功能</strong></td></tr>
+            {% for comment in comments %}
+                <tr>
+                    <td width="10%">{{ comment.user_name }}</td>
+                    <td width="70%">{{ comment.comment }}</td>
+                    <td width="10%">{{ comment.user.stores }}</td>
+                    <td width="10%" align="center">
+                        <a href="dele/{{ comment.id }}" class="btn btn-danger" onClick="{if(confirm('确定要删除 『{{ comment.user_name }}』的评论 吗?\n')){return true;}return false;}">删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
