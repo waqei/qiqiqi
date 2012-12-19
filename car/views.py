@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from form import *
+from form import ItemsForm,StoreAdForm,StoreForm,EditStoreForm,LinkForm,AddForm,ItemsStaffForm,NewsForm
 from car.models import *
 import re
 from qiqiqi.settings import DOMAIN
@@ -21,17 +21,54 @@ def IsNUM(varObj):
 
 ##################################################################
 #添加商品
-def addItems(request,muser):
-    template_var={}
-    form = ItemsForm(initial={'company':muser,})
-    form['sort'].field.help_text ='<p class="alert alert-info">按下Ctrl键支持多选</p>'
-    if request.method == 'POST':
-        form = ItemsForm(request.POST,request.FILES)
-        if form.is_valid():
-            form.save()
-
+def addItems(request):
+    if request.user.is_superuser:
+        form = ItemsForm()
+        form['sort'].field.help_text ='<p class="alert alert-info">按下Ctrl键支持多选</p>'
+        form['exit_date'].field.help_text ='<p class="alert alert-info">日期格式&nbsp;<strong><em>2012-12-21</em></strong></p>'
+        if request.method == 'POST':
+            form = ItemsForm(request.POST,request.FILES)
+            if form.is_valid():
+                form.save()
             return HttpResponse('<script>alert("添加成功！");top.location="/goods/item/manage";</script>')
-    template_var['form']=form
+    elif request.user.is_staff:
+        muser=request.user
+        form = ItemsStaffForm()
+        form['sort'].field.help_text ='<p class="alert alert-info">按下Ctrl键支持多选</p>'
+        form['exit_date'].field.help_text ='<p class="alert alert-info">日期格式<strong><em>2012-12-21</em></strong></p>'
+        if request.method =='POST':
+            form = ItemsStaffForm(request.POST,request.FILES)
+#            form.initial={'company':muser.stores}
+            if form.is_valid():
+                form.save()
+#            it_name=form.cleaned_data['it_name']
+#            company = muser.stores
+#            sort=form.cleaned_data['sort']
+#            brand=form.cleaned_data['brand']
+#            version=form.cleaned_data['version']
+#            description=form.cleaned_data['description']
+#            exit_date=form.cleaned_data['exit_date']
+#            price=form.cleaned_data['price']
+#            img =form.cleaned_data['img']
+#            item=Items
+#            item.it_name=it_name
+#            item.company=company
+#            item.sort=sort
+#            item.brand=brand
+#            item.version=version
+#            item.description=description
+#            item.exit_date=exit_date
+#            item.price=price
+#            item.img=img
+#            item.save()
+                return HttpResponse('<script>alert("添加成功！");top.location="/goods/item/manage";</script>')
+
+    else:
+        return HttpResponseRedirect(reverse("404"))
+
+    template_var={
+        'form':form,
+    }
     return  render_to_response('goods/add.html',template_var,context_instance=RequestContext(request))
 
 
@@ -51,14 +88,16 @@ def addStore(request):
     template_var['form']=form
     return render_to_response('goods/add_store.html',template_var,context_instance=RequestContext(request))
 #show store info
-def showStoreinfo(request,id):
+def showStoreinfo(request):
+    id=request.user.id
     store=Stores.objects.get(boss=id)
     template_var={}
     template_var['com']=store
     return render_to_response('goods/storeinfo.html',template_var,context_instance=RequestContext(request))
 
 #edit store info
-def editStore(request,id):
+def editStore(request):
+    id=request.user.id
     store=Stores.objects.get(boss=id)
     form=EditStoreForm()
     template_var={}
@@ -75,14 +114,15 @@ def editStore(request,id):
             it_description=form.cleaned_data['it_description']
             Stores.objects.filter(boss=id).update(url=url,name=name,tel=tel,qq=qq,address=address,
                         notice=notice,it_description=it_description)
-            return HttpResponse('<script>alert("修改成功！");top.location="/goods/store/edit/";</script>')
+            return HttpResponse('<script>alert("添加成功！");top.location="/goods/store/edit/";</script>')
         else:
-            HttpResponseRedirect(reverse('add_store_info'))
+            return HttpResponse('<script>alert("修改失败！");top.location="/goods/store/edit/";</script>')
     template_var['form']=form
     return render_to_response('goods/editstore.html',template_var,context_instance=RequestContext(request))
 
 #add store ad
-def storeAd(request,id):
+def storeAd(request):
+    id=request.user.id
     store=Stores.objects.get(boss=id)
     form=StoreAdForm()
     template_var={}
@@ -104,8 +144,15 @@ def storeAd(request,id):
 
 #管理商品
 def manageitems(request):
-    allitem=Items.objects.all()
     allsort=Sorts.objects.all()
+    if request.user.is_superuser:
+        allitem=Items.objects.all()
+    elif request.user.is_staff:
+        allitem=Items.objects.filter(company=request.user.stores)
+
+    else:
+        return HttpResponseRedirect(reverse("404"))
+
     template_var={
         'allitem':allitem,
         'allsort':allsort,
@@ -195,3 +242,22 @@ def links(request):
     template_var['alllinks']=alllinks
     template_var['form']=form
     return  render_to_response('goods/link.html',template_var,context_instance=RequestContext(request))
+
+#news
+def news(request):
+    if request.user.is_superuser:
+        allnews=News.objects.all()
+        form=NewsForm()
+        if request.method == "POST":
+            form=NewsForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return HttpResponse('<script>alert("添加成功");top.location="/goods/news";</script>')
+            else:
+                HttpResponseRedirect(reverse('news'))
+        template_var={
+            'allnews':allnews,
+            'form':form,
+        }
+        return render_to_response('goods/news/news.html',template_var,context_instance=RequestContext(request))
+

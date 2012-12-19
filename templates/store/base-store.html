@@ -14,6 +14,9 @@
 <script type="text/javascript" src="{% static 'jquery-1.js' %}"></script>
 <script type="text/javascript" src="{% static 'common.js' %}"></script>
 <script type="text/javascript" src="{% static 'wp_online.js' %}"></script>
+{% block head %}
+
+{% endblock %}
 </head>
 <body>
 
@@ -34,13 +37,13 @@
 		<div id="nav">
 			<ul class="clearfix">
 			
-				<li class="current" onclick="window.location.href='{{ com.url }}'">首页</li>
+				<li class="" onclick="window.location.href='{{ com.url }}'"><a href="{{ com.url }}">首页</a></li>
 			
-				<li class="" onclick="window.location.href='{{ com.url }}'"><a class="" href="{{ com.url }}">产品供应</a></li>
+				<li class="" onclick="window.location.href='{{ com.url }}classify/0.html/1'"><a class="" href="{{ com.url }}classify/0.html/1">产品供应</a></li>
 
 				<li class="" onclick="window.location.href='{{ com.url }}info.html'"><a class="" href="{{ com.url }}info.html">商铺介绍</a></li>
 
-                <li class="" onclick="window.location.href='{{ com.url }}'"><a class="" href="{{ com.url }}">在线留言</a></li>
+                <li class="" onclick="window.location.href='{{ com.url }}'"><a class="" href="{{ com.url }}message.html">在线留言</a></li>
 			
 			</ul>
 		</div>
@@ -105,11 +108,11 @@
                 <div id="navigation" class="bd">
                     <ul class="info-list clearfix">
 
-                        <li><a href="" title="一汽解放无锡柴油机厂">柴油机厂</a>
+                        <li><a href="" title=""></a>
 
                             <ul class="info-list clearfix hidden">
 
-                                <li><a href="ssid=15091" title="锡柴4缸机">锡柴4缸机</a></li>
+                                <li><a href="" title=""></a></li>
 
 
                             </ul>

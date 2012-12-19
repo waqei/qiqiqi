@@ -1,0 +1,72 @@
+{% extends 'store/base-store.html' %}
+{% block title %}
+    {{ com.name }}
+{% endblock %}
+{% block keywords %}
+    {{ com.name }},{{ com.description }}
+{% endblock %}
+{% block description %}
+    {{ com.name }},{{ com.description }}
+{% endblock %}
+{% block head %}
+    <style type="text/css">
+        label{display:inline;float:left;width:100px;}
+        input,textarea{width:340px;}
+        textarea{height:80px;}
+        input[type=submit]{width:120px;margin-left:300px;}
+    </style>
+{% endblock %}
+{% block main %}
+    <br>
+    <h1 align="right"><a href="#message">直接留言</a></h1>
+    {% load comments %}
+    {%get_comment_list for com as comment_list%}
+    {%for comment in comment_list%}
+        {% for comment in comment_list %}
+            <div class="message">
+                <table width="100%">
+                <tbody>
+                    <tr>
+                        <td class="infoName" width="16%"><strong>姓名</strong></td>
+                        <td class="infoContent" width="84%">{{ comment.user.username }}</td>在{{comment.submit_date|date:"Y-m-d H:i"}}的留言
+                    </tr>
+                <tr>
+                    <td class="infoName"><strong>留言内容</strong></td>
+                    <td class="infoContent">{{comment.comment|safe}}<br></td>
+                </tr>
+                </tbody>
+
+            </table>
+            </div>
+        {% endfor %}
+    {%endfor%}
+
+{#    {% render_comment_form for com %}#}
+    <br>
+    <a href="" id="message"></a>
+    {% get_comment_form for com as form %}
+    <form action='{%comment_form_target%}' method='post'>
+        {% csrf_token %}{{form.object_pk}}{{form.content_type}}{{form.timestamp}}{{form.security_hash}}
+        <div class="detail dl-msg">
+            <table>
+            <tr>
+                <td class="infoName"><label for="id_name"><strong>姓名（必填）：</strong></label></td>
+                <td class="infoContent"><input name="name" id="id_name"></td>
+            </tr>
+            <tr>
+                <td class="infoName"><label for="id_email"><strong>邮箱（必填）：</strong></label></td>
+                <td class="infoContent"><input name="email" id="id_email"></td>
+            </tr>
+            <tr>
+                <td class="infoName"><label for="id_comment"><strong>评论：</strong>(请填写必要的联系信息,以便服务人员与您联系)</label></td>
+                <td class="infoContent"><textarea name="comment" id="id_comment" rows="15" style="width:520px; font-family:'宋体'"></textarea></td>
+            </tr>
+            <tr>
+                <td></td><input type="hidden" name="next" value="{% url comments-comment-done %}"/></td>
+                <td><input name="post" value="提交留言" type="submit"  /></td>
+            </tr>
+            </table>
+        </div>
+    </form>
+
+{% endblock %}

@@ -1,8 +1,8 @@
 #coding=utf-8
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
-from django.forms import ModelForm,Textarea
-from models import Items,Stores,Sorts,Ad_6,Links,Ad_middle
+from django.forms import ModelForm,Textarea,HiddenInput
+from models import Items,Stores,Sorts,Ad_6,Links,Ad_middle,News
 from django.utils.translation import ugettext_lazy as _
 
 class ItemsForm(ModelForm):
@@ -12,6 +12,25 @@ class ItemsForm(ModelForm):
         widgets={
             'description':Textarea(attrs={'cols':10,'rows':10}),
             }
+
+class ItemsStaffForm(ModelForm):
+    class Meta:
+        model=Items
+        fields=('it_name','company','sort','brand','version','description','exit_date','price','img')
+        widgets={
+#            'company':HiddenInput,
+            'description':Textarea(attrs={'cols':10,'rows':10}),
+            }
+#class ItemsStaffForm(forms.Form):
+#    it_name=forms.CharField(max_length=10,verbose_name='商品名称')
+#    sort=forms.ChoiceField()
+#    brand=forms.CharField(max_length=10,verbose_name='品牌',blank=True)
+#    version=forms.CharField(max_length=60,verbose_name='其他参数',blank=True)
+#    description=forms.CharField(max_length=200,verbose_name='描述')
+#    exit_date=forms.DateField(verbose_name='上市时间',blank=True)
+#    price=forms.CharField(max_length=20,verbose_name='价格')
+#    img=forms.ImageField(verbose_name='商品图片',upload_to='image',blank=True)
+
 #add store
 class StoreForm(ModelForm):
     class Meta:
@@ -28,6 +47,7 @@ class EditStoreForm(ModelForm):
             'notice':Textarea(attrs={'cols':10,'rows':10}),
             'it_description':Textarea(attrs={'cols':10,'rows':10}),
             }
+
 #store ad
 class StoreAdForm(forms.Form):
     logo=forms.ImageField(label=_(u'Logo'))
@@ -65,3 +85,12 @@ class AdmiddleForm(ModelForm):
 class LinkForm(ModelForm):
     class Meta:
         model=Links
+
+#news
+class NewsForm(ModelForm):
+    class Meta:
+        felids=('title','content')
+        model = News
+        widgets={
+            'content':Textarea(attrs={'cols':10,'rows':10})
+        }

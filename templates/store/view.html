@@ -1,0 +1,116 @@
+{% extends 'store/base-store.html' %}
+{% block title %}
+    {{ com.name }}
+{% endblock %}
+{% block keywords %}
+    {{ com.name }},{{ com.description }}
+{% endblock %}
+{% block description %}
+    {{ com.name }},{{ com.description }}
+{% endblock %}
+{% block main %}
+    <div id="content-wrap" class="box">
+
+        <div class="bd">
+            <div class="detail dl-title">
+                <h2>{{ item.it_name }}</h2>
+
+                <div class="gw_tab cbox">
+                    <ul id="gw_b" class="gw_tab_menu pic_loop clearfix">
+                        <li>
+                            <div class="imgBox">
+                                <img src="{{ item.img.url }}" alt="{{ item.it_name }}" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="detail dl-date">
+                <div class="hd"><h4>详细信息</h4></div>
+                <table width="100%">
+                    <tr>
+                        <td width="12%" class="infoContent lb">产品名称</td>
+                        <td width="88%" class="infoContent">{{ item.it_name }}</td>
+                    </tr>
+                    <tr>
+                        <td width="12%" class="infoContent lb">公司</td>
+                        <td class="infoContent">{{ item.company }}</td>
+                    </tr>
+                    <tr>
+                        <td width="12%" class="infoContent lb">品牌</td>
+                        <td class="infoContent">{{ item.brand }}</td>
+                    </tr>
+                    <tr>
+                        <td width="12%" class="infoContent lb">其他参数</td>
+                        <td class="infoContent">{{ item.description }}</td>
+                    </tr>
+
+                    <tr>
+                        <td width="12%" class="infoContent lb">参考价</td>
+                        <td class="infoContent">{{ item.price }}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="detail dl-info">
+
+                <br /><br />
+                <span style=" color:#C1C1C1">我公司长期供应
+                    <strong>{{ item.it_name }}</strong>
+                    ，如果您对我们的
+                    <strong>{{ item_it_name }}</strong>
+                    感兴趣，对
+                    <strong>{{ item.it_name }}</strong>
+                    的价格，厂家，型号，图片有什么疑问，请随时拨打我们的电话，在线留言或者QQ与我交谈,谢谢。
+                </span>
+            </div>
+        </div>
+    </div>
+
+    {% load comments %}
+    {%get_comment_list for item as comment_list%}
+    {%for comment in comment_list%}
+        {% for comment in comment_list %}
+            <div class="message">
+                <table width="100%">
+                    <tbody>
+                    <tr>
+                        <td class="infoName" width="16%"><strong>姓名</strong></td>
+                        <td class="infoContent" width="84%">{{ comment.user.username }}</td>在{{comment.submit_date|date:"Y-m-d H:i"}}的留言
+                    </tr>
+                    <tr>
+                        <td class="infoName"><strong>留言内容</strong></td>
+                        <td class="infoContent">{{comment.comment|safe}}<br></td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        {% endfor %}
+    {%endfor%}
+
+    {% get_comment_form for item as form %}
+    <form action='{%comment_form_target%}' method='post'>
+        {% csrf_token %}{{form.object_pk}}{{form.content_type}}{{form.timestamp}}{{form.security_hash}}
+        <div class="detail dl-msg">
+            <table>
+                    <tr>
+                <td class="infoName"><label for="id_name"><strong>姓名（必填）：</strong></label></td>
+                <td class="infoContent"><input name="name" id="id_name"></td>
+            </tr>
+                    <tr>
+                <td class="infoName"><label for="id_email"><strong>邮箱（必填）：</strong></label></td>
+                <td class="infoContent"><input name="email" id="id_email"></td>
+            </tr>
+                <tr>
+                    <td class="infoName"><label for="id_comment"><strong>评论：(请填写必要的联系信息,以便服务人员与您联系)</strong></label></td>
+                    <td class="infoContent"><textarea name="comment" id="id_comment" rows="15" style="width:520px; font-family:'宋体'"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td><input type="hidden" name="next" value="{% url comments-comment-done %}"/></td>
+                    <td><input name="post" value="提交留言" type="submit" onClick="{alert('添加成功');location.href=document.referrer;}" /></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+{% endblock %}

@@ -139,6 +139,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'car',
     'mptt',
+    'django.contrib.comments',
 #    'south',
 )
 

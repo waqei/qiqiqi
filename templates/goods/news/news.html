@@ -1,0 +1,42 @@
+{% extends "base-admin.html" %}
+{% block title %}公告{% endblock %}
+{% block main %}
+    <h2>公告</h2>
+    <hr>
+        <table class="rable table-bordered">
+            <colgroup>
+                <col width="20%"/>
+                <col width="70%"/>
+                <col width="10%"/>
+            </colgroup>
+            <thead>
+                <tr>
+                    <td><strong>标题</strong></td>
+                    <td><strong>内容</strong></td>
+                    <td><strong>操作</strong></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for news in allnews %}
+                    <tr>
+                        <td><strong>{{ news.title }}</strong></td>
+                        <td>{{ news.content|truncatewords:"5" }}</td>
+                        <td><a href="/goods/news/dele/{{ news.id }}" class="btn btn-danger"> 删除</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <hr>
+    <h3>添加</h3>
+    <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
+        <table border="0" cellpadding="0" >
+            {{ form.as_p }}
+        </table>
+        <br>
+        <div class="control-group" align="center">
+            <div class="btn-group">
+                <input type="submit"  class="btn btn-primary" value="添加"/>
+            </div>
+        </div>
+    </form>
+{% endblock %}

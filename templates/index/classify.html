@@ -52,11 +52,11 @@
         {% for item in items.object_list %}
             <li class="list-item">
                 <div class="photo">
-                    <a href="/view/{{ item.id }}.html" target="_blank" title="{{ item.it_name }}">
+                    <a href="{{ item.get_url }}" target="_blank" title="{{ item.it_name }}">
                         <img src="{{ item.img.url }}" alt="{{ item.it_name }}" onload="iimgFix(this,98,98)"  />
                     </a></div>
                 <div class="content under">
-                    <h4><a href="/view/{{ item.id }}.html" target="_blank" class="Title" title="{{ item.it_name }}">{{ item.it_name }}</a></h4>
+                    <h4><a href="{{ item.get_url }}" target="_blank" class="Title" title="{{ item.it_name }}">{{ item.it_name }}</a></h4>
                     <p class="info">{{ item.version }}</p>
                 </div>
                 <div class="vip">
@@ -77,13 +77,6 @@
 
 
     <div class="pageNav">
-{#        <span class='current'>1</span>  #}
-{#        <a href=p2.htm>2</a>  #}
-{#        <a href=p10.htm>10</a> ... #}
-{#        <span class='next'>#}
-{#            <a href=p2.htm>下一页</a>#}
-{#        </span>#}
-{#        <span style='font-size:12px'>共16679页</span>#}
         <span class="pre">
         {% if items.has_previous %}
             <a href="{{ items.previous_page_number }}" title="Pre">上一页</a>

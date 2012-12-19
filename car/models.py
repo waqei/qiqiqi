@@ -2,7 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from mptt.models import MPTTModel,TreeForeignKey
-
+from qiqiqi.settings import DOMAIN
 
 BOOLE_CHOICES=(
     ('是','1'),
@@ -51,15 +51,18 @@ class Stores(models.Model):
 #商品
 class Items(models.Model):
     it_name=models.CharField(max_length=10,verbose_name='商品名称')
-    company=models.ForeignKey(Stores,max_length=20,verbose_name='所属商铺')
+    company=models.ForeignKey(Stores,max_length=20,verbose_name='所属商铺',blank=True)
     sort=models.ManyToManyField(Sorts,verbose_name='分类')
     brand=models.CharField(max_length=10,verbose_name='品牌',blank=True)
-    version=models.CharField(max_length=30,verbose_name='其他参数',blank=True)
+    version=models.CharField(max_length=60,verbose_name='其他参数',blank=True)
     description=models.CharField(max_length=200,verbose_name='描述')
     exit_date=models.DateField(verbose_name='上市时间',blank=True)
     price=models.CharField(max_length=20,verbose_name='价格')
     img=models.ImageField(verbose_name='商品图片',upload_to='image',blank=True)
 
+    def get_url(self):
+        link=DOMAIN +'/store/'+  str(self.company.id) + '/view/' + str(self.id) + '.html'
+        return link
 
     def __unicode__(self):
         return self.it_name
@@ -70,12 +73,13 @@ class Items(models.Model):
 class Messages(models.Model):
     store=models.ForeignKey(Stores,verbose_name='商户名称',unique=True)
     is_read=models.BooleanField(max_length='5',choices=BOOLE_CHOICES)
-    contact_number=models.DecimalField(max_digits='11',decimal_places='0',verbose_name='您的联系电话',help_text='请留下您的联系电话，方便工作人员与您联系，电话号码仅工作人员可见。')
+    contact_number=models.DecimalField(max_digits='11',decimal_places='0',verbose_name='您的联系电话',blank=True)
     content=models.CharField(max_length=200,verbose_name='留言内容')
+
     def __unicode__(self):
         return self.contact_number
 
-
+# index ad*6
 class Ad_6(models.Model):
     url1=models.URLField(verbose_name='图片链接1')
     loc1=models.ImageField(verbose_name='首页小图1',upload_to="ad")
@@ -95,7 +99,7 @@ class Ad_6(models.Model):
     url6=models.URLField(verbose_name='图片链接6')
     loc6=models.ImageField(verbose_name='首页小图6',upload_to="ad")
 
-
+#index ad*3
 class Ad_middle(models.Model):
     url1=models.URLField(verbose_name='图片链接1')
     loc1=models.ImageField(verbose_name='首页中图1',upload_to="ad_middle")
@@ -107,7 +111,19 @@ class Ad_middle(models.Model):
     loc3=models.ImageField(verbose_name='首页中图3',upload_to="ad_middle")
 
 
-
+# friend link
 class Links(models.Model):
     site=models.CharField(max_length=10,verbose_name='站点名称',)
     url=models.URLField(verbose_name='站点网址',max_length=64)
+
+class News(models.Model):
+    title=models.CharField(max_length=20,verbose_name='标题')
+    content=models.CharField(max_length=500,verbose_name=' 内容 ')
+    store=models.ForeignKey(Stores)
+
+    def get_url(self):
+        link=DOMAIN +'/'+  str(self.store.id) + '/news/' + str(self.id) + '.html'
+        return link
+
+    def __unicode__(self):
+        return self.title

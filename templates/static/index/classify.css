@@ -1,0 +1,112 @@
+
+.list-catagroy {
+width: 100%; overflow: hidden;
+}
+.list-catagroy-box {
+    position: relative; width: 748px;  padding: 10px;  overflow: hidden;
+}
+.list-catagroy-box .findby {
+    clear: both; height: 20px; line-height: 20px; background: url("../images_10/img/arrow.gif") no-repeat left center; text-indent: 15px;
+}
+.list-catagroy-box li {
+    float: left; width: 138px; margin: 0 0; padding: 0 5px; white-space: nowrap; overflow: hidden; line-height:20px;
+}
+.list-catagroy-box li i {
+    font-size: 0.85em;
+}
+
+.list-content {
+    width: 100%; margin:0 0; overflow: hidden;
+}
+.list-content .tool {
+    height: 31px; padding: 1px; background: url("../images_10/img/toolbar.gif") repeat-x center; border: 1px solid #c1ced0; color: #000;
+}
+
+
+.spu-box dl{zoom:1;}
+
+.spu-box dl:after{content:"\0020";display:block;height:0;clear:both;}
+
+.spu-box{border:1px solid #ffce94;margin:10px 0; color:#000000;}
+.spu-box a{ color:#00349A;}
+.spu-box a:hover{ color:#FF6600;}
+
+
+.spu-box-bg{background-position:0 0;height:10px;overflow:hidden; background:url(../images_10/background-x.png);}
+
+.spu-box dl dt,.spu-box dl dd,.spu-box dl dd ul,.spu-box dl dd li,.spu-box dl dd p.spu-item-all,.spu-box dl dd p.spu-item-more{display:inline;float:left;}
+
+.spu-box dl{margin:0 12px;padding:0 0 5px 0;line-height:20px;}
+
+.spu-box dl dt{width:53px;font-weight:bold;}
+
+.spu-box dl dd{width:850px;}
+
+.spu-box ul.spu-items{width:750px;}
+
+.spu-box dl.spu_sn ul.spu-items{width:280px;}
+
+.spu-box a.spu-item-title{_float:left;padding:0 10px;white-space:nowrap;}.spu-box a.spu-item-title-cur{_float:left;margin:0 10px;white-space:nowrap;background-color:#36c;color:#fff;text-decoration: none;}
+
+.spu-box a.spu-item-cur{background-color:#36c;color:#fff;white-space:nowrap;}
+
+.spu-box a.spu-item-cur:hover{text-decoration:none;}
+.spu-box .spu-li-more{display:none;}
+
+.spu-item-all{width:48px;color:#ccc;}.spu-item-all a{margin-right:10px;}.spu-item-all span{margin-right:10px;background-color:#36c;color:#fff;}
+
+.spu-item-more{width:44px;}.spu-item-more a:hover{text-decoration:none;}.spu-item-more a:hover span{text-decoration:underline;}
+
+.spu-items li span{margin-left:10px;background-color:#36c;color:#fff;}
+
+
+.list-content .list-view {
+    float: left; margin: 0 0 20px;
+}
+.list-view li.list-item {
+    position: relative; float: left; width: 770px; margin: 12px 0 0; padding: 0 0 12px; border-bottom: 1px dotted #cdcdcd; color: #666; overflow: hidden;
+}
+.list-item .photo {
+    display: inline; float: left; width: 98px; height: 98px; border: 1px solid #e5e5e5; padding: 1px; margin: 0 10px; text-align: center; overflow: hidden;
+}
+.list-item .photo a {
+    display: table-cell !important; display: block; width: 98px; line-height: 98px; height: 98px; vertical-align: middle; overflow: hidden;
+}
+.list-item .photo img {
+    max-width: 98px; max-height: 98px; *margin-top: expression(( 98 - this.height ) / 2);
+}
+.list-item .content {
+    float: left; width: 340px; overflow: hidden; padding-right:20px;
+}
+
+.content .release-time {
+    padding-left: 10px; font-size: 12px; font-weight: normal;
+}
+.vip .release-company {
+    line-height:20px; width:190px; height:20px; overflow:hidden;
+}
+.release-area {
+    text-align: left; line-height:25px;
+}
+
+.contact-by a.ly {
+    width: 50px; padding: 0 0 1px 20px; background: url("../images_10/ly.gif") no-repeat left center;
+}
+.contact-by a.lx {
+    width: 50px; padding: 0 0 1px 20px; background: url("../images_10/lx.gif") no-repeat left center;
+}
+.pageNav {
+    float: left; width: 710px; padding:30px 20px 20px 10px; font-size: 1.2em; text-align: center;
+}
+.pageNav a {
+    padding: 2px 5px; color: #333 !important; border: solid 1px #eaeaea; text-decoration: none !important;
+}
+.pageNav a:hover {
+    border: solid 1px #ff7300;
+}
+.pageNav span.current {
+    padding: 2px 5px; color: #fff !important; background-color: #ff7300 !important; border: 1px solid #da251d; font-weight: bold;
+}
+.pageNav .pre, .pageNav .next {
+    margin: 0 15px; font-weight: bold;
+}

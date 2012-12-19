@@ -1,11 +1,11 @@
 #coding=utf-8
 from django.conf.urls import patterns, url
-from car.models import Links,Sorts,Items
+from car.models import Links,Sorts,Items,News
 from form import Ad6Form,AdmiddleForm
 
 urlpatterns = patterns('',
     ##item
-    url(r'^item/add/(?P<muser>\w+)/','car.views.addItems',name="add_items"),
+    url(r'^item/add/$','car.views.addItems',name="add_items"),
     url(r'^item/manage/$','car.views.manageitems',name="manage_items"),
     url(r'^item/manage/dele/(?P<id>\b.)/$','car.views.dele',{'model':Items},name="dele_items",),
 
@@ -16,9 +16,9 @@ urlpatterns = patterns('',
 
     ##store
     url(r'^store/add/$','car.views.addStore',name="add_store"),
-    url(r'^store/(?P<id>\b.)/$','car.views.showStoreinfo',name="show_store_info"),
-    url(r'^store/edit/(?P<id>\b.)/$','car.views.editStore',name="edit_store_info"),
-    url(r'^store/edit/(?P<id>\b.)/ad/$','car.views.storeAd',name="edit_store_ad"),
+    url(r'^store/$','car.views.showStoreinfo',name="show_store_info"),
+    url(r'^store/edit/$','car.views.editStore',name="edit_store_info"),
+    url(r'^store/edit/ad/$','car.views.storeAd',name="edit_store_ad"),
 
     ##ad
     url(r'^ad/$','car.views.ad',name='ad_manage'),
@@ -27,5 +27,9 @@ urlpatterns = patterns('',
 
     ##links
     url(r'^links/$','car.views.links',name='links'),
-    url(r'^links/dele/(?P<id>\w.*)/$','car.views.dele',{'model':Links})
+    url(r'^links/dele/(?P<id>\w.*)/$','car.views.dele',{'model':Links}),
+
+    ##news
+    url(r'^news/$','car.views.news',name='news'),
+    url(r'^news/dele/(?P<id>\b.*)/$','car.views.dele',{'model':News}),
 )

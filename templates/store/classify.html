@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<title>{% block title %}123{% endblock %}</title>
+
+		<meta name="keywords" content="{% block keywords %}123{% endblock %}">
+
+		<meta name="description" content="{% block description %}123{% endblock %}">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'base-min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static '3.css' %}">
+		<link type="text/css" rel="stylesheet" href="{% static 'wq_online.css' %}">
+		<script type="text/javascript" src="{% static 'jquery-1.js' %}"></script>
+		<script type="text/javascript" src="{% static 'common.js' %}"></script>
+		<script type="text/javascript" src="{% static 'wp_online.js' %}"></script>
+{#		<link rel="stylesheet" href="{% static 'classify.css' %}">#}
+        <link rel="stylesheet" href="{% static 'c20100106_11.css' %}">
+	</head>
+	<body>
+
+		<div id="header">
+
+			<div id="wrap">
+
+				<div class="logo" style="no-repeat center center;" >
+					<img src="{{ store.logo.url }}" alt="{{ store.name }}" width="60" height="60" >
+				</div>
+
+				<h1 class="name">&nbsp;{{ store.name }}</h1>
+				<div class="favorite">
+					<a onclick="this.style.behavior='url(#default#homepage)';this.setHomePage({{ store.url }});" href="#">设为首页</a> |
+					<a href="#" onclick="javascript:window.external.AddFavorite('{{ store.url }}','{{ store.name }}');">加入收藏</a></div>
+			</div>
+
+			<div id="nav">
+				<ul class="clearfix">
+
+					<li class="" onclick="window.location.href='{{ store.url }}'"><a href="{{ store.url }}">首页</a></li>
+
+					<li class="" onclick="window.location.href='{{ store.url }}classify/0.html/1'"><a class="" href="{{ store.url }}classify/0.html/1">产品供应</a></li>
+
+					<li class="" onclick="window.location.href='{{ store.url }}info.html'"><a class="" href="{{ store.url }}info.html">商铺介绍</a></li>
+
+					<li class="" onclick="window.location.href='{{ store.url }}'"><a class="" href="{{ store.url }}message.html">在线留言</a></li>
+
+				</ul>
+			</div>
+
+			<div id="ban">
+				<div class="slide">
+					<ul style="top: -226px;" class="slide-list">
+						<li class=""><img src="{{ store.loc1.url }}" alt="" height="226" width="950"></li>
+						<li class=""><img src="{{ store.loc2.url }}" alt="" height="226" width="950"></li>
+						<li class=""><img src="{{ store.loc3.url }}" alt="" height="226" width="950"></li>
+					</ul>
+					<ul class="slide-triggers">
+						<li class="">1</li><li class="on">2</li><li class="">3</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+        <div id="content">
+					<div class="list-catagroy">
+						<div id="j-spu" class="spu-box">
+							<div class="bg-x spu-box-bg"></div>
+
+							<dl>
+								<dt>分类：</dt>
+								<dd>
+								<p class="spu-item-all">
+								<a href="{{ store.url }}classify/0.html/1" class="spu-item-title">全部</a>|
+								</p>
+								<ul class="spu-items">
+									{% for sort in sorts %}
+									<li><a href="../{{ sort.id }}.html/1" class="spu-item-title">{{ sort.name }}</a></li>
+									{% endfor %}
+
+								</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="layout grid-m0s170">
+						<div class="col-main">
+							<div class="main-wrap">
+								<div class="list-content">
+
+									<ul class="list-view clearfix">
+										<p>{{ Warn }}</p>
+
+										{% for item in items.object_list %}
+										<li class="list-item">
+										<div class="photo">
+											<a href="{{ item.get_url }}" target="_blank" title="{{ item.it_name }}">
+												<img src="{{ item.img.url }}" alt="{{ item.it_name }}" onload="iimgFix(this,98,98)"  />
+										</a></div>
+										<div class="content under">
+											<h4><a href="{{ item.get_url }}" target="_blank" class="Title" title="{{ item.it_name }}">{{ item.it_name }}</a></h4>
+											<p class="info">{{ item.version }}</p>
+										</div>
+										<div class="vip">
+											<p class="release-company"><a href="{{ item.company.url }}" target="_blank" rel="nofollow">{{ item.company.name }}</a></p>
+											<p class="release-area clearfix">{{ item.brand }}</p>
+										</div>
+										<div class="contact-by under clearfix">
+											<a href='tencent://message/?Uin={{ item.company.qq }}'><img SRC=http://wpa.qq.com/pa?p=1:{{ item.company.qq }}:10 alt='点击这里给我发消息' height='16' /></a>
+											<br />
+											<a class="ly" title="点此给卖家留言。" target="_blank" href="" rel="nofollow">站内留言</a>
+											<br />
+											<a class="lx" title="点此查看卖家电话、地址等具体联系方式。" target="_blank" href="/store/{{ item.company.id }}/info.html" rel="nofollow">联系方式</a><br />
+										</div>
+										</li>
+										{% endfor %}
+
+									</ul>
+
+
+									<div class="pageNav">
+										<span class="pre">
+											{% if items.has_previous %}
+											<a href="{{ items.previous_page_number }}" title="Pre">上一页</a>
+											{% endif %}
+										</span>
+
+										{% for p in page_range %}
+										{% ifequal p items.number %}
+										<span style="font-size:16px;" title="当前页">
+											<b>{{p}}</b>
+										</span>
+										{% else %}
+										<a href="{{p}}" title="第{{p}}页">{{p}}</a>
+										{% endifequal %}
+										{% endfor %}
+										<span class="next">
+											{% if items.has_next %}
+											<a href="{{ items.next_page_number }}" title="Next">下一页</a>
+											{% endif %}
+										</span>
+										<span style='font-size:12px'>
+											{%if items.paginator.num_pages%}共 {{ items.paginator.num_pages }} 页{%endif%}
+										</span>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-sub">
+							<div id="gold" class="box">
+								{#ad location#}
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		<div id="footer">
+			<p><strong>
+				<a title="{{ store.name }}" href="{{ store.url }}" target="_blank">{{ store.name }}</a>
+				电话：{{ store.tel }} <br>地址：{{ store.address }}<br>
+				技术支持：<a title="SLUG" href="http://sdutlinux.org/" target="_blank">SLUG</a>
+			</strong></p>
+		</div>
+
+	</body>
+</html>
