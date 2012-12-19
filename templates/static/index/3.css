@@ -1,0 +1,53 @@
+/*
+Copyright 2010, Yimai Inc. All rights reserved.
+MIT Licensed
+build: 2010-10-23
+by: liu <roccoliu@gmail.com>
+*/
+
+/* 全局 */
+body {
+	color: #333; 
+}
+
+/* 链接 */
+a {
+	color: #333; 
+}
+a:hover {
+	color: #f60!important; 
+}
+
+/* 导航 */
+#nav ul {
+	background: #bb0000; 
+	background-image: -moz-linear-gradient(top,#dd0000,#bb0000); 
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#dd0000),color-stop(1,#bb0000)); 
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#dd0000',EndColorStr='#bb0000'); 
+}
+#nav a {
+	color: #fff!important;
+}
+#nav a:hover {
+	color: #000!important; text-decoration: none!important; 
+}
+
+/* 颜色 */
+.name, #nav li.current, #news .hd h3, #announce .hd h3, .product .hd h3, #search .hd h3, .category .hd h3, #contact .hd h3, #links .hd h3, #content-wrap .hd h3 {
+	color: #770000; 
+}
+
+/* 更多 */
+.more {
+	color: #bb0000!important; 
+}
+
+/* 列表 */
+.info-list li {
+	background: url(s_icon-3.png) no-repeat; 
+}
+
+/* 菜单 */
+#navigation ul li a:hover, #navigation ul li.hover { 
+	background: #f0f0f0 url(s_icon-3.png) no-repeat 5px -58px; 
+}

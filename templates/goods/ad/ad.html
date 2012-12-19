@@ -1,0 +1,10 @@
+{% extends "base-admin.html" %}
+{% block title %}广告管理{% endblock %}
+{% block main %}
+    <h2>广告管理</h2>
+    <hr>
+        <div class="control-group">
+        <li><a href="{% url ad_middle %}" class="btn-large btn-primary">首页中图</a>&nbsp;3张</li><br>
+        <li><a href="{% url ad_6 %}" class="btn-large btn-primary">首页小图</a>&nbsp;6张</li>
+        </div>
+{% endblock %}

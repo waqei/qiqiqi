@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>{% block title %}123{% endblock %}</title>
+
+<meta name="keywords" content="{% block keywords %}123{% endblock %}">
+
+<meta name="description" content="{% block description %}123{% endblock %}">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'base-min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '3.css' %}">
+<link type="text/css" rel="stylesheet" href="{% static 'wq_online.css' %}">
+<script type="text/javascript" src="{% static 'jquery-1.js' %}"></script>
+<script type="text/javascript" src="{% static 'common.js' %}"></script>
+<script type="text/javascript" src="{% static 'wp_online.js' %}"></script>
+{% block head %}
+
+{% endblock %}
+</head>
+<body>
+
+	<div id="header">
+	
+		<div id="wrap">
+
+			<div class="logo" style="no-repeat center center;" >
+                <img src="{{ com.logo.url }}" alt="{{ com.name }}" width="60" height="60" >
+            </div>
+		
+			<h1 class="name">&nbsp;{{ com.name }}</h1>
+			<div class="favorite">
+                <a onclick="this.style.behavior='url(#default#homepage)';this.setHomePage({{ com.url }});" href="#">设为首页</a> |
+                <a href="#" onclick="javascript:window.external.AddFavorite('{{ com.url }}','{{ com.name }}');">加入收藏</a></div>
+		</div>
+	
+		<div id="nav">
+			<ul class="clearfix">
+			
+				<li class="" onclick="window.location.href='{{ com.url }}'"><a href="{{ com.url }}">首页</a></li>
+			
+				<li class="" onclick="window.location.href='{{ com.url }}classify/0.html/1'"><a class="" href="{{ com.url }}classify/0.html/1">产品供应</a></li>
+
+				<li class="" onclick="window.location.href='{{ com.url }}info.html'"><a class="" href="{{ com.url }}info.html">商铺介绍</a></li>
+
+                <li class="" onclick="window.location.href='{{ com.url }}'"><a class="" href="{{ com.url }}message.html">在线留言</a></li>
+			
+			</ul>
+		</div>
+	
+		<div id="ban">
+			<div class="slide"> 
+				 <ul style="top: -226px;" class="slide-list">
+					<li class=""><img src="{{ com.loc1.url }}" alt="" height="226" width="950"></li>
+                     <li class=""><img src="{{ com.loc2.url }}" alt="" height="226" width="950"></li>
+                     <li class=""><img src="{{ com.loc3.url }}" alt="" height="226" width="950"></li>
+			  	  </ul>
+				  <ul class="slide-triggers">
+					<li class="">1</li><li class="on">2</li><li class="">3</li>
+				  </ul>
+			</div>
+		</div>
+	
+	</div>
+
+    <div id="content">
+        <div class="layout grid-s200m0">
+            {% block main %}
+
+            {% endblock %}
+            <div class="col-sub">
+            <div id="search" class="box">
+                <div class="hd">
+                    <h3>产品搜索</h3>
+                </div>
+                <div class="bd">
+                    <div class="panel clearfix" style="background-color: #ffffff">
+
+                        <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
+                            <table border="0" cellpadding="0" >
+                                {{ form.as_table }}
+                            </table>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="product" class="box">
+                <div class="hd">
+                    <h3 style="color: rgb(119,0,0)">主营产品</h3>
+                </div>
+                <div class="bd">
+                    <div class="panel clearfix">
+                        {% for sell in com.sell.get_sorts %}
+                            {{ sell }},
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="category box">
+
+                <div class="hd">
+                    <h3>产品分类</h3>
+                </div>
+
+                <div id="navigation" class="bd">
+                    <ul class="info-list clearfix">
+
+                        <li><a href="" title=""></a>
+
+                            <ul class="info-list clearfix hidden">
+
+                                <li><a href="" title=""></a></li>
+
+
+                            </ul>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div id="contact" class="box">
+                <div class="hd">
+                    <h3>联系方式</h3>
+                </div>
+                <div class="bd clearfix">
+                    <p>联系人：{{boss.first_name}}<br>电话：{{com.tel}}</p>
+                    <p></p>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p><strong>
+            <a title="{{ com.name }}" href="{{ com.url }}" target="_blank">{{ com.name }}</a>
+            电话：{{ com.tel }} <br>地址：{{ com.address }}<br>
+            技术支持：<a title="SLUG" href="http://sdutlinux.org/" target="_blank">SLUG</a>
+        </strong></p>
+    </div>
+
+</body>
+</html>

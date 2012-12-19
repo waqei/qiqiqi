@@ -1,0 +1,98 @@
+{% extends 'store/base-store.html' %}
+{% block title %}
+    {{ com.name }}
+{% endblock %}
+{% block keywords %}
+    {{ com.name }},{{ com.description }}
+{% endblock %}
+{% block description %}
+    {{ com.name }},{{ com.description }}
+{% endblock %}
+{% block main %}
+
+
+    <div class="col-main">
+        <div class="main-wrap">
+    <div id="news" class="box">
+        <div class="hd">
+            <h3>公司动态</h3>
+        </div>
+        <div class="bd">
+
+            <div class="imgbox">
+                <div class="gw_tab">
+                    <ul id="gw_b_i" class="gw_tab_menu pic_loop clearfix">
+                        <li class="on" style="display: block;">
+                            <div class="imgBox">
+                                <img style="width: 160px; height: 77.3818px;" alt="#" src="../static/store/20127916163282639.jpg">
+                            </div>
+                        </li>
+                        <li class="" style="display: none;">
+                            <div class="imgBox">
+                                <img style="width: 160px; height: 67.7818px;" alt="#" src="../static/store/20127916595373294.jpg">
+                            </div></li>
+                        <li class="" style="display: none;">
+                            <div class="imgBox">
+                                <img style="width: 160px; height: 59.0545px;" alt="#" src="../static/store/2012791702618165.jpg">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul id="gw_s" class="gw_tab_box num_loop clearfix">
+                        <li class="on"></li><li class=""></li><li class=""></li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul class="info-list clearfix">
+
+                <li class=""><a class="" target="_blank" href="#" title="">news</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="announce" class="box">
+        <div class="hd">
+            <h3>企业公告</h3>
+        </div>
+        <div class="bd">
+            <div class="cnt">
+                <p>{{ com.notice }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="product box">
+        <div class="hd">
+            <h3>最新产品</h3>
+            <a class="more" href="{{ com.url }}classify/0.html/1">更多&gt;&gt;</a>
+        </div>
+        <div class="bd" id="a1">
+            <ul class="item-list clearfix">
+                {% for item in items %}
+                    <li>
+                        <div class="photo"><a href="{{ item.get_url }}" title="{{ item.it_name }}" target="_blank">
+                            <img alt="{{ item.it_name }}" src="{{ item.img.url }}"></a>
+                        </div>
+                        <div class="desc">
+                            <a href="{{ item.get_url }}" title="{{ item.description }}" target="_blank">{{ item.description }}</a>
+                        </div>
+                        <div class="numb"><a href="{{ item.get_url }}" title="{{ item.version }}" target="_blank">{{ item.version }}</a></div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="bd" style="display: none;" id="b1">
+            <ul class="item-list clearfix">
+
+            </ul>
+        </div>
+
+    </div>
+
+    </div>
+    </div>
+
+
+
+{% endblock %}

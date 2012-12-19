@@ -1,0 +1,17 @@
+{% extends "base-admin.html" %}
+{% block title %}edit ad{% endblock %}
+{% block main %}
+    <h2>edit ad</h2>
+    <hr>
+    <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
+        <table border="0" cellpadding="0" >
+            {{ form.as_p }}
+        </table>
+        <br>
+        <div class="control-group" align="center">
+            <div class="btn-group">
+                <input type="submit"  class="btn btn-primary" value="添加"/>
+            </div>
+        </div>
+    </form>
+{% endblock %}

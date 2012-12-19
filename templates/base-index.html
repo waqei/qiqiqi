@@ -1,58 +1,68 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
+
+<!DOCTYPE html>
+<html>
 <head>
     <title>{% block title %}{% endblock %}</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="keywords" content="{% block keywords %}{% endblock %}" />
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
-    {#css#}
-    {% load static %}
-{#    <link rel="stylesheet" href="{% static "bootstrap.css" %}" type="text/css">#}
-    {#    <link rel="stylesheet" href="{% static "bootstrap-responsive.css" %}" type="text/css">#}
-    {#    <link rel="stylesheet" href="{% static "bootstrap.min.css" %}" type="text/css" >#}
-        <link rel="stylesheet" href="{% static "style.css" %}" type="text/css" >
-        <link rel="stylesheet" href="{% static "style2.css" %}" type="text/css" >
-{#    <script type="text/javascript" src="{% static "bootstrap.js" %}"></script>#}
-{#    <script type="text/javascript" src="{% static "bootstrap.min.js" %}"></script>#}
+    {% block header %}
 
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-    <style type="text/css">
-        body {
-            padding-top: 60px;
-            padding-bottom: 40px;
-        }
-        .sidebar-nav {
-            padding: 9px 0;
-        }
-    </style>
-    {% block head %}{% endblock %}
+    {% endblock %}
 </head>
-<body>
+    <body>
+        <div id="page" class="w950">
 
-<div class="container-fluid">
-    {% block content %}{% endblock %}
-</div>
-{% block foot %}
-    <br /><br /><div style="height:3px;background-color: #092d70;"></div><br />
-    <div style="float:left; width:800px;margin-top:3px;">
-        <p align="center"">
-            Copyright &copy;  2012
-            <a href="#" style="text-decoration:none;">
-                汽配商城
-            </a>. All right reserved.  |  技术支持:
-            <a href="http://sdutlinux.org">
-                SLUG
-            </a>
-        </p>
-    </div>
-{% endblock %}
-</body>
+            <div id="header">
+                <div id="mini-nav">
+                    <p class="login-info">您好，欢迎光临汽配商城！</p>
+
+                    <div class="quick-menu">
+                        <ul>
+                            <li><a href="/" target="_blank">汽配商城</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div id="top-header">
+                    <div class="logo-search">
+                        <div class="logo">
+                            {% load static %}
+                            <a href="/" title="汽配">
+                                <img src="{% static "logo1.jpg" %}" width="154" height="56" alt="汽配人网" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav" style="background: url('/static/navbar.png') repeat scroll 0% 0% transparent;">
+                        <ul class="clearfix">
+                            <li class="w2 current"><a href="/">首页</a></li>
+                            <li class="w3"><a href="/index/classify/0.html/1">产品</a></li>
+                            <li class="w2"><a href="/news" target="_blank">资讯</a></li>
+                            <li class="w2"><a href="/sorts" target="_blank">分类</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            {% block main %}
+            
+            {% endblock %}
+
+            <div id="footer">
+                <div class="foot-nav">
+                    <a  href="about/" target="_blank" rel="nofollow">关于我们</a> | <a
+                        href="#" target="_blank" rel="nofollow">法律声明</a> | <a
+                        href="#" target="_blank">友情链接</a>
+                </div>
+                <div class="copyright">
+                    <p>版权所有 汽配商城</p>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

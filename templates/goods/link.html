@@ -1,0 +1,41 @@
+{% extends "base-admin.html" %}
+{% block title %}友情链接管理{% endblock %}
+{% block main %}
+    <h3>友情链接管理</h3>
+    <hr>
+    <div class="row">
+    <table class="table table-striped">
+     <thead>
+        <tr>
+            <th>网站名称</th>
+            <th>网站链接</th>
+            <th>功能</th>
+        </tr>
+     </thead>
+     <tbody>
+        {% for link in alllinks %}
+            <tr>
+                <th>{{ link.site }}</th>
+                <th><a href="{{ link.url }}">{{ link.url }}</a></th>
+                <th><a href="/goods/links/dele/{{ link.id }}/" class="btn btn-danger" onClick="{if(confirm('确定要删除 『{{ link.site }}』 吗?\n')){return true;}return false;}">删除</a></th>
+            </tr>
+        {% endfor %}
+     </tbody>
+
+    </table>
+
+    </div>
+    <hr>
+    <h4>添加</h4>
+    <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
+        <table border="0" cellpadding="0" >
+            {{ form.as_p }}
+        </table>
+        <br>
+        <div class="control-group" align="center">
+            <div class="btn-group">
+                <input type="submit"  class="btn btn-primary" value="添加"/>
+            </div>
+        </div>
+    </form>
+{% endblock %}

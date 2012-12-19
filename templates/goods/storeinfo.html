@@ -1,0 +1,19 @@
+{% extends "base-admin.html" %}
+{% block title %}商铺信息{% endblock %}
+{% block main %}
+    <h2>商铺信息</h2>
+    <hr>
+    <table class="table-bordered">
+        <tbody>
+            <tr><td>商铺名称</td><td class="alert alert-success">{{ com.name }}</td></tr>
+            <tr><td>logo</td><td><img src="{{ com.logo.url }}" alt="" width="64" height="64"></tr>
+            <tr><td>商铺网址</td><td class="alert alert-success"><a href="{{ com.url }}" target="_blank">{{ com.url }}</a></td></tr>
+            <tr><td>主营产品</td><td class="alert alert-success">{{ com.sell }}</td></tr>
+            <tr><td>网站公告</td><td class="alert alert-success">{{ com.notice }}</td></tr>
+            <tr><td>联系电话</td><td class="alert alert-success">{{ com.tel }}</td></tr>
+            <tr><td>qq</td><td class="alert alert-success">{{ com.qq }}</td></tr>
+            <tr><td>商铺地址</td><td class="alert alert-success">{{ com.address }}</td></tr>
+        </tbody>
+    </table>
+
+{% endblock %}

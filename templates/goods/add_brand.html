@@ -6,12 +6,11 @@
         <hr>
         <div>
             {% for brand in allbrand %}
-                <a href="{% url dele_brand %}?brand={{ brand.id }}" class="btn" onClick="{if(confirm('确定要删除品牌 『{{ brand }}』 吗?\n')){return true;}return false;}">
+                <a href="#" class="btn" >
                     {{ brand }}</a>
             {% endfor %}
         </div>
         <br>
-        <p class="alert alert-danger">单击某一品牌将删除该品牌！请慎重！</p>
     </div>
     <hr>
     <h3>添加品牌</h3>
