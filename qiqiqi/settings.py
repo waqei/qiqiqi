@@ -138,7 +138,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'car',
-    'mptt',
+    'addons.mptt',
     'django.contrib.comments',
 #    'south',
 )

@@ -5,7 +5,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.contrib.comments import Comment
 from form import ItemsForm,StoreAdForm,StoreForm,EditStoreForm,LinkForm,AddForm,ItemsStaffForm,NewsForm
-from car.models import *
+from car.models import Stores,Sorts,Items,Links,News
 import re
 from qiqiqi.settings import DOMAIN
 

@@ -15,6 +15,10 @@ class Sorts(MPTTModel):
     parent=TreeForeignKey("self", blank=True, null=True, related_name="children")
 
 
+    def get_url(self):
+        link=DOMAIN +'/index/classify/'+  str(self.id) + '.html/1'
+        return link
+
     class MPTTMeta:
         order_insertion_by = ['name']
 

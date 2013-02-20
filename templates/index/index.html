@@ -157,7 +157,7 @@
                 <div class="category-list">
                     <div class="category-title clearfix">
                         <h4>
-                            <a href="http://www.qipeiren.com/Supply/103000p.htm" target="_blank">{{ parent }}</a>
+							<a href={{ parent.get_url }} target="_blank">{{ parent }}</a>
                         </h4>
                         {#流行#}
                         <span class="category-pop">
@@ -167,7 +167,7 @@
 
                     <ul class="clearfix">
                             {% for child in parent.get_children %}
-                                <a href="#" target="_blank">{{ child }}</a>
+							<a href={{ child.get_url }} target="_blank">{{ child }}</a>
                             {% endfor %}
                     </ul>
 
