@@ -3,7 +3,7 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-DOMAIN='http://127.0.0.1:8000'
+DOMAIN=''
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -14,10 +14,10 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'qipi',                      # Or path to database file if using sqlite3.
+        'NAME': 'qpp',                      # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'zhw',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PASSWORD': 'group_0611',                  # Not used with sqlite3.
+        'HOST': '/tmp/mysql.sock',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -124,7 +124,7 @@ ROOT_URLCONF = 'qiqiqi.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'qiqiqi.wsgi.application'
 
-TEMPLATE_DIRS = ('/home/zhwei/PycharmProjects/qiqiqi/templates',)
+TEMPLATE_DIRS = ('/home/django/qi.gotit.asia/templates',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -138,7 +138,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'car',
-    'mptt',
+    'addons.mptt',
     'django.contrib.comments',
 #    'south',
 )

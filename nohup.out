@@ -1,0 +1,694 @@
+[20/Feb/2013 20:36:14] "GET / HTTP/1.0" 200 12240
+[20/Feb/2013 20:36:15] "GET /static/reset-gird-min_11.css HTTP/1.0" 304 0
+[20/Feb/2013 20:36:15] "GET /static/i20110122.css HTTP/1.0" 304 0
+[20/Feb/2013 20:36:15] "GET /static/getuname.js HTTP/1.0" 304 0
+[20/Feb/2013 20:36:15] "GET /static/index_2011.js HTTP/1.0" 304 0
+[20/Feb/2013 20:36:15] "GET /static/jquery-1.4.2.js HTTP/1.0" 304 0
+[20/Feb/2013 20:36:15] "GET /static/logo1.jpg HTTP/1.0" 304 0
+[20/Feb/2013 20:36:15] "GET /static/navbar.png HTTP/1.0" 304 0
+[20/Feb/2013 20:36:15] "GET /static/ad/21122012045_1.jpg HTTP/1.0" 200 1904011
+[20/Feb/2013 20:36:16] "GET /static/ad/21122012045_2.jpg HTTP/1.0" 200 1904011
+[20/Feb/2013 20:36:16] "GET /static/ad/21122012042_2.jpg HTTP/1.0" 200 1830446
+[20/Feb/2013 20:36:16] "GET /static/ad/21122012042_1.jpg HTTP/1.0" 200 1830446
+[20/Feb/2013 20:36:16] "GET /static/ad/21122012041_1.jpg HTTP/1.0" 200 1900218
+[20/Feb/2013 20:36:16] "GET /static/ad/21122012043_1.jpg HTTP/1.0" 200 1851523
+[20/Feb/2013 20:36:16] "GET /Uploa2181435014608.jpg HTTP/1.0" 404 3643
+[20/Feb/2013 20:36:30] "GET / HTTP/1.0" 200 12240
+[20/Feb/2013 20:36:30] "GET /static/reset-gird-min_11.css HTTP/1.0" 304 0
+[20/Feb/2013 20:36:30] "GET /static/i20110122.css HTTP/1.0" 304 0
+[20/Feb/2013 20:36:30] "GET /static/getuname.js HTTP/1.0" 304 0
+[20/Feb/2013 20:36:30] "GET /static/jquery-1.4.2.js HTTP/1.0" 304 0
+[20/Feb/2013 20:36:30] "GET /static/index_2011.js HTTP/1.0" 304 0
+[20/Feb/2013 20:36:30] "GET /static/logo1.jpg HTTP/1.0" 304 0
+[20/Feb/2013 20:36:30] "GET /static/navbar.png HTTP/1.0" 304 0
+[20/Feb/2013 20:36:31] "GET /static/ad/21122012042_2.jpg HTTP/1.0" 200 1830446
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 215, in write
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 215, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 104] Connection reset by peer
+    self.flush()
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+  File "/usr/lib/python2.7/SocketServer.py", line 582, in process_request_thread
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 582, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.4.3-py2.7.egg/django/core/servers/basehttp.py", line 139, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 640, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 693, in finish
+    self.finish_request(request, client_address)
+    self.wfile.flush()
+  File "/usr/lib/python2.7/SocketServer.py", line 323, in finish_request
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+    self.RequestHandlerClass(request, client_address, self)
+error: [Errno 32] Broken pipe
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.4.3-py2.7.egg/django/core/servers/basehttp.py", line 139, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 640, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 693, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 215, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 582, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.4.3-py2.7.egg/django/core/servers/basehttp.py", line 139, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 640, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 693, in finish
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    self.finish_response()
+    self.wfile.flush()
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 215, in write
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self.write(data)
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 215, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._write(data)
+error: [Errno 32] Broken pipe
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+error: [Errno 104] Connection reset by peer
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+Traceback (most recent call last):
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+  File "/usr/lib/python2.7/SocketServer.py", line 582, in process_request_thread
+error: [Errno 104] Connection reset by peer
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.4.3-py2.7.egg/django/core/servers/basehttp.py", line 139, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 640, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 693, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 582, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.4.3-py2.7.egg/django/core/servers/basehttp.py", line 139, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 640, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 693, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[20/Feb/2013 20:36:32] "GET /index/classify/0.html/1 HTTP/1.0" 200 5874
+[20/Feb/2013 20:36:32] "GET /static/c20100106_11.css HTTP/1.0" 200 38427
+[20/Feb/2013 20:36:32] "GET /static/bdsstyle.css HTTP/1.0" 200 8912
+[20/Feb/2013 20:36:32] "GET /static/others.css HTTP/1.0" 200 1735
+[20/Feb/2013 20:36:32] "GET /static/logger.js HTTP/1.0" 200 3062
+[20/Feb/2013 20:36:32] "GET /static/func.js HTTP/1.0" 404 1630
+[20/Feb/2013 20:36:32] "GET /images_11/sprite.png HTTP/1.0" 404 3637
+[20/Feb/2013 20:36:32] "GET /images_11/nav.png HTTP/1.0" 404 3628
+[20/Feb/2013 20:36:32] "GET /static/nav.gif HTTP/1.0" 200 150
+[20/Feb/2013 20:36:32] "GET /images_10/background-x.png HTTP/1.0" 404 3655
+[20/Feb/2013 20:36:32] "GET /static/image/mimi_1.jpg HTTP/1.0" 200 13171
+[20/Feb/2013 20:36:32] "GET /images_10/ly.gif HTTP/1.0" 404 3625
+[20/Feb/2013 20:36:32] "GET /images_10/lx.gif HTTP/1.0" 404 3625
+[20/Feb/2013 20:36:33] "GET /index/classify/0.html/1 HTTP/1.0" 200 5874
+[20/Feb/2013 20:36:33] "GET /static/func.js HTTP/1.0" 404 1630
+[20/Feb/2013 20:36:36] "GET /accounts/ HTTP/1.0" 200 2178
+[20/Feb/2013 20:36:36] "GET /static/bootstrap.min.js HTTP/1.0" 200 25743
+[20/Feb/2013 20:36:36] "GET /static/bootstrap.js HTTP/1.0" 200 56478
+[20/Feb/2013 20:36:36] "GET /static/bootstrap.css HTTP/1.0" 200 121187
+[20/Feb/2013 20:36:42] "POST /accounts/ HTTP/1.0" 302 0
+[20/Feb/2013 20:36:42] "GET /accounts/index HTTP/1.1" 200 1079
+[20/Feb/2013 20:36:42] "GET /static/bootstrap.min.js HTTP/1.1" 200 25743
+[20/Feb/2013 20:36:42] "GET /static/bootstrap.js HTTP/1.1" 200 56478
+[20/Feb/2013 20:36:42] "GET /static/bootstrap.css HTTP/1.1" 200 121187
+[20/Feb/2013 20:36:42] "GET /accounts/ HTTP/1.1" 200 2178
+[20/Feb/2013 20:36:47] "POST /accounts/ HTTP/1.1" 302 0
+[20/Feb/2013 20:36:47] "GET /accounts/index HTTP/1.1" 200 4219
+[20/Feb/2013 20:36:50] "GET /accounts/logout HTTP/1.1" 302 0
+[20/Feb/2013 20:36:50] "GET / HTTP/1.1" 200 12240
+[20/Feb/2013 20:36:50] "GET /static/reset-gird-min_11.css HTTP/1.1" 200 1178
+[20/Feb/2013 20:36:50] "GET /static/getuname.js HTTP/1.1" 200 255
+[20/Feb/2013 20:36:50] "GET /static/i20110122.css HTTP/1.1" 200 18592
+[20/Feb/2013 20:36:50] "GET /static/index_2011.js HTTP/1.1" 200 3847
+[20/Feb/2013 20:36:50] "GET /static/jquery-1.4.2.js HTTP/1.1" 200 72173
+[20/Feb/2013 20:36:50] "GET /static/logo1.jpg HTTP/1.1" 200 31638
+[20/Feb/2013 20:36:50] "GET /static/navbar.png HTTP/1.1" 200 2817
+[20/Feb/2013 20:36:51] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[20/Feb/2013 20:36:51] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[20/Feb/2013 20:36:51] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3643
+[20/Feb/2013 20:36:51] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[20/Feb/2013 20:36:51] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[20/Feb/2013 20:36:51] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[20/Feb/2013 20:36:51] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+[20/Feb/2013 20:36:52] "GET /accounts/ HTTP/1.1" 200 2178
+[20/Feb/2013 20:37:02] "POST /accounts/ HTTP/1.1" 302 0
+[20/Feb/2013 20:37:02] "GET /accounts/index HTTP/1.1" 200 4844
+[20/Feb/2013 20:37:07] "GET /accounts/store/manage_user HTTP/1.1" 200 6048
+[20/Feb/2013 20:37:07] "GET /static/bootstrap-tab.js HTTP/1.1" 200 3307
+[20/Feb/2013 20:37:08] "GET /goods/store/add/ HTTP/1.1" 200 5334
+[20/Feb/2013 20:37:09] "GET /goods/show_sort/ HTTP/1.1" 200 10035
+[20/Feb/2013 20:43:04] "HEAD / HTTP/1.0" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 582, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.4.3-py2.7.egg/django/core/servers/basehttp.py", line 139, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 638, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 116, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[21/Feb/2013 00:14:50] "CONNECT 203.188.201.253:25 HTTP/1.1" 404 1669
+[21/Feb/2013 07:49:31] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 07:49:31] "GET /static/getuname.js HTTP/1.1" 200 255
+[21/Feb/2013 07:49:31] "GET /static/index_2011.js HTTP/1.1" 200 3847
+[21/Feb/2013 07:49:31] "GET /static/i20110122.css HTTP/1.1" 200 18592
+[21/Feb/2013 07:49:31] "GET /static/jquery-1.4.2.js HTTP/1.1" 200 72173
+[21/Feb/2013 07:49:31] "GET /static/reset-gird-min_11.css HTTP/1.1" 200 1178
+[21/Feb/2013 07:49:32] "GET /static/navbar.png HTTP/1.1" 200 2817
+[21/Feb/2013 07:49:32] "GET /static/logo1.jpg HTTP/1.1" 200 31638
+[21/Feb/2013 07:49:33] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 07:49:33] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+[21/Feb/2013 07:49:33] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 07:49:33] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 07:49:33] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 07:49:33] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 07:49:33] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[21/Feb/2013 07:49:37] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 07:49:37] "GET /static/bootstrap.css HTTP/1.1" 200 121187
+[21/Feb/2013 07:49:37] "GET /static/bootstrap.min.js HTTP/1.1" 200 25743
+[21/Feb/2013 07:49:37] "GET /static/bootstrap.js HTTP/1.1" 200 56478
+[21/Feb/2013 07:49:39] "POST /accounts/ HTTP/1.1" 302 0
+[21/Feb/2013 07:49:39] "GET /accounts/index HTTP/1.1" 200 4844
+[21/Feb/2013 07:49:42] "GET /accounts/store/manage_user HTTP/1.1" 200 6048
+[21/Feb/2013 07:49:42] "GET /static/bootstrap-tab.js HTTP/1.1" 200 3307
+[21/Feb/2013 07:49:43] "GET /goods/show_sort/ HTTP/1.1" 200 10035
+[21/Feb/2013 07:49:46] "GET /goods/store/add/ HTTP/1.1" 200 5334
+[21/Feb/2013 08:42:18] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 08:42:18] "GET /static/getuname.js HTTP/1.1" 200 255
+[21/Feb/2013 08:42:18] "GET /static/reset-gird-min_11.css HTTP/1.1" 200 1178
+[21/Feb/2013 08:42:18] "GET /static/index_2011.js HTTP/1.1" 200 3847
+[21/Feb/2013 08:42:18] "GET /static/i20110122.css HTTP/1.1" 200 18592
+[21/Feb/2013 08:42:18] "GET /static/logo1.jpg HTTP/1.1" 200 31638
+[21/Feb/2013 08:42:18] "GET /static/jquery-1.4.2.js HTTP/1.1" 200 72173
+[21/Feb/2013 08:42:18] "GET /static/ad_middle/snapshot2.png HTTP/1.1" 200 18762
+[21/Feb/2013 08:42:18] "GET /static/ad_middle/snapshot6.png HTTP/1.1" 200 61356
+[21/Feb/2013 08:42:18] "GET /static/ad_middle/snapshot7.png HTTP/1.1" 200 1543280
+[21/Feb/2013 08:42:19] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 08:42:19] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 08:42:19] "GET /static/navbar.png HTTP/1.1" 200 2817
+[21/Feb/2013 08:42:19] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 08:42:19] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+[21/Feb/2013 08:42:19] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 08:42:19] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[21/Feb/2013 08:42:19] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 08:42:30] "GET /store/1/ HTTP/1.1" 200 7473
+[21/Feb/2013 08:42:30] "GET /static/3.css HTTP/1.1" 200 1149
+[21/Feb/2013 08:42:30] "GET /static/common.js HTTP/1.1" 200 3783
+[21/Feb/2013 08:42:30] "GET /static/wp_online.js HTTP/1.1" 200 1216
+[21/Feb/2013 08:42:30] "GET /static/base-min.css HTTP/1.1" 200 15707
+[21/Feb/2013 08:42:30] "GET /static/wq_online.css HTTP/1.1" 200 1160
+[21/Feb/2013 08:42:30] "GET /static/logo/u159194160819610643fm23gp0.jpg HTTP/1.1" 200 15503
+[21/Feb/2013 08:42:30] "GET /static/jquery-1.js HTTP/1.1" 200 72174
+[21/Feb/2013 08:42:30] "GET /static/ad/mimi.jpg HTTP/1.1" 200 13171
+[21/Feb/2013 08:42:30] "GET /store/static/store/20127916163282639.jpg HTTP/1.1" 404 3696
+[21/Feb/2013 08:42:30] "GET /store/static/store/20127916595373294.jpg HTTP/1.1" 404 3696
+[21/Feb/2013 08:42:30] "GET /store/static/store/2012791702618165.jpg HTTP/1.1" 404 3693
+[21/Feb/2013 08:42:30] "GET /images/s_bg.png HTTP/1.1" 404 3621
+[21/Feb/2013 08:42:30] "GET /static/ad/%E5%91%A8%E6%9D%B0%E4%BC%A6.png HTTP/1.1" 200 169481
+[21/Feb/2013 08:42:30] "GET /static/ad/Tooltip_003.png HTTP/1.1" 200 564794
+[21/Feb/2013 08:42:30] "GET /store/static/store/20127916163282639.jpg HTTP/1.1" 404 3696
+[21/Feb/2013 08:42:30] "GET /store/static/store/20127916595373294.jpg HTTP/1.1" 404 3696
+[21/Feb/2013 08:42:30] "GET /store/static/store/2012791702618165.jpg HTTP/1.1" 404 3693
+[21/Feb/2013 08:42:30] "GET /images/s_test.png HTTP/1.1" 404 3627
+[21/Feb/2013 08:42:30] "GET /static/s_icon-3.png HTTP/1.1" 404 1644
+[21/Feb/2013 08:42:30] "GET /images/s_search.png HTTP/1.1" 404 3633
+[21/Feb/2013 08:42:37] "GET /store/1/ HTTP/1.1" 200 7473
+[21/Feb/2013 08:42:37] "GET /store/static/store/20127916163282639.jpg HTTP/1.1" 404 3696
+[21/Feb/2013 08:42:37] "GET /store/static/store/2012791702618165.jpg HTTP/1.1" 404 3693
+[21/Feb/2013 08:42:37] "GET /store/static/store/20127916595373294.jpg HTTP/1.1" 404 3696
+[21/Feb/2013 08:42:37] "GET /images/s_bg.png HTTP/1.1" 404 3621
+[21/Feb/2013 08:42:37] "GET /images/s_test.png HTTP/1.1" 404 3627
+[21/Feb/2013 08:42:37] "GET /static/s_icon-3.png HTTP/1.1" 404 1644
+[21/Feb/2013 08:42:37] "GET /images/s_search.png HTTP/1.1" 404 3633
+[21/Feb/2013 08:42:37] "GET /store/1/ HTTP/1.1" 200 7473
+[21/Feb/2013 08:42:43] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 08:42:43] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 12:49:51] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 12:49:51] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 12:49:52] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+[21/Feb/2013 12:49:52] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[21/Feb/2013 12:49:52] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 12:49:53] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 12:49:53] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 12:49:53] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 12:49:56] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 12:49:58] "POST /accounts/ HTTP/1.1" 302 0
+[21/Feb/2013 12:49:58] "GET /accounts/index HTTP/1.1" 200 4844
+[21/Feb/2013 12:50:01] "GET /goods/store/edit/ad/ HTTP/1.1" 200 5393
+[21/Feb/2013 12:50:02] "GET /goods/messages/ HTTP/1.1" 200 4807
+[21/Feb/2013 12:50:03] "GET /goods/store/edit/ad/ HTTP/1.1" 200 5393
+[21/Feb/2013 12:50:04] "GET /goods/store/edit/ HTTP/1.1" 200 5753
+[21/Feb/2013 12:50:05] "GET /goods/item/add/ HTTP/1.1" 200 6702
+[21/Feb/2013 12:50:07] "GET /goods/links/ HTTP/1.1" 200 5704
+[21/Feb/2013 12:50:07] "GET /goods/ad/ HTTP/1.1" 200 4810
+[21/Feb/2013 12:50:08] "GET /goods/show_sort/ HTTP/1.1" 200 10035
+[21/Feb/2013 12:50:09] "GET /goods/store/add/ HTTP/1.1" 200 5334
+[21/Feb/2013 12:50:09] "GET /accounts/store/manage_user HTTP/1.1" 200 6048
+[21/Feb/2013 12:50:09] "GET /static/bootstrap-tab.js HTTP/1.1" 200 3307
+[21/Feb/2013 12:55:36] "GET /accounts/index HTTP/1.1" 200 4844
+[21/Feb/2013 13:12:11] "GET / HTTP/1.0" 200 12240
+[21/Feb/2013 13:12:11] "GET /static/reset-gird-min_11.css HTTP/1.0" 200 1178
+[21/Feb/2013 13:12:11] "GET /static/getuname.js HTTP/1.0" 200 255
+[21/Feb/2013 13:12:11] "GET /static/jquery-1.4.2.js HTTP/1.0" 200 72173
+[21/Feb/2013 13:12:11] "GET /static/i20110122.css HTTP/1.0" 200 18592
+[21/Feb/2013 13:12:11] "GET /static/index_2011.js HTTP/1.0" 200 3847
+[21/Feb/2013 13:12:17] "GET /static/logo1.jpg HTTP/1.0" 200 31638
+[21/Feb/2013 13:12:17] "GET /static/ad_middle/snapshot6.png HTTP/1.0" 200 61356
+[21/Feb/2013 13:12:17] "GET /static/ad_middle/snapshot2.png HTTP/1.0" 200 18762
+[21/Feb/2013 13:12:17] "GET /static/navbar.png HTTP/1.0" 200 2817
+[21/Feb/2013 13:12:18] "GET /static/ad_middle/snapshot7.png HTTP/1.0" 200 1543280
+[21/Feb/2013 13:12:18] "GET /static/ad/21122012045_1.jpg HTTP/1.0" 200 1904011
+[21/Feb/2013 13:12:18] "GET /static/ad/21122012042_1.jpg HTTP/1.0" 200 1830446
+[21/Feb/2013 13:12:18] "GET /static/ad/21122012043_1.jpg HTTP/1.0" 200 1851523
+[21/Feb/2013 13:12:18] "GET /static/ad/21122012045_2.jpg HTTP/1.0" 200 1904011
+[21/Feb/2013 13:12:18] "GET /static/ad/21122012041_1.jpg HTTP/1.0" 200 1900218
+[21/Feb/2013 13:12:18] "GET /static/ad/21122012042_2.jpg HTTP/1.0" 200 1830446
+[21/Feb/2013 13:12:19] "GET /Uploa2181435014608.jpg HTTP/1.0" 404 3643
+[21/Feb/2013 13:12:33] "GET /index/classify/0.html/1 HTTP/1.0" 200 5874
+[21/Feb/2013 13:12:34] "GET /static/others.css HTTP/1.0" 200 1735
+[21/Feb/2013 13:12:34] "GET /static/bdsstyle.css HTTP/1.0" 200 8912
+[21/Feb/2013 13:12:34] "GET /static/c20100106_11.css HTTP/1.0" 200 38427
+[21/Feb/2013 13:12:34] "GET /static/logger.js HTTP/1.0" 200 3062
+[21/Feb/2013 13:12:34] "GET /static/func.js HTTP/1.0" 404 1630
+[21/Feb/2013 13:12:37] "GET /static/image/mimi_1.jpg HTTP/1.0" 200 13171
+[21/Feb/2013 13:12:37] "GET /images_11/sprite.png HTTP/1.0" 404 3637
+[21/Feb/2013 13:12:37] "GET /images_11/nav.png HTTP/1.0" 404 3628
+[21/Feb/2013 13:12:37] "GET /images_10/background-x.png HTTP/1.0" 404 3655
+[21/Feb/2013 13:12:37] "GET /static/nav.gif HTTP/1.0" 200 150
+[21/Feb/2013 13:12:37] "GET /images_10/ly.gif HTTP/1.0" 404 3625
+[21/Feb/2013 13:12:37] "GET /images_10/lx.gif HTTP/1.0" 404 3625
+[21/Feb/2013 13:12:39] "GET /index/classify/0.html/1 HTTP/1.0" 200 5874
+[21/Feb/2013 13:12:40] "GET /static/reset-gird-min_11.css HTTP/1.0" 304 0
+[21/Feb/2013 13:12:40] "GET /static/c20100106_11.css HTTP/1.0" 304 0
+[21/Feb/2013 13:12:40] "GET /static/others.css HTTP/1.0" 304 0
+[21/Feb/2013 13:12:40] "GET /static/bdsstyle.css HTTP/1.0" 304 0
+[21/Feb/2013 13:12:40] "GET /static/func.js HTTP/1.0" 404 1630
+[21/Feb/2013 13:12:40] "GET /static/logger.js HTTP/1.0" 304 0
+[21/Feb/2013 13:12:40] "GET /static/getuname.js HTTP/1.0" 304 0
+[21/Feb/2013 13:12:40] "GET /static/logo1.jpg HTTP/1.0" 304 0
+[21/Feb/2013 13:12:40] "GET /images_11/sprite.png HTTP/1.0" 404 3637
+[21/Feb/2013 13:12:40] "GET /static/navbar.png HTTP/1.0" 304 0
+[21/Feb/2013 13:12:40] "GET /images_11/nav.png HTTP/1.0" 404 3628
+[21/Feb/2013 13:12:40] "GET /static/nav.gif HTTP/1.0" 304 0
+[21/Feb/2013 13:12:40] "GET /images_10/background-x.png HTTP/1.0" 404 3655
+[21/Feb/2013 13:12:40] "GET /static/image/mimi_1.jpg HTTP/1.0" 200 13171
+[21/Feb/2013 13:12:40] "GET /images_10/ly.gif HTTP/1.0" 404 3625
+[21/Feb/2013 13:12:40] "GET /images_10/lx.gif HTTP/1.0" 404 3625
+[21/Feb/2013 13:12:44] "GET / HTTP/1.0" 200 12240
+[21/Feb/2013 13:12:44] "GET /static/i20110122.css HTTP/1.0" 304 0
+[21/Feb/2013 13:12:44] "GET /static/jquery-1.4.2.js HTTP/1.0" 304 0
+[21/Feb/2013 13:12:44] "GET /static/index_2011.js HTTP/1.0" 304 0
+[21/Feb/2013 13:12:44] "GET /static/ad_middle/snapshot2.png HTTP/1.0" 200 18762
+[21/Feb/2013 13:12:44] "GET /static/ad_middle/snapshot6.png HTTP/1.0" 200 61356
+[21/Feb/2013 13:12:44] "GET /Uploa2181435014608.jpg HTTP/1.0" 404 3643
+[21/Feb/2013 13:12:45] "GET /static/ad_middle/snapshot7.png HTTP/1.0" 200 1543280
+[21/Feb/2013 13:12:45] "GET /static/ad/21122012045_1.jpg HTTP/1.0" 200 1904011
+[21/Feb/2013 13:12:45] "GET /static/ad/21122012042_1.jpg HTTP/1.0" 200 1830446
+[21/Feb/2013 13:12:45] "GET /static/ad/21122012045_2.jpg HTTP/1.0" 200 1904011
+[21/Feb/2013 13:12:45] "GET /static/ad/21122012041_1.jpg HTTP/1.0" 200 1900218
+[21/Feb/2013 13:12:45] "GET /static/ad/21122012043_1.jpg HTTP/1.0" 200 1851523
+[21/Feb/2013 13:12:48] "GET /static/ad/21122012042_2.jpg HTTP/1.0" 200 1830446
+[21/Feb/2013 13:14:51] "GET / HTTP/1.0" 200 12240
+[21/Feb/2013 13:14:51] "GET /static/reset-gird-min_11.css HTTP/1.0" 304 0
+[21/Feb/2013 13:14:51] "GET /static/i20110122.css HTTP/1.0" 304 0
+[21/Feb/2013 13:14:51] "GET /static/getuname.js HTTP/1.0" 304 0
+[21/Feb/2013 13:14:51] "GET /static/index_2011.js HTTP/1.0" 304 0
+[21/Feb/2013 13:14:51] "GET /static/jquery-1.4.2.js HTTP/1.0" 304 0
+[21/Feb/2013 13:14:52] "GET /static/logo1.jpg HTTP/1.0" 304 0
+[21/Feb/2013 13:14:52] "GET /static/ad_middle/snapshot6.png HTTP/1.0" 200 61356
+[21/Feb/2013 13:14:52] "GET /static/ad_middle/snapshot2.png HTTP/1.0" 200 18762
+[21/Feb/2013 13:14:52] "GET /static/navbar.png HTTP/1.0" 304 0
+[21/Feb/2013 13:14:53] "GET /static/ad_middle/snapshot7.png HTTP/1.0" 200 1543280
+[21/Feb/2013 13:14:53] "GET /Uploa2181435014608.jpg HTTP/1.0" 404 3643
+[21/Feb/2013 13:14:53] "GET /static/ad/21122012042_2.jpg HTTP/1.0" 200 1830446
+[21/Feb/2013 13:14:53] "GET /static/ad/21122012043_1.jpg HTTP/1.0" 200 1851523
+[21/Feb/2013 13:14:53] "GET /static/ad/21122012045_2.jpg HTTP/1.0" 200 1904011
+[21/Feb/2013 13:14:53] "GET /static/ad/21122012045_1.jpg HTTP/1.0" 200 1904011
+[21/Feb/2013 13:14:53] "GET /static/ad/21122012041_1.jpg HTTP/1.0" 200 1900218
+[21/Feb/2013 13:14:53] "GET /static/ad/21122012042_1.jpg HTTP/1.0" 200 1830446
+[21/Feb/2013 13:29:41] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:29:41] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:30:13] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:30:13] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:30:28] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:30:28] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:30:28] "GET /static/reset-gird-min_11.css HTTP/1.1" 200 1178
+[21/Feb/2013 13:30:28] "GET /static/i20110122.css HTTP/1.1" 200 18592
+[21/Feb/2013 13:30:28] "GET /static/getuname.js HTTP/1.1" 200 255
+[21/Feb/2013 13:30:28] "GET /static/index_2011.js HTTP/1.1" 200 3847
+[21/Feb/2013 13:30:29] "GET /static/jquery-1.4.2.js HTTP/1.1" 200 72173
+[21/Feb/2013 13:30:30] "GET /static/ad_middle/snapshot2.png HTTP/1.1" 200 18762
+[21/Feb/2013 13:30:30] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:30:30] "GET /static/logo1.jpg HTTP/1.1" 200 31638
+[21/Feb/2013 13:30:31] "GET /static/ad_middle/snapshot6.png HTTP/1.1" 200 61356
+[21/Feb/2013 13:30:31] "GET /static/navbar.png HTTP/1.1" 200 2817
+[21/Feb/2013 13:30:39] "GET /store/1/ HTTP/1.1" 200 7473
+[21/Feb/2013 13:30:39] "GET /static/3.css HTTP/1.1" 200 1149
+[21/Feb/2013 13:30:39] "GET /static/base-min.css HTTP/1.1" 200 15707
+[21/Feb/2013 13:30:39] "GET /static/common.js HTTP/1.1" 200 3783
+[21/Feb/2013 13:30:39] "GET /static/wp_online.js HTTP/1.1" 200 1216
+[21/Feb/2013 13:30:40] "GET /static/jquery-1.js HTTP/1.1" 200 72174
+[21/Feb/2013 13:30:41] "GET /static/wq_online.css HTTP/1.1" 200 1160
+[21/Feb/2013 13:30:41] "GET /static/logo/u159194160819610643fm23gp0.jpg HTTP/1.1" 200 15503
+[21/Feb/2013 13:30:41] "GET /static/ad/mimi.jpg HTTP/1.1" 200 13171
+[21/Feb/2013 13:30:41] "GET /store/static/store/20127916163282639.jpg HTTP/1.1" 404 3696
+[21/Feb/2013 13:30:41] "GET /store/static/store/20127916595373294.jpg HTTP/1.1" 404 3696
+[21/Feb/2013 13:30:41] "GET /store/static/store/2012791702618165.jpg HTTP/1.1" 404 3693
+[21/Feb/2013 13:30:41] "GET /images/s_bg.png HTTP/1.1" 404 3621
+[21/Feb/2013 13:30:41] "GET /images/s_test.png HTTP/1.1" 404 3627
+[21/Feb/2013 13:30:41] "GET /static/s_icon-3.png HTTP/1.1" 404 1644
+[21/Feb/2013 13:30:41] "GET /images/s_search.png HTTP/1.1" 404 3633
+[21/Feb/2013 13:30:41] "GET /store/1/ HTTP/1.1" 200 7473
+[21/Feb/2013 13:30:43] "GET /static/ad/%E5%91%A8%E6%9D%B0%E4%BC%A6.png HTTP/1.1" 200 169481
+[21/Feb/2013 13:30:43] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 215, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 582, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.4.3-py2.7.egg/django/core/servers/basehttp.py", line 139, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 640, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 693, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[21/Feb/2013 13:30:52] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:30:55] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:30:57] "GET /static/ad_middle/snapshot7.png HTTP/1.1" 200 1543280
+[21/Feb/2013 13:30:57] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:31:01] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:31:09] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[21/Feb/2013 13:31:18] "GET /accounts HTTP/1.1" 301 0
+[21/Feb/2013 13:31:18] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 13:31:18] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 13:31:49] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 13:31:49] "GET /static/bootstrap.min.js HTTP/1.1" 200 25743
+[21/Feb/2013 13:31:50] "GET /static/bootstrap.js HTTP/1.1" 200 56478
+[21/Feb/2013 13:31:50] "GET /static/bootstrap.css HTTP/1.1" 200 121187
+[21/Feb/2013 13:32:14] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 13:32:15] "GET /static/bootstrap.css HTTP/1.1" 200 121187
+[21/Feb/2013 13:32:16] "GET /static/bootstrap.js HTTP/1.1" 200 56478
+[21/Feb/2013 13:32:16] "GET /static/bootstrap.min.js HTTP/1.1" 200 25743
+[21/Feb/2013 13:32:47] "POST /accounts/ HTTP/1.1" 302 0
+[21/Feb/2013 13:32:47] "GET /accounts/index HTTP/1.1" 200 1079
+[21/Feb/2013 13:32:47] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 13:33:02] "POST /accounts/ HTTP/1.1" 302 0
+[21/Feb/2013 13:33:02] "GET /accounts/index HTTP/1.1" 200 4844
+[21/Feb/2013 13:33:03] "GET /static/glyphicons-halflings.png HTTP/1.1" 200 12799
+[21/Feb/2013 13:33:04] "GET /accounts/store/manage_user HTTP/1.1" 200 6048
+[21/Feb/2013 13:33:04] "GET /static/bootstrap-tab.js HTTP/1.1" 200 3307
+[21/Feb/2013 13:33:05] "GET /goods/store/add/ HTTP/1.1" 200 5334
+[21/Feb/2013 13:33:06] "GET /goods/show_sort/ HTTP/1.1" 200 10035
+[21/Feb/2013 13:33:07] "GET /goods/ad/ HTTP/1.1" 200 4810
+[21/Feb/2013 13:33:08] "GET /goods/links/ HTTP/1.1" 200 5704
+[21/Feb/2013 13:33:10] "GET /goods/item/add/ HTTP/1.1" 200 6702
+[21/Feb/2013 13:34:02] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:34:03] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:34:09] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:34:10] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:34:22] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:34:23] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:36:02] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:36:02] "GET /static/getuname.js HTTP/1.1" 200 255
+[21/Feb/2013 13:36:02] "GET /static/index_2011.js HTTP/1.1" 200 3847
+[21/Feb/2013 13:36:03] "GET /static/jquery-1.4.2.js HTTP/1.1" 200 72173
+[21/Feb/2013 13:36:05] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:36:06] "GET /static/reset-gird-min_11.css HTTP/1.1" 200 1178
+[21/Feb/2013 13:36:06] "GET /static/index_2011.js HTTP/1.1" 200 3847
+[21/Feb/2013 13:36:06] "GET /static/getuname.js HTTP/1.1" 200 255
+[21/Feb/2013 13:36:06] "GET /static/ad_middle/snapshot2.png HTTP/1.1" 200 18762
+[21/Feb/2013 13:36:06] "GET /static/logo1.jpg HTTP/1.1" 200 31638
+[21/Feb/2013 13:36:06] "GET /static/ad_middle/snapshot6.png HTTP/1.1" 200 61356
+[21/Feb/2013 13:36:06] "GET /static/jquery-1.4.2.js HTTP/1.1" 200 72173
+[21/Feb/2013 13:36:06] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:36:09] "GET /static/i20110122.css HTTP/1.1" 200 18592
+[21/Feb/2013 13:36:10] "GET /static/navbar.png HTTP/1.1" 200 2817
+[21/Feb/2013 13:36:15] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+[21/Feb/2013 13:36:17] "GET /static/ad_middle/snapshot7.png HTTP/1.1" 200 1543280
+[21/Feb/2013 13:36:18] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:36:18] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:36:19] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[21/Feb/2013 13:36:20] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:36:22] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:36:24] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 13:36:30] "GET /accounts HTTP/1.1" 301 0
+[21/Feb/2013 13:36:30] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 13:36:36] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 13:36:36] "GET /static/bootstrap.min.js HTTP/1.1" 200 25743
+[21/Feb/2013 13:36:36] "GET /static/bootstrap.js HTTP/1.1" 200 56478
+[21/Feb/2013 13:36:37] "GET /static/bootstrap.css HTTP/1.1" 200 121187
+[21/Feb/2013 13:37:59] "GET /static/bootstrap.min.js HTTP/1.1" 200 25743
+[21/Feb/2013 13:37:59] "GET /static/bootstrap.js HTTP/1.1" 200 56478
+[21/Feb/2013 13:41:53] "POST /accounts/ HTTP/1.1" 302 0
+[21/Feb/2013 13:41:53] "GET /accounts/index HTTP/1.1" 200 4844
+[21/Feb/2013 13:41:55] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:41:56] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:42:19] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:42:20] "GET /static/ad_middle/snapshot2.png HTTP/1.1" 200 18762
+[21/Feb/2013 13:42:20] "GET /static/ad_middle/snapshot6.png HTTP/1.1" 200 61356
+[21/Feb/2013 13:42:20] "GET /static/ad_middle/snapshot7.png HTTP/1.1" 200 1543280
+[21/Feb/2013 13:42:20] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:42:21] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:42:21] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:42:21] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+[21/Feb/2013 13:42:21] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[21/Feb/2013 13:42:21] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:42:21] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:42:27] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:42:28] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:42:37] "HEAD /manager/html HTTP/1.0" 404 0
+[21/Feb/2013 13:43:12] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:43:13] "GET /static/reset-gird-min_11.css HTTP/1.1" 304 0
+[21/Feb/2013 13:43:13] "GET /static/i20110122.css HTTP/1.1" 304 0
+[21/Feb/2013 13:43:13] "GET /static/jquery-1.4.2.js HTTP/1.1" 304 0
+[21/Feb/2013 13:43:13] "GET /static/getuname.js HTTP/1.1" 304 0
+[21/Feb/2013 13:43:13] "GET /static/index_2011.js HTTP/1.1" 304 0
+[21/Feb/2013 13:43:13] "GET /static/logo1.jpg HTTP/1.1" 304 0
+[21/Feb/2013 13:43:13] "GET /static/ad_middle/snapshot6.png HTTP/1.1" 200 61356
+[21/Feb/2013 13:43:13] "GET /static/ad_middle/snapshot2.png HTTP/1.1" 200 18762
+[21/Feb/2013 13:43:13] "GET /static/navbar.png HTTP/1.1" 304 0
+[21/Feb/2013 13:43:13] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:43:22] "GET /index/classify/1.html/1 HTTP/1.1" 200 4294
+[21/Feb/2013 13:43:22] "GET /static/bdsstyle.css HTTP/1.1" 200 8912
+[21/Feb/2013 13:43:22] "GET /static/others.css HTTP/1.1" 200 1735
+[21/Feb/2013 13:43:22] "GET /static/func.js HTTP/1.1" 404 1629
+[21/Feb/2013 13:43:22] "GET /static/logger.js HTTP/1.1" 200 3062
+[21/Feb/2013 13:43:22] "GET /static/c20100106_11.css HTTP/1.1" 200 38427
+[21/Feb/2013 13:43:22] "GET /images_11/nav.png HTTP/1.1" 404 3627
+[21/Feb/2013 13:43:22] "GET /static/nav.gif HTTP/1.1" 200 150
+[21/Feb/2013 13:43:22] "GET /images_10/background-x.png HTTP/1.1" 404 3654
+[21/Feb/2013 13:43:22] "GET /images_11/sprite.png HTTP/1.1" 404 3636
+[21/Feb/2013 13:43:24] "GET /index/classify/2.html/1 HTTP/1.1" 200 4167
+[21/Feb/2013 13:43:24] "GET /static/func.js HTTP/1.1" 404 1629
+[21/Feb/2013 13:43:24] "GET /images_11/sprite.png HTTP/1.1" 404 3636
+[21/Feb/2013 13:43:24] "GET /images_11/nav.png HTTP/1.1" 404 3627
+[21/Feb/2013 13:43:24] "GET /images_10/background-x.png HTTP/1.1" 404 3654
+[21/Feb/2013 13:44:17] "GET /index/classify/1.html/1 HTTP/1.1" 200 4294
+[21/Feb/2013 13:44:17] "GET /static/func.js HTTP/1.1" 404 1629
+[21/Feb/2013 13:44:17] "GET /images_11/sprite.png HTTP/1.1" 404 3636
+[21/Feb/2013 13:44:17] "GET /images_11/nav.png HTTP/1.1" 404 3627
+[21/Feb/2013 13:44:17] "GET /images_10/background-x.png HTTP/1.1" 404 3654
+[21/Feb/2013 13:44:29] "GET /about/ HTTP/1.1" 404 3594
+[21/Feb/2013 13:44:33] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:44:33] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:44:38] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:44:38] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:46:04] "GET / HTTP/1.1" 200 12240
+[21/Feb/2013 13:46:04] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:46:08] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 13:46:08] "GET /static/bootstrap.js HTTP/1.1" 200 56478
+[21/Feb/2013 13:46:08] "GET /static/bootstrap.min.js HTTP/1.1" 200 25743
+[21/Feb/2013 13:46:08] "GET /static/bootstrap.css HTTP/1.1" 200 121187
+[21/Feb/2013 13:46:13] "POST /accounts/ HTTP/1.1" 302 0
+[21/Feb/2013 13:46:13] "GET /accounts/index HTTP/1.1" 200 4844
+[21/Feb/2013 13:46:18] "GET /goods/show_sort/ HTTP/1.1" 200 10035
+[21/Feb/2013 13:46:25] "GET /goods/show_sort/add/1/ HTTP/1.1" 200 5492
+[21/Feb/2013 13:46:29] "POST /goods/show_sort/add/1/ HTTP/1.1" 200 72
+[21/Feb/2013 13:46:30] "GET /goods/show_sort/ HTTP/1.1" 200 10511
+[21/Feb/2013 13:46:32] "GET /goods/show_sort/add/1/ HTTP/1.1" 200 5492
+[21/Feb/2013 13:46:42] "POST /goods/show_sort/add/1/ HTTP/1.1" 200 72
+[21/Feb/2013 13:46:43] "GET /goods/show_sort/ HTTP/1.1" 200 10993
+[21/Feb/2013 13:46:45] "GET /goods/show_sort/add/1/ HTTP/1.1" 200 5492
+[21/Feb/2013 13:46:51] "POST /goods/show_sort/add/1/ HTTP/1.1" 200 72
+[21/Feb/2013 13:46:53] "GET /goods/show_sort/ HTTP/1.1" 200 11484
+[21/Feb/2013 13:47:00] "GET / HTTP/1.1" 200 12541
+[21/Feb/2013 13:47:00] "GET /static/index_2011.js HTTP/1.1" 304 0
+[21/Feb/2013 13:47:00] "GET /static/i20110122.css HTTP/1.1" 304 0
+[21/Feb/2013 13:47:00] "GET /static/reset-gird-min_11.css HTTP/1.1" 304 0
+[21/Feb/2013 13:47:00] "GET /static/jquery-1.4.2.js HTTP/1.1" 304 0
+[21/Feb/2013 13:47:00] "GET /static/getuname.js HTTP/1.1" 304 0
+[21/Feb/2013 13:47:00] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:47:00] "GET /static/logo1.jpg HTTP/1.1" 304 0
+[21/Feb/2013 13:47:00] "GET /static/ad_middle/snapshot2.png HTTP/1.1" 200 18762
+[21/Feb/2013 13:47:00] "GET /static/ad_middle/snapshot6.png HTTP/1.1" 200 61356
+[21/Feb/2013 13:47:01] "GET /static/ad_middle/snapshot7.png HTTP/1.1" 200 1543280
+[21/Feb/2013 13:47:01] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:47:01] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:47:01] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+[21/Feb/2013 13:47:01] "GET /static/navbar.png HTTP/1.1" 304 0
+[21/Feb/2013 13:47:01] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[21/Feb/2013 13:47:01] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:47:02] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:49:44] "GET / HTTP/1.1" 200 12541
+[21/Feb/2013 13:49:48] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[21/Feb/2013 13:49:48] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:49:48] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:49:48] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:49:48] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:49:48] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+[21/Feb/2013 13:49:48] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:50:17] "GET / HTTP/1.1" 200 12541
+[21/Feb/2013 13:50:17] "GET /static/reset-gird-min_11.css HTTP/1.1" 200 1178
+[21/Feb/2013 13:50:17] "GET /static/getuname.js HTTP/1.1" 200 255
+[21/Feb/2013 13:50:17] "GET /static/i20110122.css HTTP/1.1" 200 18592
+[21/Feb/2013 13:50:17] "GET /static/index_2011.js HTTP/1.1" 200 3847
+[21/Feb/2013 13:50:17] "GET /static/jquery-1.4.2.js HTTP/1.1" 200 72173
+[21/Feb/2013 13:50:17] "GET /static/logo1.jpg HTTP/1.1" 200 31638
+[21/Feb/2013 13:50:17] "GET /static/ad_middle/snapshot2.png HTTP/1.1" 200 18762
+[21/Feb/2013 13:50:17] "GET /static/ad_middle/snapshot6.png HTTP/1.1" 200 61356
+[21/Feb/2013 13:50:17] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:50:17] "GET /static/navbar.png HTTP/1.1" 200 2817
+[21/Feb/2013 13:50:18] "GET /static/ad_middle/snapshot7.png HTTP/1.1" 200 1543280
+[21/Feb/2013 13:50:18] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:50:18] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:50:18] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:50:18] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:50:18] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[21/Feb/2013 13:50:18] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+[21/Feb/2013 13:50:40] "GET /accounts HTTP/1.1" 301 0
+[21/Feb/2013 13:50:40] "GET /accounts/ HTTP/1.1" 200 2178
+[21/Feb/2013 13:50:40] "GET /static/bootstrap.min.js HTTP/1.1" 200 25743
+[21/Feb/2013 13:50:40] "GET /static/bootstrap.js HTTP/1.1" 200 56478
+[21/Feb/2013 13:50:40] "GET /static/bootstrap.css HTTP/1.1" 200 121187
+[21/Feb/2013 13:50:44] "POST /accounts/ HTTP/1.1" 302 0
+[21/Feb/2013 13:50:44] "GET /accounts/index HTTP/1.1" 200 4844
+[21/Feb/2013 13:50:48] "GET /accounts/store/manage_user HTTP/1.1" 200 6048
+[21/Feb/2013 13:50:48] "GET /static/bootstrap-tab.js HTTP/1.1" 200 3307
+[21/Feb/2013 13:50:51] "GET /goods/store/add/ HTTP/1.1" 200 5334
+[21/Feb/2013 13:50:52] "GET /accounts/store/manage_user HTTP/1.1" 200 6048
+[21/Feb/2013 13:50:54] "GET /goods/store/edit/ad/ HTTP/1.1" 200 5393
+[21/Feb/2013 13:50:55] "GET /goods/messages/ HTTP/1.1" 200 4807
+[21/Feb/2013 13:50:56] "GET /goods/store/edit/ad/ HTTP/1.1" 200 5393
+[21/Feb/2013 13:50:57] "GET /goods/messages/ HTTP/1.1" 200 4807
+[21/Feb/2013 13:51:08] "GET / HTTP/1.1" 200 12541
+[21/Feb/2013 13:51:08] "GET /static/i20110122.css HTTP/1.1" 304 0
+[21/Feb/2013 13:51:08] "GET /static/reset-gird-min_11.css HTTP/1.1" 304 0
+[21/Feb/2013 13:51:08] "GET /static/getuname.js HTTP/1.1" 304 0
+[21/Feb/2013 13:51:08] "GET /static/jquery-1.4.2.js HTTP/1.1" 304 0
+[21/Feb/2013 13:51:08] "GET /static/index_2011.js HTTP/1.1" 304 0
+[21/Feb/2013 13:51:08] "GET /static/logo1.jpg HTTP/1.1" 304 0
+[21/Feb/2013 13:51:09] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:51:09] "GET /static/ad_middle/snapshot2.png HTTP/1.1" 200 18762
+[21/Feb/2013 13:51:09] "GET /static/navbar.png HTTP/1.1" 304 0
+[21/Feb/2013 13:51:11] "GET /about/ HTTP/1.1" 404 3594
+[21/Feb/2013 13:51:19] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[21/Feb/2013 13:51:21] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:51:21] "GET /static/ad_middle/snapshot6.png HTTP/1.1" 200 61356
+[21/Feb/2013 13:51:24] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+[21/Feb/2013 13:51:30] "GET /static/ad_middle/snapshot7.png HTTP/1.1" 200 1543280
+[21/Feb/2013 13:51:40] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:51:46] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:53:02] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:55:39] "GET / HTTP/1.1" 200 12541
+[21/Feb/2013 13:55:39] "GET /static/i20110122.css HTTP/1.1" 304 0
+[21/Feb/2013 13:55:39] "GET /static/reset-gird-min_11.css HTTP/1.1" 304 0
+[21/Feb/2013 13:55:39] "GET /static/getuname.js HTTP/1.1" 304 0
+[21/Feb/2013 13:55:39] "GET /static/jquery-1.4.2.js HTTP/1.1" 304 0
+[21/Feb/2013 13:55:39] "GET /static/index_2011.js HTTP/1.1" 304 0
+[21/Feb/2013 13:55:39] "GET /static/logo1.jpg HTTP/1.1" 304 0
+[21/Feb/2013 13:55:39] "GET /static/ad_middle/snapshot2.png HTTP/1.1" 200 18762
+[21/Feb/2013 13:55:39] "GET /Uploa2181435014608.jpg HTTP/1.1" 404 3642
+[21/Feb/2013 13:55:39] "GET /static/navbar.png HTTP/1.1" 304 0
+[21/Feb/2013 13:55:41] "GET /static/ad_middle/snapshot6.png HTTP/1.1" 200 61356
+[21/Feb/2013 13:55:51] "GET /static/ad/21122012042_1.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:55:52] "GET /static/ad/21122012043_1.jpg HTTP/1.1" 200 1851523
+[21/Feb/2013 13:55:59] "GET /static/ad/21122012041_1.jpg HTTP/1.1" 200 1900218
+[21/Feb/2013 13:56:02] "GET /static/ad/21122012045_1.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:56:05] "GET /static/ad/21122012042_2.jpg HTTP/1.1" 200 1830446
+[21/Feb/2013 13:56:10] "GET /static/ad/21122012045_2.jpg HTTP/1.1" 200 1904011
+[21/Feb/2013 13:56:38] "GET /static/ad_middle/snapshot7.png HTTP/1.1" 200 1543280

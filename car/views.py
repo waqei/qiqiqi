@@ -5,7 +5,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.contrib.comments import Comment
 from form import ItemsForm,StoreAdForm,StoreForm,EditStoreForm,LinkForm,AddForm,ItemsStaffForm,NewsForm
-from car.models import *
+from car.models import Stores,Sorts,Items,Links,News
 import re
 from qiqiqi.settings import DOMAIN
 
@@ -104,7 +104,7 @@ def editStore(request):
     if request.method == 'POST':
         form = EditStoreForm(request.POST,request.FILES)
         if form.is_valid():
-            url = DOMAIN+"/store/" + str(store.id) + "/"
+            #url = DOMAIN+"/store/" + str(store.id) + "/"
             name=form.cleaned_data['name']
             tel=form.cleaned_data['tel']
             qq=form.cleaned_data['qq']
@@ -112,7 +112,7 @@ def editStore(request):
 #            sell=form.cleaned_data['sell']
             notice=form.cleaned_data['notice']
             it_description=form.cleaned_data['it_description']
-            Stores.objects.filter(boss=id).update(url=url,name=name,tel=tel,qq=qq,address=address,
+            Stores.objects.filter(boss=id).update(name=name,tel=tel,qq=qq,address=address,
                         notice=notice,it_description=it_description)
             return HttpResponse('<script>alert("添加成功！");top.location="/goods/store/edit/";</script>')
         else:

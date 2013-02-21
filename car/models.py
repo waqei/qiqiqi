@@ -15,6 +15,10 @@ class Sorts(MPTTModel):
     parent=TreeForeignKey("self", blank=True, null=True, related_name="children")
 
 
+    def get_url(self):
+        link='/index/classify/'+  str(self.id) + '.html/1'
+        return link
+
     class MPTTMeta:
         order_insertion_by = ['name']
 
@@ -27,7 +31,7 @@ class Sorts(MPTTModel):
 class Stores(models.Model):
     boss=models.OneToOneField(User,verbose_name='商铺主')
 
-    url=models.URLField(verbose_name='商铺网址',blank=True)
+    #url=models.URLField(verbose_name='商铺网址',blank=True)
     name=models.CharField(max_length=10,verbose_name='商铺名称',unique=True)
 
     logo=models.ImageField(upload_to='logo',verbose_name='商店logo',blank=True)
@@ -43,6 +47,9 @@ class Stores(models.Model):
     notice=models.CharField(max_length=600,verbose_name='商铺公告',blank=True)
     it_description=models.CharField(max_length=200,verbose_name='商铺描述',blank=True)
 
+    def url(self):
+        url = "/store/" + str(self.id) + "/"
+        return url
 
     def __unicode__(self):
         return self.name
